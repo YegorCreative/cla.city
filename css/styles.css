@@ -972,7 +972,6 @@ p {
 .cta-section__content p {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.78);
-  margin-bottom: var(--space-lg);
   max-width: 520px;
   margin-inline: auto;
   margin-bottom: var(--space-lg);

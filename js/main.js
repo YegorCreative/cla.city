@@ -8,6 +8,7 @@
 
   // ── Sticky Header ──────────────────────────
   const header = document.querySelector('.site-header');
+  const scrollTopBtn = document.querySelector('.scroll-top');
 
   function onScroll() {
     if (window.scrollY > 60) {
@@ -17,7 +18,6 @@
     }
 
     // Scroll-to-top visibility
-    const scrollTopBtn = document.querySelector('.scroll-top');
     if (scrollTopBtn) {
       if (window.scrollY > 400) {
         scrollTopBtn.classList.add('visible');
@@ -61,7 +61,6 @@
   }
 
   // ── Scroll-to-top Button ───────────────────
-  const scrollTopBtn = document.querySelector('.scroll-top');
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
