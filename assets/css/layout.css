@@ -10,9 +10,15 @@
   padding-inline: var(--sp-sm);
 }
 
+/* Container size variants */
+.container--wide   { max-width: var(--max-w-wide);   padding-inline: var(--sp-md); }
+.container--narrow { max-width: var(--max-w-narrow); }
+.container--text   { max-width: var(--max-w-text);   }
+
 /* --- Section spacing --- */
 .section    { padding-block: var(--sp-xl); }
 .section-sm { padding-block: var(--sp-lg); }
+.section--lg { padding-block: var(--sp-2xl); }
 
 /* --- Generic two-column intro split --- */
 .intro-block {
@@ -152,6 +158,6 @@
 }
 
 /* --- Image gradient placeholders --- */
-.img-grad       { width: 100%; height: 100%; background: linear-gradient(135deg, #2A2D35, #3D4450); }
-.img-grad--warm { background: linear-gradient(135deg, #3D2C1E, rgba(194,138,93,0.4)); }
-.img-grad--blue { background: linear-gradient(135deg, #1C2B3A, #2D4A6A); }
+.img-grad       { width: 100%; height: 100%; background: linear-gradient(135deg, #1C2029, #252930); }
+.img-grad--warm { background: linear-gradient(135deg, #2E1E12, rgba(194,138,93,0.40)); }
+.img-grad--blue { background: linear-gradient(135deg, #131E2E, #1C3352); }
