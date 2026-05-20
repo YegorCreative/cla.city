@@ -1,0 +1,44 @@
+[
+  {
+    "id": "t1",
+    "textEn": "I moved to LA and felt completely alone. My first Sunday at Church LA, someone invited me for coffee after the service. Three years later, these are my closest friends.",
+    "textRu": "Я переехала в Лос-Анджелес и чувствовала себя совсем одна. В первое воскресенье в Church LA кто-то пригласил меня на кофе после служения. Три года спустя — это мои ближайшие друзья.",
+    "authorEn": "Marina K. — arrived from Ukraine",
+    "authorRu": "Марина К. — приехала из Украины"
+  },
+  {
+    "id": "t2",
+    "textEn": "I was skeptical about church. But the message was real, the people were genuine, and I didn't feel judged for a single moment. I've been coming back every Sunday since.",
+    "textRu": "Я скептически относился к церкви. Но проповедь была настоящей, люди — искренними, и ни на секунду я не чувствовал осуждения. С тех пор я прихожу каждое воскресенье.",
+    "authorEn": "James T. — Los Angeles",
+    "authorRu": "Джеймс Т. — Лос-Анджелес"
+  },
+  {
+    "id": "t3",
+    "textEn": "Our children love Sunday school and we finally found a community where we feel at home — in both cultures at once.",
+    "textRu": "Наши дети в восторге от воскресной школы, а мы наконец нашли общину, где чувствуем себя как дома — сразу в двух культурах.",
+    "authorEn": "The Sokolov Family — LA",
+    "authorRu": "Семья Соколовых — Лос-Анджелес"
+  },
+  {
+    "id": "t4",
+    "textEn": "The worship here has a warmth and authenticity I haven't found anywhere else in LA. Every Sunday feels like coming home.",
+    "textRu": "Поклонение здесь несёт такую теплоту и искренность, которую я не встречал нигде в Лос-Анджелесе. Каждое воскресенье ощущается как возвращение домой.",
+    "authorEn": "Denise R. — Los Angeles",
+    "authorRu": "Дениз Р. — Лос-Анджелес"
+  },
+  {
+    "id": "t5",
+    "textEn": "Life Groups changed everything for me. I went from attending church to actually belonging somewhere. Real people, real conversations, real faith.",
+    "textRu": "Домашние группы изменили всё для меня. Я перешёл от посещения церкви к настоящей принадлежности. Настоящие люди, настоящие разговоры, настоящая вера.",
+    "authorEn": "Alex P. — Glendale",
+    "authorRu": "Алекс П. — Глендейл"
+  },
+  {
+    "id": "t6",
+    "textEn": "I came as a skeptic and stayed because I found a community that takes both faith and real questions seriously. This place is the real deal.",
+    "textRu": "Я пришла скептиком и осталась, потому что нашла общину, которая серьёзно относится и к вере, и к настоящим вопросам. Это место — по-настоящему.",
+    "authorEn": "Sarah M. — Hollywood",
+    "authorRu": "Сара М. — Голливуд"
+  }
+]
