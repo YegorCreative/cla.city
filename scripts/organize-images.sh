@@ -60,25 +60,18 @@ cp "$IMAGES/ministries/ministries20.png"  "$IMAGES/ministries/worship.png"   # P
 cp "$IMAGES/ministries/ministries8.jpeg"  "$IMAGES/ministries/groups.jpg"
 cp "$IMAGES/ministries/ministries42.jpeg" "$IMAGES/ministries/prayer.jpg"
 
-# NOTE: Pages reference ministries/worship.jpg but source is a PNG.
-# Two options: convert to jpg or update the page reference.
-# Copying as worship.png for now — update <img src> in ministries pages to .png
-echo "    WARNING: ministries/worship source is a PNG (ministries20.png)."
-echo "    Either convert it or update the page reference from .jpg to .png."
-echo ""
+# Convert PNG worship image to JPEG so pages can load it via ministries/worship.jpg
+sips -s format jpeg "$IMAGES/ministries/ministries20.png" --out "$IMAGES/ministries/worship.jpg" > /dev/null 2>&1
 
 # Gallery images (pages reference gallery/01.jpg through gallery/08.jpg)
 cp "$IMAGES/events/events9.jpg"           "$IMAGES/gallery/01.jpg"
 cp "$IMAGES/ministries/ministries2.jpeg"  "$IMAGES/gallery/02.jpg"
 cp "$IMAGES/events/events21.jpg"          "$IMAGES/gallery/03.jpg"
 cp "$IMAGES/ministries/ministries18.jpg"  "$IMAGES/gallery/04.jpg"
-cp "$IMAGES/events/events16.png"          "$IMAGES/gallery/05.png"  # PNG kept as PNG
+sips -s format jpeg "$IMAGES/events/events16.png" --out "$IMAGES/gallery/05.jpg" > /dev/null 2>&1
 cp "$IMAGES/ministries/ministries26.jpg"  "$IMAGES/gallery/06.jpg"
 cp "$IMAGES/events/events20.JPG"          "$IMAGES/gallery/07.jpg"
 cp "$IMAGES/ministries/ministries39.jpeg" "$IMAGES/gallery/08.jpg"
-
-echo "    NOTE: gallery/05 source is a PNG → copied as gallery/05.png."
-echo "          Update gallery page reference from .jpg to .png if needed."
 echo ""
 echo "    Done."
 echo ""
@@ -199,6 +192,7 @@ webp_convert() {
   local SRC="$1"
   local OUT="$2"
   local MAXW="${3:-2400}"
+  local Q="${4:-82}"
 
   if [ ! -f "$SRC" ]; then
     echo "    SKIP: $SRC not found"
@@ -208,49 +202,47 @@ webp_convert() {
   WIDTH=$(sips -g pixelWidth "$SRC" 2>/dev/null | awk '/pixelWidth/{print $2}')
 
   if [ "$WIDTH" -gt "$MAXW" ]; then
-    # Resize first, then convert
+    # Resize first (sips), then convert to WebP (cwebp)
     TMPFILE="/tmp/cla_resize_$$.jpg"
     sips -Z "$MAXW" "$SRC" --out "$TMPFILE" > /dev/null 2>&1
-    sips -s format webp "$TMPFILE" --out "$OUT" > /dev/null 2>&1
+    cwebp -q "$Q" "$TMPFILE" -o "$OUT" -quiet
     rm -f "$TMPFILE"
-    echo "    ✓ $SRC  →  $OUT  (resized to ${MAXW}px + WebP)"
+    echo "    ✓ $SRC  →  $OUT  (resized ${WIDTH}→${MAXW}px + WebP)"
   else
-    sips -s format webp "$SRC" --out "$OUT" > /dev/null 2>&1
-    echo "    ✓ $SRC  →  $OUT  (WebP, original size preserved)"
+    cwebp -q "$Q" "$SRC" -o "$OUT" -quiet
+    echo "    ✓ $SRC  →  $OUT  (WebP, ${WIDTH}px preserved)"
   fi
 }
 
-# Priority 1 — Hero banner candidates
-webp_convert "$IMAGES/ministries/ministries16.jpg"  "$IMAGES/webp/hero-home-worship-raised-hands.webp"       2400
-webp_convert "$IMAGES/ministries/ministries33.jpg"  "$IMAGES/webp/hero-about-pastor-speaking.webp"           1600
-webp_convert "$IMAGES/ministries/ministries1.jpeg"  "$IMAGES/webp/hero-community-congregation.webp"          2400
-webp_convert "$IMAGES/ministries/ministries17.jpg"  "$IMAGES/webp/hero-worship-congregation-from-behind.webp" 2400
-webp_convert "$IMAGES/events/events9.jpg"           "$IMAGES/webp/hero-worship-concert-crowd.webp"           2400
-webp_convert "$IMAGES/events/events21.jpg"          "$IMAGES/webp/worship-band-on-stage.webp"                2400
-webp_convert "$IMAGES/ministries/ministries40.jpeg" "$IMAGES/webp/worship-raised-hands-portrait.webp"        853
+# Priority 1 — Hero banner candidates (quality 85)
+webp_convert "$IMAGES/ministries/ministries16.jpg"  "$IMAGES/webp/hero-home-worship-raised-hands.webp"          2400 85
+webp_convert "$IMAGES/ministries/ministries33.jpg"  "$IMAGES/webp/hero-about-pastor-speaking.webp"              1600 85
+webp_convert "$IMAGES/ministries/ministries1.jpeg"  "$IMAGES/webp/hero-community-congregation.webp"             2400 85
+webp_convert "$IMAGES/ministries/ministries17.jpg"  "$IMAGES/webp/hero-worship-congregation-from-behind.webp"   2400 85
+webp_convert "$IMAGES/events/events9.jpg"           "$IMAGES/webp/hero-worship-concert-crowd.webp"              2400 85
+webp_convert "$IMAGES/events/events21.jpg"          "$IMAGES/webp/worship-band-on-stage.webp"                   2400 85
+webp_convert "$IMAGES/ministries/ministries40.jpeg" "$IMAGES/webp/worship-raised-hands-portrait.webp"           853  85
 
-# Priority 2 — Key ministry card images
-webp_convert "$IMAGES/events/events5.jpg"           "$IMAGES/webp/kids-classroom-activity.webp"              1200
-webp_convert "$IMAGES/ministries/ministries5.jpg"   "$IMAGES/webp/youth-outdoor-games.webp"                  1200
-webp_convert "$IMAGES/events/events10.jpg"          "$IMAGES/webp/women-painting-event.webp"                 1200
-webp_convert "$IMAGES/ministries/ministries20.png"  "$IMAGES/webp/worship-band-on-stage-1080p.webp"          1920
-webp_convert "$IMAGES/ministries/ministries42.jpeg" "$IMAGES/webp/prayer-women-at-cross.webp"                853
-webp_convert "$IMAGES/ministries/ministries8.jpeg"  "$IMAGES/webp/resources-jesus-school.webp"               1280
+# Priority 2 — Key ministry card images (quality 82)
+webp_convert "$IMAGES/events/events5.jpg"           "$IMAGES/webp/kids-classroom-activity.webp"                 1200 82
+webp_convert "$IMAGES/ministries/ministries5.jpg"   "$IMAGES/webp/youth-outdoor-games.webp"                     1200 82
+webp_convert "$IMAGES/events/events10.jpg"          "$IMAGES/webp/women-painting-event.webp"                    1200 82
+webp_convert "$IMAGES/ministries/ministries20.png"  "$IMAGES/webp/worship-band-on-stage-1080p.webp"             1920 82
+webp_convert "$IMAGES/ministries/ministries42.jpeg" "$IMAGES/webp/prayer-women-at-cross.webp"                   853  85
+webp_convert "$IMAGES/ministries/ministries8.jpeg"  "$IMAGES/webp/resources-jesus-school.webp"                  1280 82
 
-# Priority 3 — Leadership / pastors
-webp_convert "$IMAGES/ministries/ministries39.jpeg" "$IMAGES/webp/senior-pastor-couple-portrait.webp"        833
-webp_convert "$IMAGES/pastors/pastors1.jpg"         "$IMAGES/webp/pastor-portrait-01.webp"                   800
-webp_convert "$IMAGES/pastors/pastors2.jpg"         "$IMAGES/webp/pastor-portrait-02.webp"                   800
-webp_convert "$IMAGES/ministries/ministries26.jpg"  "$IMAGES/webp/leadership-team-group.webp"                1600
+# Priority 3 — Leadership / pastors (quality 85)
+webp_convert "$IMAGES/ministries/ministries39.jpeg" "$IMAGES/webp/senior-pastor-couple-portrait.webp"           833  85
+webp_convert "$IMAGES/pastors/pastors1.jpg"         "$IMAGES/webp/pastor-portrait-01.webp"                      800  85
+webp_convert "$IMAGES/pastors/pastors2.jpg"         "$IMAGES/webp/pastor-portrait-02.webp"                      800  85
+webp_convert "$IMAGES/ministries/ministries26.jpg"  "$IMAGES/webp/leadership-team-group.webp"                   1600 82
 
-# Priority 4 — Gallery
-webp_convert "$IMAGES/ministries/ministries2.jpeg"  "$IMAGES/webp/gallery-baptism.webp"                      1600
-webp_convert "$IMAGES/ministries/ministries18.jpg"  "$IMAGES/webp/gallery-community-gathering.webp"          1200
-webp_convert "$IMAGES/events/events20.JPG"          "$IMAGES/webp/gallery-church-exterior.webp"              1200
-
-# Large PNGs that must be converted
-webp_convert "$IMAGES/ministries/ministries21.png"  "$IMAGES/webp/worship-band-wide-stage.webp"              2400
-webp_convert "$IMAGES/events/events16.png"          "$IMAGES/webp/community-large-group.webp"                1600
+# Priority 4 — Gallery + large PNGs (quality 82)
+webp_convert "$IMAGES/ministries/ministries2.jpeg"  "$IMAGES/webp/gallery-baptism.webp"                         1600 82
+webp_convert "$IMAGES/ministries/ministries18.jpg"  "$IMAGES/webp/gallery-community-gathering.webp"             1200 82
+webp_convert "$IMAGES/events/events20.JPG"          "$IMAGES/webp/gallery-church-exterior.webp"                 1200 82
+webp_convert "$IMAGES/ministries/ministries21.png"  "$IMAGES/webp/worship-band-wide-stage.webp"                 2400 82
+webp_convert "$IMAGES/events/events16.png"          "$IMAGES/webp/community-large-group.webp"                   1600 82
 
 echo ""
 echo "==> Done! WebP files saved to $IMAGES/webp/"
