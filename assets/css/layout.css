@@ -1,0 +1,157 @@
+/* ============================================================
+   layout.css — Page-level structure, grids, spacing frames
+   ============================================================ */
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--sp-sm);
+}
+
+/* --- Section spacing --- */
+.section    { padding-block: var(--sp-xl); }
+.section-sm { padding-block: var(--sp-lg); }
+
+/* --- Generic two-column intro split --- */
+.intro-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-lg);
+  align-items: center;
+}
+.intro-block .intro-text h2  { margin-bottom: var(--sp-sm); }
+.intro-block .intro-text p   { color: var(--c-muted); font-size: 1.05rem; }
+.intro-block .intro-text p+p { margin-top: var(--sp-xs); }
+
+.intro-block .intro-img {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-lg);
+  aspect-ratio: 4 / 3;
+  background: var(--c-bg-alt);
+}
+.intro-block .intro-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* --- Service info layout --- */
+.service-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+.service-times {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+/* --- Pastor grid --- */
+.pastor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+}
+
+/* --- Beliefs grid --- */
+.beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-md);
+}
+
+/* --- Feature cards grids --- */
+.cards-grid    { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-md); }
+.cards-grid--2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-md); }
+.cards-grid--4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-md); }
+
+/* --- Ministry grid --- */
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+}
+
+/* --- Testimonials grid --- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+}
+
+/* --- Stats row --- */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-xl);
+  flex-wrap: wrap;
+}
+
+/* --- Media grid --- */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+}
+
+/* --- Gallery grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.gallery-item        { aspect-ratio: 1; overflow: hidden; background: var(--c-bg-alt); cursor: pointer; }
+.gallery-item img    { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow); }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item.tall   { grid-row: span 2; }
+.gallery-item.wide   { grid-column: span 2; }
+
+/* --- Give page layout --- */
+.give-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+
+/* --- Footer grid --- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--sp-lg);
+  margin-bottom: var(--sp-lg);
+}
+
+/* --- FAQ list --- */
+.faq-list {
+  max-width: 720px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* --- Course list (Jesus School) --- */
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* --- Give steps --- */
+.give-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+/* --- Image gradient placeholders --- */
+.img-grad       { width: 100%; height: 100%; background: linear-gradient(135deg, #2A2D35, #3D4450); }
+.img-grad--warm { background: linear-gradient(135deg, #3D2C1E, rgba(194,138,93,0.4)); }
+.img-grad--blue { background: linear-gradient(135deg, #1C2B3A, #2D4A6A); }

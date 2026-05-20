@@ -1,0 +1,54 @@
+/* ============================================================
+   utilities.css — Single-purpose helper classes
+   ============================================================ */
+
+/* --- Text alignment --- */
+.text-center { text-align: center; }
+.text-left   { text-align: left;   }
+.text-right  { text-align: right;  }
+
+/* --- Text color --- */
+.text-white   { color: var(--c-white)   !important; }
+.text-muted   { color: var(--c-muted);               }
+.text-primary { color: var(--c-primary);              }
+.text-dark    { color: var(--c-dark);                 }
+
+/* --- Background --- */
+.bg-light { background-color: var(--c-bg);     }
+.bg-alt   { background-color: var(--c-bg-alt); }
+.bg-dark  { background-color: var(--c-dark);   color: var(--c-white); }
+.bg-white { background-color: var(--c-white);  }
+
+/* --- Spacing helpers --- */
+.mt-sm { margin-top:    var(--sp-sm); }
+.mt-md { margin-top:    var(--sp-md); }
+.mt-lg { margin-top:    var(--sp-lg); }
+.mb-sm { margin-bottom: var(--sp-sm); }
+.mb-md { margin-bottom: var(--sp-md); }
+.mb-lg { margin-bottom: var(--sp-lg); }
+
+/* --- Display --- */
+.d-flex   { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.gap-sm   { gap: var(--sp-sm); }
+.gap-md   { gap: var(--sp-md); }
+.flex-wrap{ flex-wrap: wrap; }
+
+/* --- Width helpers --- */
+.w-full   { width: 100%; }
+.max-600  { max-width: 600px; margin-inline: auto; }
+.max-720  { max-width: 720px; margin-inline: auto; }
+.max-800  { max-width: 800px; margin-inline: auto; }
+
+/* --- Visibility --- */
+.hidden       { display: none !important; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

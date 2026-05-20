@@ -1,0 +1,68 @@
+/* ============================================================
+   typography.css — Font import + type scale
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+/* --- Base body --- */
+body {
+  font-family: var(--f-body);
+  color: var(--c-text);
+  background: var(--c-bg);
+  line-height: 1.65;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--f-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--c-text);
+}
+
+h1 { font-size: clamp(2.5rem,  5.5vw, 4.25rem); }
+h2 { font-size: clamp(1.9rem,  3.5vw, 3rem);    }
+h3 { font-size: clamp(1.3rem,  2.5vw, 1.8rem);  }
+h4 { font-size: clamp(1.05rem, 2vw,   1.35rem); }
+h5 { font-size: 0.9rem; }
+h6 { font-size: 0.8rem; }
+
+/* --- Paragraph --- */
+p { margin-bottom: var(--sp-sm); }
+p:last-child { margin-bottom: 0; }
+
+/* --- Anchor base --- */
+a { transition: color var(--t-fast); }
+
+/* --- Eyebrow label — used above section headings --- */
+.eyebrow {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--c-primary);
+  margin-bottom: 0.7rem;
+}
+
+/* --- Section header cluster --- */
+.section-header          { margin-bottom: var(--sp-lg); }
+.section-header h2       { margin-bottom: var(--sp-xs); }
+.section-header .lead    {
+  font-size: 1.05rem;
+  color: var(--c-muted);
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+/* --- Lead / intro paragraph --- */
+.lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.72;
+  color: var(--c-muted);
+}
+
+/* --- On dark backgrounds --- */
+.bg-dark h1, .bg-dark h2, .bg-dark h3,
+.bg-dark h4, .bg-dark p { color: var(--c-white); }

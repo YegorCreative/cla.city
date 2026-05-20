@@ -1,0 +1,50 @@
+/* ============================================================
+   variables.css — Design Tokens
+   ============================================================ */
+:root {
+  /* --- Colors --- */
+  --c-bg:         #FAF9F6;
+  --c-bg-alt:     #F0EBE6;
+  --c-white:      #FFFFFF;
+  --c-dark:       #1A1C20;
+  --c-dark-2:     #242A32;
+  --c-text:       #2A2D35;
+  --c-muted:      #636672;
+  --c-primary:    #C28A5D;
+  --c-primary-dk: #A6734A;
+  --c-primary-lt: #D9A87A;
+  --c-border:     rgba(0, 0, 0, 0.08);
+  --c-border-w:   rgba(255, 255, 255, 0.15);
+
+  /* --- Typography --- */
+  --f-heading: 'Playfair Display', Georgia, serif;
+  --f-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* --- Spacing scale --- */
+  --sp-xs: 0.5rem;    /*  8px */
+  --sp-sm: 1rem;      /* 16px */
+  --sp-md: 2rem;      /* 32px */
+  --sp-lg: 4rem;      /* 64px */
+  --sp-xl: 6rem;      /* 96px */
+
+  /* --- Border radius --- */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 32px;
+
+  /* --- Shadows --- */
+  --sh-sm:    0 2px 8px   rgba(0, 0, 0, 0.06);
+  --sh-md:    0 8px 24px  rgba(0, 0, 0, 0.10);
+  --sh-lg:    0 20px 60px rgba(0, 0, 0, 0.14);
+  --sh-amber: 0 6px 20px  rgba(194, 138, 93, 0.35);
+
+  /* --- Motion --- */
+  --t-fast: 0.18s ease;
+  --t-norm: 0.30s ease;
+  --t-slow: 0.50s ease;
+
+  /* --- Layout --- */
+  --header-h: 72px;
+  --max-w:    1200px;
+}

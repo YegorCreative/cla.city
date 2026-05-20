@@ -1,0 +1,57 @@
+/* ============================================================
+   animations.css — Keyframes & scroll-triggered reveals
+   ============================================================ */
+
+/* --- Keyframes --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* --- Scroll reveal — base state (hidden) --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.62s ease, transform 0.62s ease;
+}
+
+/* Triggered by IntersectionObserver */
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Stagger delays for sibling fade-ins --- */
+.fade-in:nth-child(1) { transition-delay: 0.00s; }
+.fade-in:nth-child(2) { transition-delay: 0.08s; }
+.fade-in:nth-child(3) { transition-delay: 0.16s; }
+.fade-in:nth-child(4) { transition-delay: 0.24s; }
+.fade-in:nth-child(5) { transition-delay: 0.32s; }
+.fade-in:nth-child(6) { transition-delay: 0.40s; }
+
+/* --- Hero entrance (applied directly via animation: fadeUp) --- */
+.hero-content { animation: fadeUp 0.9s ease both; }
+
+/* --- Subtle hover lift (utility) --- */
+.hover-lift {
+  transition: transform var(--t-norm), box-shadow var(--t-norm);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-md);
+}

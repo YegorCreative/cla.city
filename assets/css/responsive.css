@@ -1,0 +1,86 @@
+/* ============================================================
+   responsive.css — Mobile-first breakpoints
+   ============================================================ */
+
+/* ==========================================================================
+   Tablet (≤ 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Collapse 3-col to 2-col */
+  .cards-grid         { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid--4      { grid-template-columns: repeat(2, 1fr); }
+  .ministry-grid      { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid  { grid-template-columns: repeat(2, 1fr); }
+  .media-grid         { grid-template-columns: repeat(2, 1fr); }
+  .pastor-grid        { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
+  .footer-grid        { grid-template-columns: 1fr 1fr;  gap: var(--sp-md); }
+
+  /* Give page */
+  .give-layout  { grid-template-columns: 1fr; }
+  .give-cta-box { position: static; }
+
+  /* Split blocks */
+  .intro-block     { grid-template-columns: 1fr; }
+  .service-layout  { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Mobile (≤ 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Reduce spacing */
+  :root {
+    --sp-xl: 4rem;
+    --sp-lg: 2.5rem;
+    --sp-md: 1.5rem;
+  }
+
+  /* Header — hide desktop nav, show hamburger */
+  .desktop-nav               { display: none; }
+  .header-right .btn         { display: none; }
+  .header-right .lang-switch { display: none; }
+  #menu-btn                  { display: block; }
+
+  /* Collapse all grids to 1-col */
+  .cards-grid,
+  .cards-grid--2,
+  .cards-grid--4      { grid-template-columns: 1fr; }
+  .ministry-grid      { grid-template-columns: 1fr; }
+  .pastor-grid        { grid-template-columns: 1fr; }
+  .beliefs-grid       { grid-template-columns: 1fr; }
+  .testimonials-grid  { grid-template-columns: 1fr; }
+  .media-grid         { grid-template-columns: 1fr; }
+  .footer-grid        { grid-template-columns: 1fr; gap: var(--sp-md); }
+
+  /* Gallery 2-col on mobile */
+  .gallery-grid              { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.tall,
+  .gallery-item.wide         { grid-row: auto; grid-column: auto; }
+
+  /* Hero */
+  .hero-content h1 { font-size: 2.6rem; }
+  .hero-btns       { flex-direction: column; align-items: center; }
+  .hero-btns .btn  { width: 100%; max-width: 320px; }
+
+  /* Stats */
+  .stats-row { gap: var(--sp-lg); }
+
+  /* Footer */
+  .footer-bottom { flex-direction: column; gap: var(--sp-sm); text-align: center; }
+
+  /* Give box */
+  .give-cta-box { border-radius: var(--r-lg); padding: var(--sp-md); }
+}
+
+/* ==========================================================================
+   Small mobile (≤ 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  :root { --header-h: 64px; }
+
+  .hero-content h1    { font-size: 2.1rem; }
+  .ministry-card      { height: 280px; }
+  .pastor-card        { flex-direction: column; }
+  .gallery-grid       { grid-template-columns: 1fr 1fr; }
+  .page-hero          { padding-top: calc(var(--header-h) + 3rem); padding-bottom: 3rem; }
+}
