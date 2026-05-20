@@ -9,25 +9,44 @@
   <style>
     .error-page {
       min-height: 100vh;
-      background: var(--c-dark);
+      background: var(--c-dark, #1A1C20);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: var(--sp-md);
+      padding: var(--sp-md, 2rem);
     }
     .error-code {
-      font-family: var(--f-heading);
+      font-family: var(--f-heading, 'Georgia', serif);
       font-size: clamp(6rem, 18vw, 12rem);
       font-weight: 700;
-      color: var(--c-primary);
+      color: var(--c-primary, #C28A5D);
       line-height: 1;
-      margin-bottom: var(--sp-sm);
+      margin-bottom: 1rem;
       opacity: 0.85;
     }
-    .error-page h1 { color: var(--c-white); font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: var(--sp-sm); }
-    .error-page p  { color: rgba(255,255,255,0.6); max-width: 420px; margin-inline: auto; margin-bottom: var(--sp-md); }
-    .error-btns    { display: flex; gap: var(--sp-sm); justify-content: center; flex-wrap: wrap; }
+    .error-page h1 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 1rem; }
+    .error-page p  { color: rgba(255,255,255,0.6); max-width: 420px; margin-inline: auto; margin-bottom: 2rem; }
+    .error-btns    { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    /* Self-contained button styles — work even if external CSS fails to load */
+    .error-btns .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.9rem 2rem; border-radius: 6px;
+      font-family: inherit; font-weight: 600; font-size: 0.95rem;
+      cursor: pointer; border: none; text-decoration: none;
+      transition: all 0.3s ease; line-height: 1; white-space: nowrap;
+    }
+    .error-btns .btn-primary {
+      background: linear-gradient(135deg, #C28A5D, #A6734A);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(194,138,93,0.35);
+    }
+    .error-btns .btn-primary:hover { transform: translateY(-2px); color: #fff; }
+    .error-btns .btn-outline {
+      background: transparent; color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.55);
+    }
+    .error-btns .btn-outline:hover { background: rgba(255,255,255,0.12); color: #fff; }
   </style>
 </head>
 <body>
@@ -37,10 +56,28 @@
       <h1>Page Not Found</h1>
       <p>This page doesn't exist — but you are still very welcome here. Let's get you somewhere good.</p>
       <div class="error-btns">
-        <a href="en/index.html" class="btn btn-primary">Go to Home (EN)</a>
-        <a href="ru/index.html" class="btn btn-outline">На главную (RU)</a>
+        <a id="go-en" href="en/" class="btn btn-primary">Go to Home (EN)</a>
+        <a id="go-ru" href="ru/" class="btn btn-outline">На главную (RU)</a>
       </div>
     </div>
   </main>
+  <script>
+    // Fix relative paths — 404.html is served from root but browser URL may be a sub-path
+    (function () {
+      var loc  = window.location;
+      var path = loc.pathname; // e.g. "/cla.city/en/foo" or "/en/foo"
+      var root = loc.origin + '/';
+      var parts = path.replace(/^\//, '').split('/').filter(Boolean);
+      // If first path segment is not a known language dir, treat it as the repo/site base
+      if (parts.length > 0 && parts[0] !== 'en' && parts[0] !== 'ru') {
+        root = loc.origin + '/' + parts[0] + '/';
+      }
+      document.getElementById('go-en').href = root + 'en/';
+      document.getElementById('go-ru').href = root + 'ru/';
+      // Also correct the CSS href in case the page is being served from a sub-path
+      var css = document.head.querySelector('link[rel="stylesheet"]');
+      if (css) css.href = root + 'assets/css/styles.css';
+    })();
+  </script>
 </body>
 </html>

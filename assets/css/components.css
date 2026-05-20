@@ -374,6 +374,22 @@
   padding: var(--sp-md);
   color: var(--c-white);
 }
+
+/* Base tag pill — video info, course items, ministry cards, etc. */
+.tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-primary);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(194, 138, 93, 0.12);
+  margin-bottom: 0.4rem;
+}
+
+/* Ministry card override — solid amber background with white text */
 .ministry-card-body .tag {
   display: inline-block;
   background: var(--c-primary);
