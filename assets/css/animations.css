@@ -118,7 +118,7 @@
    ========================================================================== */
 
 .hero-content {
-  animation: fadeSlideUp 1.0s var(--ease-reveal) both;
+  animation: fadeSlideUp 1.1s var(--ease-reveal) 0.18s both;
 }
 
 /* ==========================================================================

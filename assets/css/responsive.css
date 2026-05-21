@@ -73,7 +73,7 @@
   .gallery-item.tall, .gallery-item.wide { grid-row: auto; grid-column: auto; }
 
   /* Hero */
-  .hero-content h1       { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero-content h1       { font-size: clamp(2.4rem, 9vw, 3.4rem); }
   .hero-btns             { flex-direction: column; align-items: center; }
   .hero-btns .btn        { width: 100%; max-width: 320px; }
 
