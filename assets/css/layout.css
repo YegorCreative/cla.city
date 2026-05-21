@@ -38,6 +38,7 @@
   aspect-ratio: 4 / 3;
   background: var(--c-bg-alt);
 }
+.intro-block .intro-img picture { display: block; width: 100%; height: 100%; }
 .intro-block .intro-img img {
   width: 100%; height: 100%;
   object-fit: cover;
