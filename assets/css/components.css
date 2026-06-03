@@ -479,6 +479,53 @@
 }
 .ministry-card-body a:hover { color: var(--c-white); }
 
+/* Editorial ministries layout (homepage only) */
+.ministry-grid--editorial .ministry-card {
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-md);
+  transform-origin: center;
+}
+
+.ministry-grid--editorial .ministry-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--sh-lg), 0 0 0 1px rgba(176,122,79,0.30);
+}
+
+.ministry-grid--editorial .ministry-card::before {
+  background: linear-gradient(
+    to top,
+    rgba(10, 6, 3, 0.94) 0%,
+    rgba(10, 6, 3, 0.60) 38%,
+    rgba(0, 0, 0, 0.18) 74%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.ministry-grid--editorial .ministry-card-body {
+  padding: clamp(1.05rem, 1.8vw, 1.45rem);
+}
+
+.ministry-grid--editorial .ministry-card-body h3 {
+  font-size: clamp(1.1rem, 1.4vw, 1.34rem);
+}
+
+.ministry-grid--editorial .ministry-card--featured .ministry-card-body {
+  padding: clamp(1.25rem, 2.2vw, 1.8rem);
+}
+
+.ministry-grid--editorial .ministry-card--featured .ministry-card-body h3 {
+  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+}
+
+.ministry-grid--editorial .ministry-card--featured .ministry-card-body p {
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+
+.ministry-grid--editorial .ministry-card--wide .ministry-card-body {
+  max-width: 70ch;
+}
+
 /* Ministry bg gradients */
 .mg--kids    { background: linear-gradient(135deg, #5A4635, var(--accent-faith)); }
 .mg--youth   { background: linear-gradient(135deg, #3D5A47, #2C4334); }
