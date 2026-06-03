@@ -96,6 +96,7 @@
   .gallery-item.tall, .gallery-item.wide { grid-row: auto; grid-column: auto; }
 
   /* Hero */
+  .hero                  { padding-bottom: clamp(2rem, 6vh, 3.5rem); }
   .hero-content h1       { font-size: clamp(2.4rem, 9vw, 3.4rem); }
   .hero-btns             { flex-direction: column; align-items: center; }
   .hero-btns .btn        { width: 100%; max-width: 320px; }
@@ -140,7 +141,8 @@
     --sp-lg:    2rem;
   }
 
-  .hero-content h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .hero                  { padding-bottom: 2rem; }
+  .hero-content h1       { font-size: clamp(2rem, 10vw, 2.8rem); }
   .page-hero       { padding-top: calc(var(--header-h) + 2.5rem); padding-bottom: 2.5rem; }
   .ministry-card   { height: 260px; }
   .pastor-card     { flex-direction: column; }
