@@ -48,6 +48,29 @@
   transform: scale(1.04);
 }
 
+/* --- Who We Are card variant --- */
+.intro-block--who {
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--sp-xl);
+  background: var(--c-white);
+  border-radius: var(--r-2xl);
+  box-shadow: var(--sh-md);
+  padding: var(--sp-lg);
+  align-items: stretch;
+}
+.intro-block--who .intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro-block--who .intro-text p   { font-size: 1.05rem; color: var(--c-muted); }
+.intro-block--who .intro-text p+p { margin-top: var(--sp-sm); }
+.intro-block--who .intro-img {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-xl);
+  box-shadow: none;
+}
+
 /* --- Service info layout --- */
 .service-layout {
   display: grid;
