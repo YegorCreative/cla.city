@@ -12,9 +12,22 @@
    ============================================================ */
 :root {
   /* ==========================================================================
+     PREMIUM PALETTE ALIASES (safe additive layer)
+     ========================================================================== */
+  --bg-primary:    #F7F4EE;
+  --bg-secondary:  #FFFFFF;
+  --text-primary:  #1F2328;
+  --text-secondary:#5C6670;
+  --accent-primary:#B07A4F;
+  --accent-hover:  #C8965A;
+  --accent-faith:  #3D5A47;
+  --border-soft:   #E7DED2;
+  --shadow-warm:   rgba(33, 28, 24, 0.08);
+
+  /* ==========================================================================
      COLORS — Background & Surface
      ========================================================================== */
-  --c-bg:         #F6F3EF;   /* warm parchment — primary page background  */
+  --c-bg:         #F7F4EE;   /* warm parchment — primary page background  */
   --c-bg-alt:     #EDE8E2;   /* warm beige — alternate sections           */
   --c-bg-warm:    #EFE9E1;   /* deeper warm — hover tints                 */
   --c-white:      #FFFFFF;   /* pure white                                */
@@ -30,37 +43,38 @@
   /* ==========================================================================
      COLORS — Text
      ========================================================================== */
-  --c-text:       #2A2D35;   /* primary text — warm near-black            */
+   --c-text:       #1F2328;   /* primary text — warm near-black            */
   --c-text-2:     #3D4250;   /* secondary text                            */
-  --c-muted:      #656872;   /* muted / subdued                           */
+   --c-muted:      #5C6670;   /* muted / subdued                           */
   --c-subtle:     #9A9CAA;   /* very subtle — placeholders, footnotes     */
-  --c-inverted:   #F6F3EF;   /* text on dark backgrounds                  */
+   --c-inverted:   #F7F4EE;   /* text on dark backgrounds                  */
 
   /* ==========================================================================
      COLORS — Primary Accent (Warm Amber / Spiritual Gold)
      ========================================================================== */
-  --c-primary:      #C28A5D;               /* core amber — brand identity */
+   --c-primary:      #B07A4F;               /* core amber — brand identity */
   --c-primary-dk:   #A6734A;               /* dark amber — hover states   */
-  --c-primary-lt:   #D9A87A;               /* light amber — text on dark  */
-  --c-primary-xlt:  #F2DFC8;               /* very light amber — tints    */
-  --c-primary-glow: rgba(194,138,93,0.28); /* glow tint for shadows       */
+   --c-primary-lt:   #C8965A;               /* light amber — text on dark  */
+   --c-primary-xlt:  #E8D3BD;               /* very light amber — tints    */
+   --c-primary-glow: rgba(176,122,79,0.28); /* glow tint for shadows       */
 
   /* ==========================================================================
      COLORS — Borders
      ========================================================================== */
-  --c-border:     rgba(0, 0, 0, 0.07);
+   --c-border:     #E7DED2;
   --c-border-md:  rgba(0, 0, 0, 0.12);
   --c-border-str: rgba(0, 0, 0, 0.18);
   --c-border-w:   rgba(255, 255, 255, 0.13);
   --c-border-w2:  rgba(255, 255, 255, 0.24);
+   --c-shadow:     rgba(33, 28, 24, 0.08);
 
   /* ==========================================================================
      COLORS — Gradients & Cinematic Overlays
      ========================================================================== */
-  --c-gradient-warm:  linear-gradient(135deg, #C28A5D 0%, #A6734A 100%);
+   --c-gradient-warm:  linear-gradient(135deg, #B07A4F 0%, #A6734A 100%);
   --c-gradient-dark:  linear-gradient(160deg, #111316 0%, #252930 100%);
-  --c-gradient-gold:  linear-gradient(135deg, #D9A87A 0%, #C28A5D 50%, #A6734A 100%);
-  --c-gradient-paper: linear-gradient(180deg, #F6F3EF 0%, #EDE8E2 100%);
+   --c-gradient-gold:  linear-gradient(135deg, #C8965A 0%, #B07A4F 50%, #A6734A 100%);
+   --c-gradient-paper: linear-gradient(180deg, #F7F4EE 0%, #EDE8E2 100%);
 
   /* ==========================================================================
      TYPOGRAPHY
@@ -133,8 +147,8 @@
   --sh-md:       0 4px 16px rgba(0,0,0,0.07), 0 12px 36px rgba(0,0,0,0.08);
   --sh-lg:       0 12px 40px rgba(0,0,0,0.10), 0 28px 72px rgba(0,0,0,0.10);
   --sh-xl:       0 24px 64px rgba(0,0,0,0.14), 0 48px 100px rgba(0,0,0,0.10);
-  --sh-amber:    0 4px 16px rgba(194,138,93,0.28), 0 8px 32px rgba(194,138,93,0.16);
-  --sh-amber-lg: 0 8px 28px rgba(194,138,93,0.38), 0 16px 48px rgba(194,138,93,0.20);
+   --sh-amber:    0 4px 16px rgba(176,122,79,0.28), 0 8px 32px rgba(176,122,79,0.16);
+   --sh-amber-lg: 0 8px 28px rgba(176,122,79,0.38), 0 16px 48px rgba(176,122,79,0.20);
 
   /* ==========================================================================
      TRANSITIONS

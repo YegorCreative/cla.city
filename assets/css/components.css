@@ -99,7 +99,7 @@
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: var(--z-header);
-  background: rgba(246, 243, 239, 0.92);
+  background: rgba(247, 244, 238, 0.92);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   border-bottom: 1px solid transparent;
@@ -345,11 +345,11 @@
   z-index: -1;
 }
 
-.page-hero--about::before  { background: linear-gradient(135deg, #1A1C20 0%, #2F3845 100%); }
-.page-hero--visit::before  { background: linear-gradient(135deg, #1C2B3A 0%, #2A3F52 100%); }
+.page-hero--about::before  { background: linear-gradient(135deg, #1F2328 0%, var(--accent-faith) 100%); }
+.page-hero--visit::before  { background: linear-gradient(135deg, #2B332D 0%, var(--accent-faith) 100%); }
 .page-hero--min::before    { background: linear-gradient(135deg, #2A1F1A 0%, #3D2E22 100%); }
-.page-hero--res::before    { background: linear-gradient(135deg, #1A2020 0%, #243030 100%); }
-.page-hero--media::before  { background: linear-gradient(135deg, #131316 0%, #1E1E24 100%); }
+.page-hero--res::before    { background: linear-gradient(135deg, #1F2328 0%, #32473A 100%); }
+.page-hero--media::before  { background: linear-gradient(135deg, #1F2328 0%, #2E352F 100%); }
 .page-hero--give::before   { background: linear-gradient(135deg, #3B2512 0%, var(--c-primary-dk) 100%); }
 
 .page-hero::after {
@@ -478,12 +478,12 @@
 .ministry-card-body a:hover { color: var(--c-white); }
 
 /* Ministry bg gradients */
-.mg--kids    { background: linear-gradient(135deg, #3B5998, #2B4082); }
-.mg--youth   { background: linear-gradient(135deg, #1E3A5F, #0D2035); }
-.mg--women   { background: linear-gradient(135deg, #5C3060, #3D1F40); }
+.mg--kids    { background: linear-gradient(135deg, #5A4635, var(--accent-faith)); }
+.mg--youth   { background: linear-gradient(135deg, #3D5A47, #2C4334); }
+.mg--women   { background: linear-gradient(135deg, #6A4A3A, #4B3225); }
 .mg--prayer  { background: linear-gradient(135deg, #1A3028, #0F1F1A); }
 .mg--groups  { background: linear-gradient(135deg, #4A3520, #2E1F0C); }
-.mg--worship { background: linear-gradient(135deg, #2A1C3A, #180E25); }
+.mg--worship { background: linear-gradient(135deg, #4F3A2A, #302116); }
 
 /* ==========================================================================
    PASTOR CARDS
@@ -543,7 +543,7 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: linear-gradient(135deg, #1E2D3D, #162030);
+  background: linear-gradient(135deg, #2D352F, #1F2328);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: var(--sp-sm);
@@ -731,7 +731,7 @@
 .video-thumb {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #1A1C20, #2F3540);
+  background: linear-gradient(135deg, #2D352F, #1F2328);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
@@ -758,7 +758,7 @@
 /* Gallery placeholder */
 .gallery-placeholder {
   width: 100%; height: 100%;
-  background: linear-gradient(135deg, #2A2D35, #3D4450);
+  background: linear-gradient(135deg, #3A3129, #2A2520);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.8rem;
   color: rgba(255, 255, 255, 0.1);
