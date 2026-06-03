@@ -44,9 +44,9 @@
      COLORS — Text
      ========================================================================== */
    --c-text:       #1F2328;   /* primary text — warm near-black            */
-  --c-text-2:     #3D4250;   /* secondary text                            */
+   --c-text-2:     #3D4250;   /* secondary text                            */
    --c-muted:      #5C6670;   /* muted / subdued                           */
-  --c-subtle:     #9A9CAA;   /* very subtle — placeholders, footnotes     */
+   --c-subtle:     #9A9CAA;   /* very subtle — placeholders, footnotes     */
    --c-inverted:   #F7F4EE;   /* text on dark backgrounds                  */
 
   /* ==========================================================================
