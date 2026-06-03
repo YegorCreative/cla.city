@@ -5,6 +5,7 @@ export function initNavigation() {
   const header    = document.getElementById('site-header');
   const menuBtn   = document.getElementById('menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
+  let overlay = null;
   const mobileBreakpoint = 992;
 
   /* --- Scroll shadow --- */
@@ -16,7 +17,7 @@ export function initNavigation() {
 
   /* --- Mobile menu toggle --- */
   if (menuBtn && mobileNav) {
-    const overlay = document.createElement('button');
+    overlay = document.createElement('button');
     overlay.className = 'mobile-nav-overlay';
     overlay.type = 'button';
     overlay.setAttribute('aria-label', 'Close menu overlay');
@@ -71,6 +72,10 @@ export function initNavigation() {
   function closeMenu() {
     if (!mobileNav) return;
     mobileNav.classList.remove('open');
+    if (overlay) {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
     menuBtn.setAttribute('aria-expanded', 'false');
     mobileNav.setAttribute('aria-hidden', 'true');
     menuBtn.textContent = '☰';
