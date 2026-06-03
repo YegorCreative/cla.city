@@ -47,7 +47,7 @@
   .desktop-nav               { display: none; }
   .header-right .btn         { display: none; }
   .header-right .lang-switch { display: flex; }
-  #menu-btn                  { display: inline-flex; }
+  #menu-btn                  { display: block; }
 
   .header-inner {
     gap: 0.55rem;
@@ -67,8 +67,6 @@
     font-size: 0.69rem;
     letter-spacing: 0.045em;
   }
-
-  body.nav-open { overflow: hidden; }
 }
 
 /* ==========================================================================
@@ -80,19 +78,6 @@
     --sp-xl: 4rem;
     --sp-lg: 2.5rem;
     --sp-md: 1.5rem;
-  }
-
-  #mobile-nav {
-    top: calc(var(--header-h) + 0.45rem);
-    right: 0.4rem;
-    bottom: 0.4rem;
-    border-radius: 1.35rem;
-    padding: 0.72rem;
-  }
-
-  .mobile-nav-link {
-    font-size: 0.97rem;
-    padding: 0.72rem 0.74rem;
   }
 
   /* All grids to 1-col */
@@ -161,11 +146,6 @@
   .pastor-card     { flex-direction: column; }
   .gallery-grid    { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
 
-  #mobile-nav {
-    right: 0.3rem;
-    top: calc(var(--header-h) + 0.35rem);
-    bottom: 0.3rem;
-  }
 }
 
 /* ==========================================================================
