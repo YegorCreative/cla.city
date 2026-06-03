@@ -67,6 +67,17 @@
     grid-column: span 1;
     grid-row: span 1;
   }
+
+  .testimonials-grid--editorial {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    gap: var(--sp-sm);
+  }
+  .testimonials-grid--editorial .testimonial--featured,
+  .testimonials-grid--editorial .testimonial--side {
+    grid-column: 1 / -1;
+    grid-row: span 1;
+  }
 }
 
 /* ==========================================================================
@@ -144,6 +155,20 @@
   .ministry-grid--editorial .ministry-card--featured { min-height: 360px; }
   .ministry-grid--editorial .ministry-card--medium,
   .ministry-grid--editorial .ministry-card--wide { min-height: 300px; }
+
+  .testimonials-grid--editorial {
+    gap: var(--sp-sm);
+  }
+  .testimonials-grid--editorial .testimonial--featured {
+    padding: var(--sp-md);
+  }
+  .testimonials-grid--editorial .testimonial--featured p {
+    font-size: 1rem;
+    line-height: 1.74;
+  }
+  .testimonials-grid--editorial .testimonial--side p {
+    font-size: 0.94rem;
+  }
 
   .service-layout--welcome {
     padding: var(--sp-sm);
