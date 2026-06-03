@@ -39,6 +39,14 @@
   }
   .intro-block--who .intro-img { aspect-ratio: 4 / 3; }
   .service-layout { grid-template-columns: 1fr; }
+  .service-layout--welcome {
+    grid-template-columns: 1fr;
+    padding: var(--sp-md);
+    gap: var(--sp-md);
+  }
+  .service-layout--welcome .map-card {
+    aspect-ratio: 16 / 10;
+  }
   .give-layout    { grid-template-columns: 1fr; }
   .give-cta-box   { position: static; box-shadow: none; }
 
@@ -106,6 +114,22 @@
   .hero-content h1       { font-size: clamp(2.4rem, 9vw, 3.4rem); }
   .hero-btns             { flex-direction: column; align-items: center; }
   .hero-btns .btn        { width: 100%; max-width: 320px; }
+
+  .service-layout--welcome {
+    padding: var(--sp-sm);
+    border-radius: var(--r-xl);
+    gap: var(--sp-sm);
+  }
+  .service-layout--welcome .service-block {
+    padding: 1rem;
+  }
+  .service-layout--welcome .map-card {
+    aspect-ratio: 4 / 3;
+    padding: var(--sp-md) var(--sp-sm);
+  }
+  .service-cta {
+    width: 100%;
+  }
 
   /* Section headers */
   .section-header { margin-bottom: var(--sp-md); }

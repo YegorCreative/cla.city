@@ -84,6 +84,28 @@
   gap: var(--sp-sm);
 }
 
+/* Sunday welcome variant */
+.service-layout--welcome {
+  grid-template-columns: 1fr 0.95fr;
+  align-items: stretch;
+  gap: var(--sp-lg);
+  padding: var(--sp-lg);
+  border-radius: var(--r-2xl);
+  border: 1px solid var(--c-border-w);
+  background: linear-gradient(145deg, rgba(28, 35, 31, 0.92), rgba(17, 19, 22, 0.96));
+  box-shadow: var(--sh-xl);
+}
+
+.service-times--welcome {
+  min-width: 0;
+  gap: 0.85rem;
+}
+
+.service-times--welcome > p {
+  max-width: 64ch;
+  line-height: 1.72;
+}
+
 /* --- Pastor grid --- */
 .pastor-grid {
   display: grid;

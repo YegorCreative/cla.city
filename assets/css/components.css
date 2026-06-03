@@ -569,6 +569,60 @@
   margin-top: 0.2rem;
 }
 
+/* Sunday welcome scoped refinements */
+.service-layout--welcome .service-block {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 3px solid rgba(200, 150, 90, 0.72);
+  border-radius: var(--r-lg);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--sh-sm);
+}
+
+.service-layout--welcome .service-block:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-left-color: var(--c-primary-lt);
+  transform: translateX(3px);
+}
+
+.service-layout--welcome .service-block h4 {
+  color: #F7F4EE;
+  margin-bottom: 0.35rem;
+}
+
+.service-layout--welcome .service-block p {
+  color: rgba(247, 244, 238, 0.84);
+}
+
+.service-layout--welcome .map-card {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(155deg, rgba(61, 90, 71, 0.38), rgba(31, 35, 40, 0.96));
+  box-shadow: var(--sh-md);
+  padding: var(--sp-lg) var(--sp-md);
+}
+
+.service-layout--welcome .map-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-lg);
+}
+
+.service-layout--welcome .map-card .pin {
+  font-size: 2.45rem;
+}
+
+.service-layout--welcome .map-card address {
+  max-width: 24ch;
+}
+
+.service-cta {
+  margin-top: var(--sp-sm);
+  align-self: flex-start;
+}
+
 /* ==========================================================================
    BELIEFS
    ========================================================================== */
