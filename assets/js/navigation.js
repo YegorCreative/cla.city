@@ -5,6 +5,7 @@ export function initNavigation() {
   const header    = document.getElementById('site-header');
   const menuBtn   = document.getElementById('menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
+  const mobileBreakpoint = 992;
 
   /* --- Scroll shadow --- */
   if (header) {
@@ -15,12 +16,25 @@ export function initNavigation() {
 
   /* --- Mobile menu toggle --- */
   if (menuBtn && mobileNav) {
+    const overlay = document.createElement('button');
+    overlay.className = 'mobile-nav-overlay';
+    overlay.type = 'button';
+    overlay.setAttribute('aria-label', 'Close menu overlay');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(overlay);
+
     menuBtn.setAttribute('type', 'button');
+    menuBtn.setAttribute('aria-controls', 'mobile-nav');
+
+    mobileNav.setAttribute('aria-modal', 'true');
+    mobileNav.setAttribute('role', 'dialog');
 
     const setMenuOpen = (open) => {
       mobileNav.classList.toggle('open', open);
+      overlay.classList.toggle('open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
       mobileNav.setAttribute('aria-hidden', String(!open));
+      overlay.setAttribute('aria-hidden', String(!open));
       menuBtn.textContent = open ? '✕' : '☰';
       document.body.classList.toggle('nav-open', open);
     };
@@ -31,13 +45,17 @@ export function initNavigation() {
     });
 
     /* Close on link tap */
-    mobileNav.querySelectorAll('a').forEach(link => {
+    mobileNav.querySelectorAll('.mobile-nav-link, .mobile-lang-row a, .mobile-cta a').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
+    /* Close on overlay tap */
+    overlay.addEventListener('click', closeMenu);
+
     /* Close on outside click */
     document.addEventListener('click', e => {
-      if (!header.contains(e.target)) closeMenu();
+      if (!mobileNav.classList.contains('open')) return;
+      if (!mobileNav.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
     });
 
     /* Close on Escape and when returning to desktop */
@@ -46,7 +64,7 @@ export function initNavigation() {
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) closeMenu();
+      if (window.innerWidth >= mobileBreakpoint) closeMenu();
     }, { passive: true });
   }
 
