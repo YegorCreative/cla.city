@@ -15,11 +15,19 @@ export function initNavigation() {
 
   /* --- Mobile menu toggle --- */
   if (menuBtn && mobileNav) {
-    menuBtn.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('type', 'button');
+
+    const setMenuOpen = (open) => {
+      mobileNav.classList.toggle('open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
       mobileNav.setAttribute('aria-hidden', String(!open));
       menuBtn.textContent = open ? '✕' : '☰';
+      document.body.classList.toggle('nav-open', open);
+    };
+
+    menuBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setMenuOpen(!mobileNav.classList.contains('open'));
     });
 
     /* Close on link tap */
@@ -31,6 +39,15 @@ export function initNavigation() {
     document.addEventListener('click', e => {
       if (!header.contains(e.target)) closeMenu();
     });
+
+    /* Close on Escape and when returning to desktop */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    }, { passive: true });
   }
 
   function closeMenu() {
@@ -39,6 +56,7 @@ export function initNavigation() {
     menuBtn.setAttribute('aria-expanded', 'false');
     mobileNav.setAttribute('aria-hidden', 'true');
     menuBtn.textContent = '☰';
+    document.body.classList.remove('nav-open');
   }
 
   /* --- Active nav link (match current filename) --- */

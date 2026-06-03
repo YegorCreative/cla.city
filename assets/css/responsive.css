@@ -57,6 +57,8 @@
   .header-right .lang-switch { display: none; }
   #menu-btn                  { display: block; }
 
+  body.nav-open { overflow: hidden; }
+
   /* All grids to 1-col */
   .cards-grid,
   .cards-grid--2,

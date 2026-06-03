@@ -199,18 +199,33 @@
 /* Mobile nav panel */
 #mobile-nav {
   display: none;
-  position: absolute;
+  position: fixed;
   top: var(--header-h);
   left: 0; right: 0;
+  width: 100%;
+  max-height: calc(100svh - var(--header-h));
+  overflow-y: auto;
   background: var(--c-bg);
   border-bottom: 1px solid var(--c-border);
   padding: var(--sp-sm);
   flex-direction: column;
   gap: 0.18rem;
-  box-shadow: var(--sh-md);
-  z-index: 999;
+  box-shadow: var(--sh-xl);
+  z-index: var(--z-modal);
+  transform: translateY(-0.5rem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--t-norm), transform var(--t-norm), visibility 0s linear var(--t-norm);
 }
-#mobile-nav.open { display: flex; }
+#mobile-nav.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
 
 .mobile-nav-link {
   padding: 0.78rem var(--sp-sm);
