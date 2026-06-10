@@ -265,6 +265,7 @@
     aspect-ratio: auto;
     padding: var(--sp-md) var(--sp-sm);
   }
+  .service-layout--welcome .map-card--embed { padding: 0; min-height: 280px; }
   .service-cta {
     width: 100%;
   }
