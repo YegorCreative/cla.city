@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,12 +28,7 @@
   </style>
   <script>
     (function(){
-      var lang = navigator.language || navigator.userLanguage || '';
-      if (lang.toLowerCase().startsWith('ru')) {
-        window.location.replace('./ru/');
-      } else {
-        window.location.replace('./en/');
-      }
+      window.location.replace('./ru/');
     })();
   </script>
 </head>
@@ -43,16 +38,16 @@
     <div class="choices">
       <h1>Church LA — cla.city</h1>
       <div class="lang-row">
-        <a href="./en/" class="lang-link">English</a>
         <a href="./ru/" class="lang-link">Русский</a>
+        <a href="./en/" class="lang-link">English</a>
       </div>
     </div>
   </noscript>
   <div class="choices" id="fallback" style="display:none">
     <h1>Church LA</h1>
     <div class="lang-row">
-      <a href="./en/" class="lang-link">English</a>
       <a href="./ru/" class="lang-link">Русский</a>
+      <a href="./en/" class="lang-link">English</a>
     </div>
   </div>
   <script>

@@ -30,9 +30,11 @@ export function initLanguageSwitcher() {
 }
 
 /* Utility: redirect root visitors based on browser language */
-export function autoRedirect(defaultLang = 'en') {
+export function autoRedirect(defaultLang = 'ru') {
   if (!window.location.pathname.endsWith('/')) return; // only on root
   const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-  const target = lang.startsWith('ru') ? './ru/' : './en/';
+  const target = defaultLang === 'ru'
+    ? './ru/'
+    : (lang.startsWith('ru') ? './ru/' : './en/');
   window.location.replace(target);
 }
