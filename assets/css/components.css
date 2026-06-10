@@ -1074,7 +1074,7 @@
    CTA BANNER
    ========================================================================== */
 .cta-banner {
-  background: var(--c-gradient-warm);
+  background: var(--c-bg);
   text-align: center;
   padding: var(--sp-xl) 0;
   color: var(--c-white);
@@ -1086,13 +1086,101 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% -10%, rgba(255,255,255,0.20) 0%, transparent 52%),
-    radial-gradient(ellipse at 50% 120%, rgba(0,0,0,0.18) 0%, transparent 48%);
+    radial-gradient(ellipse at 50% 0%, rgba(194, 138, 93, 0.18) 0%, transparent 56%),
+    linear-gradient(to bottom, rgba(247, 244, 238, 0) 0%, rgba(194, 138, 93, 0.08) 100%);
   pointer-events: none;
 }
 .cta-banner .container { position: relative; z-index: 1; }
-.cta-banner h2   { color: var(--c-white); margin-bottom: var(--sp-xs); }
-.cta-banner .lead { opacity: 0.88; max-width: 540px; margin-inline: auto; margin-bottom: var(--sp-md); color: var(--c-white); }
+.cta-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(2rem, 4vw, 3.25rem);
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+  background:
+    linear-gradient(145deg, rgba(62, 39, 23, 0.96), rgba(25, 18, 14, 0.98)),
+    var(--c-gradient-warm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 28px 90px rgba(39, 24, 13, 0.22), 0 8px 26px rgba(39, 24, 13, 0.14);
+  isolation: isolate;
+}
+
+.cta-panel::before,
+.cta-panel::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-panel::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 231, 199, 0.22) 0%, transparent 30%),
+    radial-gradient(ellipse at 78% 88%, rgba(194, 138, 93, 0.28) 0%, transparent 42%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.10) 0%, transparent 44%, rgba(255, 255, 255, 0.06) 100%);
+}
+
+.cta-panel::after {
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-panel__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin-inline: auto;
+  padding: clamp(2.4rem, 6vw, 5rem) clamp(1.2rem, 4vw, 3rem);
+  border-radius: clamp(1.4rem, 3vw, 2.35rem);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 50px rgba(10, 6, 3, 0.16);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+}
+
+.cta-banner h2 {
+  color: var(--c-white);
+  margin-bottom: var(--sp-xs);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.36;
+  letter-spacing: -0.035em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+}
+
+.cta-banner .lead {
+  opacity: 0.90;
+  max-width: 620px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-md);
+  color: var(--c-white);
+  line-height: 1.74;
+}
+
+.cta-actions {
+  margin-top: var(--sp-md);
+}
+
+.cta-banner .btn {
+  border-radius: 999px;
+  padding-inline: 1.65rem;
+  box-shadow: 0 16px 34px rgba(11, 8, 6, 0.16);
+}
+
+.cta-banner .btn-white {
+  color: var(--c-primary-dk);
+}
+
+.cta-banner .btn-outline {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.54);
+}
+
+.cta-banner .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.86);
+}
 
 /* ==========================================================================
    FOOTER
