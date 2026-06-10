@@ -78,6 +78,22 @@
     grid-column: 1 / -1;
     grid-row: span 1;
   }
+
+  .hero-shell {
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .hero-frame {
+    min-height: min(760px, calc(100svh - var(--header-h) - 1.5rem));
+  }
+
+  .hero-panel {
+    width: min(100%, 680px);
+  }
+
+  .hero-float-card {
+    max-width: 250px;
+  }
 }
 
 /* ==========================================================================
@@ -136,10 +152,45 @@
   .gallery-item.tall, .gallery-item.wide { grid-row: auto; grid-column: auto; }
 
   /* Hero */
-  .hero                  { padding-bottom: clamp(2rem, 6vh, 3.5rem); }
-  .hero-content h1       { font-size: clamp(2.4rem, 9vw, 3.4rem); }
-  .hero-btns             { flex-direction: column; align-items: center; }
-  .hero-btns .btn        { width: 100%; max-width: 320px; }
+  .hero                  { padding-bottom: clamp(1.8rem, 5vh, 2.8rem); }
+  .hero-shell            { max-width: calc(100% - 1rem); }
+  .hero-frame            {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding-top: 15rem;
+    border-radius: var(--r-2xl);
+  }
+  .hero-panel            {
+    width: auto;
+    box-sizing: border-box;
+    margin: 0.75rem;
+    padding: 1.15rem;
+    border-radius: var(--r-xl);
+    backdrop-filter: blur(8px) saturate(115%);
+    -webkit-backdrop-filter: blur(8px) saturate(115%);
+  }
+  .hero-meta             { gap: 0.5rem; }
+  .hero-meta-pill        { font-size: 0.68rem; letter-spacing: 0.06em; padding: 0.45rem 0.78rem; }
+  .hero-content h1       { font-size: clamp(2.4rem, 9vw, 3.4rem); max-width: 10ch; }
+  .hero-content .lead    { max-width: none; font-size: 1rem; }
+  .hero-btns             { flex-direction: column; align-items: stretch; }
+  .hero-btns .btn        { width: 100%; max-width: none; }
+  .hero-float-card       {
+    position: static;
+    width: auto;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    margin: 0 0.75rem 0.65rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: 1.1rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .hero-float-card--language { margin-bottom: 0.65rem; }
 
   .ministry-grid--editorial {
     grid-template-columns: minmax(0, 1fr);
@@ -234,6 +285,10 @@
   }
 
   .hero                  { padding-bottom: 2rem; }
+  .hero-frame            { padding-top: 13.5rem; border-radius: 1.4rem; }
+  .hero-panel            { margin: 0.55rem; padding: 1rem; }
+  .hero-meta-pill        { width: 100%; justify-content: flex-start; }
+  .hero-float-label      { font-size: 0.76rem; }
   .hero-content h1       { font-size: clamp(2rem, 10vw, 2.8rem); }
   .page-hero       { padding-top: calc(var(--header-h) + 2.5rem); padding-bottom: 2.5rem; }
   .ministry-card   { height: 260px; }

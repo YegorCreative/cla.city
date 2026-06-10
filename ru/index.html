@@ -57,20 +57,36 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Приветствие">
-    <div class="hero-bg">
-      <picture>
-        <source srcset="../assets/images/webp/hero-home-worship-raised-hands.webp" type="image/webp" />
-        <img src="../assets/images/hero/home.jpg" alt="Община CLA City во время совместного поклонения" fetchpriority="high" decoding="async" />
-      </picture>
-    </div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-content">
-      <span class="eyebrow anim-delay-1" style="color:var(--c-primary-lt)">Лос-Анджелес · Каждое воскресенье</span>
-      <h1 class="anim-delay-2">Найдите веру.<br />Найдите семью. Найдите дом.</h1>
-      <p class="lead anim-delay-3">Обретите веру, дружбу и своё место на английском и русском.<br />Приходите в это воскресенье и почувствуйте церковь, где вам действительно рады.</p>
-      <div class="hero-btns anim-delay-4">
-        <a href="visit.html" class="btn btn-primary btn-lg">Спланировать первое воскресенье</a>
-        <a href="media.html" class="btn btn-outline btn-lg">Смотреть служение</a>
+    <div class="hero-shell">
+      <div class="hero-frame">
+        <div class="hero-bg hero-media">
+          <picture class="hero-image-wrap">
+            <source srcset="../assets/images/webp/hero-home-worship-raised-hands.webp" type="image/webp" />
+            <img src="../assets/images/hero/home.jpg" alt="Община CLA City во время совместного поклонения" fetchpriority="high" decoding="async" />
+          </picture>
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-float-card hero-float-card--service">
+          <span class="hero-float-label">Every Sunday</span>
+        </div>
+
+        <div class="hero-float-card hero-float-card--language">
+          <span class="hero-float-label">English + Russian</span>
+        </div>
+
+        <div class="hero-content hero-panel">
+          <div class="hero-meta anim-delay-1" aria-label="Hero metadata">
+            <span class="hero-meta-pill">Los Angeles</span>
+            <span class="hero-meta-pill">Every Sunday</span>
+          </div>
+          <h1 class="anim-delay-2">Найдите веру.<br />Найдите семью. Найдите дом.</h1>
+          <p class="lead anim-delay-3">Обретите веру, дружбу и своё место на английском и русском.<br />Приходите в это воскресенье и почувствуйте церковь, где вам действительно рады.</p>
+          <div class="hero-btns hero-actions anim-delay-4">
+            <a href="visit.html" class="btn btn-primary btn-lg">Спланировать первое воскресенье</a>
+            <a href="media.html" class="btn btn-outline btn-lg">Смотреть служение</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

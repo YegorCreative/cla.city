@@ -20,6 +20,21 @@
 .section-sm { padding-block: var(--sp-lg); }
 .section--lg { padding-block: var(--sp-2xl); }
 
+/* --- Hero frame layout --- */
+.hero-shell {
+  width: 100%;
+  max-width: min(1380px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.hero-frame {
+  position: relative;
+  min-height: min(820px, calc(100svh - var(--header-h) - 2rem));
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
 /* --- Generic two-column intro split --- */
 .intro-block {
   display: grid;
