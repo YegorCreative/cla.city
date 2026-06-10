@@ -95,8 +95,8 @@
   <!-- КТО МЫ -->
   <section class="section" aria-labelledby="about-heading">
     <div class="container">
-      <div class="intro-block intro-block--who">
-        <div class="intro-text fade-in">
+      <div class="intro-block intro-block--who intro-block--premium">
+        <div class="intro-text intro-copy-card fade-in">
           <span class="eyebrow">Кто мы</span>
           <h2 id="about-heading">Укоренены во Христе. Открыты для каждого.</h2>
           <div class="divider"></div>
@@ -104,7 +104,7 @@
           <p>Если вы возвращаетесь к вере или только начинаете искать - вам здесь место.</p>
           <a href="about.html" class="btn btn-dark mt-md">Наша история →</a>
         </div>
-        <div class="intro-img fade-in">
+        <div class="intro-img intro-media-card fade-in">
           <img src="../assets/images/hero/community.jpg" alt="Сообщество Church LA" loading="lazy" decoding="async" />
         </div>
       </div>
@@ -113,37 +113,41 @@
 
 
   <!-- ВРЕМЯ СЛУЖЕНИЙ -->
-  <section class="service-section section" aria-labelledby="times-heading">
+  <section class="service-section service-section--premium section" aria-labelledby="times-heading">
     <div class="container">
-      <div class="service-layout service-layout--welcome">
-        <div class="service-times service-times--welcome">
+      <div class="service-panel">
+        <div class="service-panel__glow" aria-hidden="true"></div>
+        <div class="service-layout service-layout--welcome">
+        <div class="service-times service-times--welcome service-content-card">
           <span class="eyebrow">Присоединяйтесь</span>
           <h2 id="times-heading" style="color:var(--c-white)">Как проходит воскресенье у нас</h2>
           <p style="color:rgba(255,255,255,0.65);margin-bottom:var(--sp-md)">Вас ждут искреннее поклонение, понятная проповедь по Библии и тёплая встреча с людьми. Служения проходят на английском и русском, и здесь есть место для всей семьи. Приходите как есть - мы поможем вам с первого шага.</p>
 
-          <div class="service-block fade-in">
-            <h4>Воскресное служение на английском</h4>
-            <p>10:00 · Главный зал</p>
-          </div>
-          <div class="service-block fade-in">
-            <h4>Воскресное служение на русском</h4>
-            <p>12:00 · Главный зал</p>
-          </div>
-          <div class="service-block fade-in">
-            <h4>Библейское изучение по средам</h4>
-            <p>19:00 · Зал общения · English &amp; Русский</p>
-          </div>
-          <div class="service-block fade-in">
-            <h4>Наш адрес</h4>
-            <p>5853 Laurel Canyon Blvd, North Hollywood, CA 91607</p>
+          <div class="service-card-stack">
+            <div class="service-block fade-in">
+              <h4>Воскресное служение на английском</h4>
+              <p>10:00 · Главный зал</p>
+            </div>
+            <div class="service-block fade-in">
+              <h4>Воскресное служение на русском</h4>
+              <p>12:00 · Главный зал</p>
+            </div>
+            <div class="service-block fade-in">
+              <h4>Библейское изучение по средам</h4>
+              <p>19:00 · Зал общения · English &amp; Русский</p>
+            </div>
+            <div class="service-block fade-in">
+              <h4>Наш адрес</h4>
+              <p>5853 Laurel Canyon Blvd, North Hollywood, CA 91607</p>
+            </div>
           </div>
 
-          <a href="visit.html" class="btn btn-primary mt-md service-cta">Планируй визит →</a>
+          <a href="visit.html" class="btn btn-primary mt-md service-cta service-cta--pill">Планируй визит →</a>
         </div>
 
         <a href="https://maps.google.com/?q=5853+Laurel+Canyon+Boulevard,+North+Hollywood,+CA+91607"
            target="_blank" rel="noopener noreferrer"
-           class="map-card fade-in"
+           class="map-card map-card--premium fade-in"
            aria-label="Открыть адрес в Google Maps">
           <div class="pin">📍</div>
           <address>
@@ -152,6 +156,7 @@
           </address>
           <span class="map-label">Открыть в Google Maps →</span>
         </a>
+        </div>
       </div>
     </div>
   </section>
@@ -166,10 +171,10 @@
         <p class="lead">Для детей, подростков, молодёжи и взрослых у нас есть живое сообщество для роста. Наши служения помогают находить друзей, призвание и вместе следовать за Иисусом. Воскресенье - это только начало.</p>
       </div>
 
-      <div class="ministry-grid ministry-grid--editorial">
-        <article class="ministry-card ministry-card--featured" aria-label="KidsZone">
+      <div class="ministry-grid ministry-grid--editorial ministry-grid--premium">
+        <article class="ministry-card ministry-card--featured ministry-card--premium" aria-label="Kids Zone">
           <div class="ministry-card-bg mg--kids" style="background-image:url('../assets/images/ministries/kids.jpg')"></div>
-          <div class="ministry-card-body fade-in">
+          <div class="ministry-card-body ministry-card-content fade-in">
             <span class="tag">Возраст 0–12</span>
             <h3>KidsZone</h3>
             <p>Радостная воскресная школа, где дети открывают любовь Бога через истории, поклонение и творчество.</p>
@@ -177,9 +182,9 @@
           </div>
         </article>
 
-        <article class="ministry-card ministry-card--medium" aria-label="Молодёжное служение">
+        <article class="ministry-card ministry-card--medium ministry-card--premium" aria-label="Молодёжное служение">
           <div class="ministry-card-bg mg--youth" style="background-image:url('../assets/images/ministries/youth.jpg')"></div>
-          <div class="ministry-card-body fade-in">
+          <div class="ministry-card-body ministry-card-content fade-in">
             <span class="tag">Возраст 13–25</span>
             <h3>Молодёжное служение</h3>
             <p>Пространство для подростков и молодёжи, где можно задавать настоящие вопросы и открывать свою идентичность во Христе.</p>
@@ -187,9 +192,9 @@
           </div>
         </article>
 
-        <article class="ministry-card ministry-card--medium" aria-label="Женское служение">
+        <article class="ministry-card ministry-card--medium ministry-card--premium" aria-label="Женское служение">
           <div class="ministry-card-bg mg--women" style="background-image:url('../assets/images/ministries/women.jpg')"></div>
-          <div class="ministry-card-body fade-in">
+          <div class="ministry-card-body ministry-card-content fade-in">
             <span class="tag">Все женщины приглашены</span>
             <h3>Женское служение</h3>
             <p>Сообщество женщин, растущих вместе в вере, дружбе и призвании — через библейские занятия, ретриты и совместную жизнь.</p>
@@ -197,9 +202,9 @@
           </div>
         </article>
 
-        <article class="ministry-card ministry-card--wide" aria-label="Домашние группы">
+        <article class="ministry-card ministry-card--wide ministry-card--premium" aria-label="Домашние группы">
           <div class="ministry-card-bg mg--groups" style="background-image:url('../assets/images/ministries/groups.jpg')"></div>
-          <div class="ministry-card-body fade-in">
+          <div class="ministry-card-body ministry-card-content fade-in">
             <span class="tag">По всему LA</span>
             <h3>Домашние группы</h3>
             <p>Небольшие еженедельные встречи по всему городу, где рождается настоящая дружба и вера становится глубже.</p>
@@ -216,7 +221,7 @@
 
 
   <!-- ОТЗЫВЫ -->
-  <section class="section bg-alt" aria-labelledby="testimonials-heading">
+  <section class="section bg-alt testimonials-section--premium" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-header text-center">
         <span class="eyebrow">Их слова</span>
@@ -225,21 +230,23 @@
         <p class="lead">Реальные люди. Реальный путь веры. Реальное сообщество в Лос-Анджелесе.</p>
       </div>
 
-      <div class="testimonials-grid testimonials-grid--editorial">
-        <blockquote class="testimonial testimonial--featured fade-in">
-          <p>«Я переехала в LA и чувствовала себя совершенно одна. В первое же воскресенье меня пригласили на кофе. Три года спустя — это мои лучшие друзья.»</p>
-          <cite class="author">— Марина К., приехала с Украины</cite>
-        </blockquote>
+      <div class="testimonials-shell">
+        <div class="testimonials-grid testimonials-grid--editorial testimonials-grid--premium">
+          <blockquote class="testimonial testimonial--featured testimonial--glass fade-in">
+            <p>«Я переехала в LA и чувствовала себя совершенно одна. В первое же воскресенье меня пригласили на кофе. Три года спустя — это мои лучшие друзья.»</p>
+            <cite class="author">— Марина К., приехала с Украины</cite>
+          </blockquote>
 
-        <blockquote class="testimonial testimonial--side fade-in">
-          <p>«Я скептически относился к церкви. Но послание было настоящим, люди искренними, и меня ни разу не осудили. Прихожу каждое воскресенье с тех пор.»</p>
-          <cite class="author">— Джеймс Т., Лос-Анджелес</cite>
-        </blockquote>
+          <blockquote class="testimonial testimonial--side testimonial--soft fade-in">
+            <p>«Я скептически относился к церкви. Но послание было настоящим, люди искренними, и меня ни разу не осудили. Прихожу каждое воскресенье с тех пор.»</p>
+            <cite class="author">— Джеймс Т., Лос-Анджелес</cite>
+          </blockquote>
 
-        <blockquote class="testimonial testimonial--side fade-in">
-          <p>«Наши дети в восторге от воскресной школы, а мы наконец нашли общину, где чувствуем себя как дома — сразу в двух культурах.»</p>
-          <cite class="author">— Семья Соколовых, LA</cite>
-        </blockquote>
+          <blockquote class="testimonial testimonial--side testimonial--soft fade-in">
+            <p>«Наши дети в восторге от воскресной школы, а мы наконец нашли общину, где чувствуем себя как дома — сразу в двух культурах.»</p>
+            <cite class="author">— Семья Соколовых, LA</cite>
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>

@@ -622,6 +622,54 @@
   max-width: 70ch;
 }
 
+.ministry-grid--premium .ministry-card {
+  border-radius: clamp(1.6rem, 3vw, 2.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 56px rgba(18, 12, 8, 0.22), 0 4px 18px rgba(18, 12, 8, 0.14);
+  isolation: isolate;
+}
+
+.ministry-grid--premium .ministry-card--premium::before {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 236, 210, 0.18) 0%, transparent 30%),
+    linear-gradient(to top, rgba(10, 6, 3, 0.96) 0%, rgba(10, 6, 3, 0.68) 42%, rgba(10, 6, 3, 0.22) 74%, transparent 100%);
+}
+
+.ministry-card--premium::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  z-index: 1;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  pointer-events: none;
+}
+
+.ministry-card--premium:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 28px 76px rgba(18, 12, 8, 0.30), 0 0 0 1px rgba(194,138,93,0.30);
+}
+
+.ministry-card-content {
+  width: min(100%, 34rem);
+  padding: clamp(1.2rem, 2.4vw, 1.9rem);
+}
+
+.ministry-grid--premium .tag {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 248, 240, 0.95);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+
+.ministry-grid--premium + .text-center .btn {
+  border-radius: 999px;
+  padding-inline: 1.6rem;
+  box-shadow: 0 14px 30px rgba(18, 12, 8, 0.14);
+}
+
 /* Ministry bg gradients */
 .mg--kids    { background: linear-gradient(135deg, #5A4635, var(--accent-faith)); }
 .mg--youth   { background: linear-gradient(135deg, #3D5A47, #2C4334); }
@@ -666,6 +714,12 @@
    SERVICE INFO
    ========================================================================== */
 .service-section { background: var(--c-dark); }
+
+.service-section--premium {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(194, 138, 93, 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, var(--c-bg) 0%, #ECE4D8 46%, var(--c-bg) 100%);
+}
 
 .service-block {
   background: rgba(255, 255, 255, 0.06);
@@ -713,19 +767,72 @@
 }
 
 /* Sunday welcome scoped refinements */
+.service-panel {
+  background:
+    linear-gradient(145deg, rgba(60, 40, 26, 0.96), rgba(25, 21, 18, 0.97)),
+    var(--c-gradient-warm);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 90px rgba(39, 24, 13, 0.22), 0 8px 26px rgba(39, 24, 13, 0.14);
+  isolation: isolate;
+}
+
+.service-panel::before,
+.service-panel::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.service-panel::before {
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 235, 206, 0.22) 0%, transparent 32%),
+    radial-gradient(ellipse at 84% 76%, rgba(194, 138, 93, 0.28) 0%, transparent 48%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.09) 0%, transparent 48%);
+}
+
+.service-panel::after {
+  inset: 1px;
+  z-index: 2;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-panel__glow {
+  position: absolute;
+  inset: auto 6% -18% auto;
+  width: min(460px, 52vw);
+  height: min(460px, 52vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,168,122,0.24) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-content-card {
+  padding: clamp(1.2rem, 2.4vw, 1.8rem);
+  border-radius: clamp(1.4rem, 3vw, 2.2rem);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 48px rgba(10, 6, 3, 0.14);
+  backdrop-filter: blur(10px) saturate(125%);
+  -webkit-backdrop-filter: blur(10px) saturate(125%);
+}
+
 .service-layout--welcome .service-block {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-left: 3px solid rgba(200, 150, 90, 0.72);
-  border-radius: var(--r-lg);
-  padding: 1.15rem 1.25rem;
-  box-shadow: var(--sh-sm);
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 0;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 12px 28px rgba(8, 5, 3, 0.12);
 }
 
 .service-layout--welcome .service-block:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
   border-left-color: var(--c-primary-lt);
-  transform: translateX(3px);
+  transform: translateY(-2px);
 }
 
 .service-layout--welcome .service-block h4 {
@@ -740,12 +847,17 @@
 .service-layout--welcome .map-card {
   width: 100%;
   min-width: 0;
-  aspect-ratio: 5 / 4;
-  border-radius: var(--r-xl);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(155deg, rgba(61, 90, 71, 0.38), rgba(31, 35, 40, 0.96));
-  box-shadow: var(--sh-md);
-  padding: var(--sp-lg) var(--sp-md);
+  aspect-ratio: auto;
+  min-height: 100%;
+  border-radius: clamp(1.6rem, 3vw, 2.3rem);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  background:
+    radial-gradient(circle at 22% 16%, rgba(255, 235, 206, 0.18) 0%, transparent 34%),
+    linear-gradient(155deg, rgba(75, 83, 60, 0.46), rgba(24, 23, 22, 0.94));
+  box-shadow: 0 20px 56px rgba(8, 5, 3, 0.20);
+  padding: clamp(2rem, 4vw, var(--sp-xl)) var(--sp-md);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
 }
 
 .service-layout--welcome .map-card:hover {
@@ -764,6 +876,51 @@
 .service-cta {
   margin-top: var(--sp-sm);
   align-self: flex-start;
+}
+
+.service-cta--pill,
+.intro-block--premium .btn {
+  border-radius: 999px;
+  padding-inline: 1.6rem;
+  box-shadow: 0 14px 30px rgba(18, 12, 8, 0.14);
+}
+
+.map-card--premium .map-label {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* Homepage Who We Are premium variant */
+.intro-block--premium {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(250, 246, 239, 0.72)),
+    radial-gradient(circle at 90% 12%, rgba(194,138,93,0.16) 0%, transparent 34%);
+  border: 1px solid rgba(194, 138, 93, 0.14);
+  box-shadow: 0 26px 76px rgba(42, 30, 20, 0.12), 0 6px 24px rgba(42, 30, 20, 0.08);
+}
+
+.intro-block--premium::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.70);
+  pointer-events: none;
+}
+
+.intro-copy-card {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.intro-media-card {
+  box-shadow: 0 22px 62px rgba(42, 30, 20, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+}
+
+.intro-media-card img {
+  object-position: center 36%;
 }
 
 /* ==========================================================================
@@ -873,6 +1030,44 @@
 .testimonials-grid--editorial .testimonial--side p {
   font-size: 0.92rem;
   line-height: 1.66;
+}
+
+.testimonials-section--premium {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(194, 138, 93, 0.16) 0%, transparent 52%),
+    linear-gradient(180deg, #F7F4EE 0%, #EFE7DC 100%);
+}
+
+.testimonials-shell {
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  border-radius: clamp(1.8rem, 3.5vw, 2.8rem);
+  background: linear-gradient(145deg, rgba(255,255,255,0.54), rgba(255,255,255,0.24));
+  border: 1px solid rgba(194, 138, 93, 0.14);
+  box-shadow: 0 22px 70px rgba(42, 30, 20, 0.10);
+}
+
+.testimonials-grid--premium .testimonial {
+  border-radius: clamp(1.3rem, 2.6vw, 2rem);
+  border: 1px solid rgba(194, 138, 93, 0.16);
+  background: linear-gradient(150deg, rgba(255,255,255,0.90), rgba(247,244,238,0.78));
+  box-shadow: 0 14px 36px rgba(42, 30, 20, 0.10);
+}
+
+.testimonials-grid--premium .testimonial--glass {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 235, 206, 0.42) 0%, transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,0.88), rgba(242,230,216,0.82));
+  box-shadow: 0 24px 68px rgba(42, 30, 20, 0.15);
+}
+
+.testimonials-grid--premium .testimonial--soft {
+  background: linear-gradient(160deg, rgba(255,255,255,0.84), rgba(247,244,238,0.74));
+}
+
+.testimonials-grid--premium .testimonial::before {
+  color: rgba(176,122,79,0.24);
 }
 
 /* ==========================================================================
