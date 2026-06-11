@@ -1603,6 +1603,9 @@
 /* Remove old wave */
 .hero::after { display: none; }
 
+/* Topbar carries location + schedule — hide redundant meta pills */
+.hero .hero-meta { display: none; }
+
 /* Hero shell: large radius + overflow:hidden clips the inner frame to a
    rounded shape, while the cream bg of .hero shows as the outer border */
 .hero-shell {
