@@ -1530,3 +1530,155 @@
   animation: pulse 1.8s ease-in-out infinite;
   flex-shrink: 0;
 }
+
+/* ==========================================================================
+   PREMIUM VISUAL SYSTEM — Curved transitions, depth, spacing
+   ========================================================================== */
+
+/* ── 1. Hero → next section organic wave ──────────────────────────────────── */
+.hero {
+  padding-bottom: clamp(4rem, 7vh, 6rem);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(56px, 7vw, 96px);
+  background: var(--c-bg, #faf9f7);
+  /* Elliptical wave that bleeds upward from page bg */
+  clip-path: ellipse(58% 100% at 50% 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── 2. Sunday service section — layered ambient depth ───────────────────── */
+.service-section--premium {
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 60% at 12% 30%, rgba(194, 138, 93, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 88% 70%, rgba(194, 138, 93, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(194, 138, 93, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, var(--c-bg) 0%, #ede7dc 46%, var(--c-bg) 100%);
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+/* Subtle top wave cutout so the section flows from hero wave */
+.service-section--premium::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: clamp(40px, 5vw, 72px);
+  background: var(--c-bg, #faf9f7);
+  clip-path: ellipse(55% 100% at 50% 0%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-section--premium > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── 3. Ministry cards — premium depth enhancements ─────────────────────── */
+
+/* Deeper ambient shadow at rest */
+.ministry-grid--premium .ministry-card {
+  box-shadow:
+    0 4px 8px rgba(18, 12, 8, 0.06),
+    0 12px 32px rgba(18, 12, 8, 0.16),
+    0 28px 64px rgba(18, 12, 8, 0.14);
+  transition: transform 0.36s cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 0.36s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Richer hover elevation */
+.ministry-card--premium:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow:
+    0 2px 4px rgba(18, 12, 8, 0.04),
+    0 16px 40px rgba(18, 12, 8, 0.20),
+    0 40px 90px rgba(18, 12, 8, 0.24),
+    0 0 0 1.5px rgba(194, 138, 93, 0.36);
+}
+
+/* Slower, smoother image zoom on hover */
+.ministry-card--premium .ministry-card-bg {
+  transition: transform 0.60s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.ministry-card--premium:hover .ministry-card-bg {
+  transform: scale(1.08);
+}
+
+/* Brighter inner border shimmer on hover */
+.ministry-card--premium::after {
+  transition: border-color 0.36s ease, opacity 0.36s ease;
+  opacity: 0.7;
+}
+.ministry-card--premium:hover::after {
+  border-color: rgba(255, 255, 255, 0.20);
+  opacity: 1;
+}
+
+/* ── 4. Testimonials section — curved entry and exit ─────────────────────── */
+.testimonials-section--premium {
+  position: relative;
+  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+}
+
+.testimonials-section--premium::before,
+.testimonials-section--premium::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Curved top entry (bg-alt bleeds up into white section above) */
+.testimonials-section--premium::before {
+  top: 0;
+  height: clamp(48px, 6vw, 80px);
+  background: var(--c-bg, #faf9f7);
+  clip-path: ellipse(60% 100% at 50% 0%);
+}
+
+/* Curved bottom exit */
+.testimonials-section--premium::after {
+  bottom: 0;
+  height: clamp(48px, 6vw, 80px);
+  background: var(--c-bg, #faf9f7);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.testimonials-section--premium > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 5. CTA banner — curved top entry ───────────────────────────────────── */
+.cta-banner {
+  padding-top: clamp(5rem, 9vw, 7.5rem);
+  position: relative;
+}
+
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: clamp(56px, 7vw, 96px);
+  background: var(--c-bg, #faf9f7);
+  clip-path: ellipse(58% 100% at 50% 0%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 6. Section breathing room ───────────────────────────────────────────── */
+/* Extra vertical space between homepage sections for premium pacing */
+.service-section--premium + .section,
+.section + .service-section--premium,
+.section + .testimonials-section--premium {
+  margin-top: 0; /* spacing handled by padding-block on each section */
+}
