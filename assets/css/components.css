@@ -1546,10 +1546,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: clamp(56px, 7vw, 96px);
-  background: var(--c-bg, #faf9f7);
-  /* Elliptical wave that bleeds upward from page bg */
-  clip-path: ellipse(58% 100% at 50% 100%);
+  height: clamp(100px, 13vw, 180px);
+  /* Gradient fades from solid at base to transparent at peak → no hard blob edge */
+  background: linear-gradient(to top, var(--c-bg, #faf9f7) 35%, transparent 100%);
+  /* Wide ellipse = shallow, gentle sweep rather than a visible bump */
+  clip-path: ellipse(78% 100% at 50% 100%);
   z-index: 3;
   pointer-events: none;
 }
@@ -1570,9 +1571,9 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: clamp(40px, 5vw, 72px);
-  background: var(--c-bg, #faf9f7);
-  clip-path: ellipse(55% 100% at 50% 0%);
+  height: clamp(88px, 11vw, 156px);
+  background: linear-gradient(to bottom, var(--c-bg, #faf9f7) 35%, transparent 100%);
+  clip-path: ellipse(78% 100% at 50% 0%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1637,20 +1638,20 @@
   z-index: 0;
 }
 
-/* Curved top entry (bg-alt bleeds up into white section above) */
+/* Curved top entry — white bleeds down into the warm section from above */
 .testimonials-section--premium::before {
   top: 0;
-  height: clamp(48px, 6vw, 80px);
-  background: var(--c-bg, #faf9f7);
-  clip-path: ellipse(60% 100% at 50% 0%);
+  height: clamp(88px, 11vw, 148px);
+  background: linear-gradient(to bottom, var(--c-bg, #faf9f7) 35%, transparent 100%);
+  clip-path: ellipse(78% 100% at 50% 0%);
 }
 
-/* Curved bottom exit */
+/* Curved bottom exit — white bleeds up from below */
 .testimonials-section--premium::after {
   bottom: 0;
-  height: clamp(48px, 6vw, 80px);
-  background: var(--c-bg, #faf9f7);
-  clip-path: ellipse(60% 100% at 50% 100%);
+  height: clamp(88px, 11vw, 148px);
+  background: linear-gradient(to top, var(--c-bg, #faf9f7) 35%, transparent 100%);
+  clip-path: ellipse(78% 100% at 50% 100%);
 }
 
 .testimonials-section--premium > .container {
@@ -1668,9 +1669,9 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: clamp(56px, 7vw, 96px);
-  background: var(--c-bg, #faf9f7);
-  clip-path: ellipse(58% 100% at 50% 0%);
+  height: clamp(100px, 13vw, 168px);
+  background: linear-gradient(to bottom, var(--c-bg, #faf9f7) 35%, transparent 100%);
+  clip-path: ellipse(78% 100% at 50% 0%);
   pointer-events: none;
   z-index: 0;
 }
