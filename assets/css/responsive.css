@@ -361,15 +361,16 @@
   .pastor-card     { flex-direction: column; }
   .gallery-grid    { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
 
-  /* Premium Visual System — mobile curve scale-down */
-  .hero::after                             { height: 64px; }
-  .service-section--premium::before        { height: 56px; }
-  .service-section--premium               { padding-block: 3rem; }
-  .testimonials-section--premium::before,
-  .testimonials-section--premium::after   { height: 60px; }
-  .testimonials-section--premium          { padding-block: 3.5rem; }
-  .cta-banner::after                       { height: 64px; }
-  .cta-banner                              { padding-top: 3.5rem; }
+  /* Premium Visual System — mobile frame adjustments */
+  .hero {
+    padding: 0.5rem 0.5rem clamp(1rem, 3vw, 1.4rem);
+    padding-top: calc(var(--header-h) + 0.5rem);
+  }
+  .hero-shell { border-radius: clamp(1.8rem, 4.5vw, 2.6rem); }
+  .hero-float-card { padding: 0.48rem 0.95rem; min-height: 2.3rem; }
+  .service-section--premium { padding-block: 2.5rem; }
+  .testimonials-section--premium { padding-block: 2.5rem; }
+  .cta-banner { padding-top: 2.5rem; }
 
 }
 
