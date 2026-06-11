@@ -200,6 +200,7 @@
     display: none; /* topbar carries same info on mobile */
   }
   .hero-float-card--language { margin-bottom: 0.65rem; }
+  .hero .hero-meta       { display: none; } /* topbar carries location/schedule */
 
   .ministry-grid--editorial {
     grid-template-columns: minmax(0, 1fr);
