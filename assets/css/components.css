@@ -1532,60 +1532,94 @@
 }
 
 /* ==========================================================================
-   PREMIUM VISUAL SYSTEM — Curved transitions, depth, spacing
+   PREMIUM VISUAL SYSTEM — Framed canvas, layered cards, app-like depth
    ========================================================================== */
 
-/* ── 1. Hero → next section organic wave ──────────────────────────────────── */
+/* ─── 1. HERO FRAME SYSTEM ──────────────────────────────────────────────── */
+
+/* Hero outer: warm cream surface = the visible thick border/frame */
 .hero {
-  padding-bottom: clamp(4rem, 7vh, 6rem);
+  background: #e9e4db;
+  overflow: hidden;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  padding-top: calc(var(--header-h) + clamp(1.1rem, 2vw, 1.6rem));
+  padding-bottom: clamp(1.2rem, 2.2vw, 1.8rem);
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: clamp(100px, 13vw, 180px);
-  /* Gradient fades from solid at base to transparent at peak → no hard blob edge */
-  background: linear-gradient(to top, var(--c-bg, #faf9f7) 35%, transparent 100%);
-  /* Wide ellipse = shallow, gentle sweep rather than a visible bump */
-  clip-path: ellipse(78% 100% at 50% 100%);
-  z-index: 3;
-  pointer-events: none;
+/* Remove old wave */
+.hero::after { display: none; }
+
+/* Hero shell: large radius + overflow:hidden clips the inner frame to a
+   rounded shape, while the cream bg of .hero shows as the outer border */
+.hero-shell {
+  border-radius: clamp(2.6rem, 4.8vw, 4rem);
+  overflow: hidden;
 }
 
-/* ── 2. Sunday service section — layered ambient depth ───────────────────── */
+/* Hero frame: deeper lift shadow */
+.hero-frame {
+  box-shadow:
+    0 4px 16px rgba(12, 8, 5, 0.14),
+    0 24px 64px rgba(12, 8, 5, 0.22),
+    0 56px 130px rgba(12, 8, 5, 0.20);
+}
+
+/* Float cards: cream frosted pill — light on dark image = reference style */
+.hero-float-card {
+  min-width: auto;
+  max-width: 240px;
+  min-height: 2.7rem;
+  padding: 0.58rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(238, 234, 228, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 4px 16px rgba(12, 8, 5, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
+
+.hero-float-label {
+  color: #251a0f;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Hero glass content panel: richer dark glass against cream frame */
+.hero-panel {
+  padding: clamp(1.4rem, 2.8vw, 2.2rem);
+  border-radius: clamp(1.8rem, 3vw, 2.5rem);
+  background: rgba(10, 7, 4, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 32px 80px rgba(10, 7, 4, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+/* ─── 2. SUNDAY SERVICE SECTION ─────────────────────────────────────────── */
 .service-section--premium {
-  position: relative;
-  background:
-    radial-gradient(ellipse 80% 60% at 12% 30%, rgba(194, 138, 93, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 50% at 88% 70%, rgba(194, 138, 93, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(194, 138, 93, 0.18) 0%, transparent 55%),
-    linear-gradient(180deg, var(--c-bg) 0%, #ede7dc 46%, var(--c-bg) 100%);
-  padding-block: clamp(4rem, 8vw, 7rem);
+  background: #e9e4db;
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
-/* Subtle top wave cutout so the section flows from hero wave */
-.service-section--premium::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: clamp(88px, 11vw, 156px);
-  background: linear-gradient(to bottom, var(--c-bg, #faf9f7) 35%, transparent 100%);
-  clip-path: ellipse(78% 100% at 50% 0%);
-  z-index: 1;
-  pointer-events: none;
+/* Remove old wave */
+.service-section--premium::before { display: none; }
+.service-section--premium > .container { position: static; z-index: auto; }
+
+/* Deeper shadow on service panel for lifted-card feel */
+.service-panel {
+  box-shadow:
+    0 4px 12px rgba(39, 24, 13, 0.08),
+    0 20px 56px rgba(39, 24, 13, 0.16),
+    0 52px 120px rgba(39, 24, 13, 0.16);
 }
 
-.service-section--premium > .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* ── 3. Ministry cards — premium depth enhancements ─────────────────────── */
-
-/* Deeper ambient shadow at rest */
+/* ─── 3. MINISTRY CARDS — premium depth ─────────────────────────────────── */
 .ministry-grid--premium .ministry-card {
   box-shadow:
     0 4px 8px rgba(18, 12, 8, 0.06),
@@ -1595,7 +1629,6 @@
               box-shadow 0.36s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Richer hover elevation */
 .ministry-card--premium:hover {
   transform: translateY(-8px) scale(1.015);
   box-shadow:
@@ -1605,15 +1638,11 @@
     0 0 0 1.5px rgba(194, 138, 93, 0.36);
 }
 
-/* Slower, smoother image zoom on hover */
 .ministry-card--premium .ministry-card-bg {
   transition: transform 0.60s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.ministry-card--premium:hover .ministry-card-bg {
-  transform: scale(1.08);
-}
+.ministry-card--premium:hover .ministry-card-bg { transform: scale(1.08); }
 
-/* Brighter inner border shimmer on hover */
 .ministry-card--premium::after {
   transition: border-color 0.36s ease, opacity 0.36s ease;
   opacity: 0.7;
@@ -1623,63 +1652,44 @@
   opacity: 1;
 }
 
-/* ── 4. Testimonials section — curved entry and exit ─────────────────────── */
+/* ─── 4. TESTIMONIALS SECTION ───────────────────────────────────────────── */
 .testimonials-section--premium {
-  position: relative;
-  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+  background: #e9e4db;
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
+/* Remove old waves */
 .testimonials-section--premium::before,
-.testimonials-section--premium::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  pointer-events: none;
-  z-index: 0;
+.testimonials-section--premium::after { display: none; }
+.testimonials-section--premium > .container { position: static; z-index: auto; }
+
+/* Testimonials shell: elevated card on cream surface */
+.testimonials-shell {
+  box-shadow:
+    0 4px 12px rgba(18, 12, 8, 0.06),
+    0 20px 60px rgba(18, 12, 8, 0.12);
 }
 
-/* Curved top entry — white bleeds down into the warm section from above */
-.testimonials-section--premium::before {
-  top: 0;
-  height: clamp(88px, 11vw, 148px);
-  background: linear-gradient(to bottom, var(--c-bg, #faf9f7) 35%, transparent 100%);
-  clip-path: ellipse(78% 100% at 50% 0%);
-}
-
-/* Curved bottom exit — white bleeds up from below */
-.testimonials-section--premium::after {
-  bottom: 0;
-  height: clamp(88px, 11vw, 148px);
-  background: linear-gradient(to top, var(--c-bg, #faf9f7) 35%, transparent 100%);
-  clip-path: ellipse(78% 100% at 50% 100%);
-}
-
-.testimonials-section--premium > .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* ── 5. CTA banner — curved top entry ───────────────────────────────────── */
+/* ─── 5. CTA BANNER ─────────────────────────────────────────────────────── */
 .cta-banner {
-  padding-top: clamp(5rem, 9vw, 7.5rem);
-  position: relative;
+  background: #e9e4db;
+  padding-top: clamp(3.5rem, 6vw, 5rem);
 }
 
-.cta-banner::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: clamp(100px, 13vw, 168px);
-  background: linear-gradient(to bottom, var(--c-bg, #faf9f7) 35%, transparent 100%);
-  clip-path: ellipse(78% 100% at 50% 0%);
-  pointer-events: none;
-  z-index: 0;
+/* Remove old wave */
+.cta-banner::after { display: none; }
+
+/* Richer shadow on CTA panel */
+.cta-panel {
+  box-shadow:
+    0 4px 12px rgba(39, 24, 13, 0.08),
+    0 24px 72px rgba(39, 24, 13, 0.20),
+    0 56px 130px rgba(39, 24, 13, 0.18);
 }
 
-/* ── 6. Section breathing room ───────────────────────────────────────────── */
-/* Extra vertical space between homepage sections for premium pacing */
+/* ─── 6. Spacing resets (padding-block handles section separation) ────────── */
 .service-section--premium + .section,
 .section + .service-section--premium,
 .section + .testimonials-section--premium {
-  margin-top: 0; /* spacing handled by padding-block on each section */
+  margin-top: 0;
 }
