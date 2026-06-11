@@ -163,6 +163,9 @@
   /* Hero */
   .hero                  { padding-bottom: clamp(1.8rem, 5vh, 2.8rem); }
   .hero-shell            { max-width: calc(100% - 1rem); }
+  .hero-topbar           { top: 0.75rem; padding: 0.44rem 1.05rem; }
+  .hero-topbar__item     { font-size: 0.62rem; }
+  .hero-topbar__sep      { margin: 0 0.46rem; }
   .hero-frame            {
     min-height: auto;
     flex-direction: column;
@@ -367,6 +370,15 @@
     padding-top: calc(var(--header-h) + 0.5rem);
   }
   .hero-shell { border-radius: clamp(1.8rem, 4.5vw, 2.6rem); }
+  .hero-topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 0.55rem;
+    padding: 0.4rem 0.85rem;
+    max-width: calc(100% - 1rem);
+  }
+  .hero-topbar__item { font-size: 0.59rem; letter-spacing: 0.07em; }
+  .hero-topbar__sep  { margin: 0 0.38rem; }
   .hero-float-card { padding: 0.48rem 0.95rem; min-height: 2.3rem; }
   .service-section--premium { padding-block: 2.5rem; }
   .testimonials-section--premium { padding-block: 2.5rem; }

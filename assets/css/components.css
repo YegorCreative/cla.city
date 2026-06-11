@@ -1535,6 +1535,60 @@
    PREMIUM VISUAL SYSTEM — Framed canvas, layered cards, app-like depth
    ========================================================================== */
 
+/* ─── 0. HERO TOPBAR (premium floating pill info bar) ───────────────────── */
+.hero-topbar {
+  position: absolute;
+  top: clamp(0.9rem, 1.8vw, 1.4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0.52rem 1.3rem;
+  border-radius: 999px;
+  background: rgba(235, 230, 222, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  box-shadow:
+    0 4px 22px rgba(12, 8, 5, 0.14),
+    0 1px 4px rgba(12, 8, 5, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  max-width: calc(100% - 2.4rem);
+  overflow: hidden;
+}
+
+.hero-topbar__item {
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #251a0f;
+  white-space: nowrap;
+}
+
+.hero-topbar__sep {
+  margin: 0 0.62rem;
+  color: rgba(37, 26, 15, 0.30);
+  font-size: 0.78rem;
+  font-weight: 400;
+  user-select: none;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* ─── DEPTH SYSTEM (enhanced vignette + corner darkening) ───────────────── */
+.hero .hero-overlay {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(194, 138, 93, 0.30) 0%, transparent 28%),
+    radial-gradient(ellipse 90% 60% at 78% 20%, rgba(255, 244, 224, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse 75% 55% at 100% 0%, rgba(10, 6, 4, 0.48) 0%, transparent 52%),
+    radial-gradient(ellipse 75% 55% at 0% 100%, rgba(10, 6, 4, 0.46) 0%, transparent 52%),
+    linear-gradient(118deg, rgba(15, 11, 8, 0.72) 0%, rgba(15, 11, 8, 0.10) 52%, rgba(15, 11, 8, 0.60) 100%),
+    linear-gradient(to top, rgba(11, 8, 6, 0.94) 0%, rgba(11, 8, 6, 0.46) 40%, rgba(11, 8, 6, 0.08) 75%);
+}
+
 /* ─── 1. HERO FRAME SYSTEM ──────────────────────────────────────────────── */
 
 /* Hero outer: warm cream surface = the visible thick border/frame */
