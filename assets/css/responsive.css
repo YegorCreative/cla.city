@@ -361,6 +361,16 @@
   .pastor-card     { flex-direction: column; }
   .gallery-grid    { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
 
+  /* Premium Visual System — mobile curve scale-down */
+  .hero::after                             { height: 40px; }
+  .service-section--premium::before        { height: 32px; }
+  .service-section--premium               { padding-block: 3rem; }
+  .testimonials-section--premium::before,
+  .testimonials-section--premium::after   { height: 36px; }
+  .testimonials-section--premium          { padding-block: 3.5rem; }
+  .cta-banner::after                       { height: 40px; }
+  .cta-banner                              { padding-top: 3.5rem; }
+
 }
 
 /* ==========================================================================
