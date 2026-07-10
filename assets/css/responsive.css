@@ -227,33 +227,35 @@
   .intro-media-card { border-radius: var(--r-lg); }
 
   .mtc-feature {
+    gap: 1.8rem;
+  }
+
+  .mtc-heading,
+  .mtc-body {
     grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0.65rem;
-    border-radius: 1.4rem;
+    gap: 1.25rem;
+  }
+
+  .mtc-heading h2 {
+    max-width: 14ch;
+    font-size: clamp(2.35rem, 9vw, 3.6rem);
   }
 
   .mtc-copy {
-    padding: 2rem 1.35rem 1.4rem;
-  }
-
-  .mtc-copy h2 {
-    max-width: 12ch;
-    font-size: clamp(2.55rem, 10vw, 3.9rem);
+    padding-top: 0.25rem;
   }
 
   .mtc-principles {
-    grid-template-columns: 1fr;
     gap: 0.9rem;
-    margin-top: 1.75rem;
+    margin-top: 1.5rem;
   }
 
   .mtc-principle {
-    padding-top: 0.8rem;
+    grid-template-columns: minmax(5.5rem, 0.3fr) minmax(0, 1fr);
+    gap: 0.85rem;
   }
 
   .mtc-media {
-    min-height: 0;
     aspect-ratio: 4 / 3;
     border-radius: 1.1rem;
   }
@@ -386,9 +388,9 @@
   .service-layout--welcome .map-card { min-height: 240px; border-radius: 1.1rem; }
   .intro-block--premium  { padding: 0.85rem; }
   .intro-copy-card       { padding: 0.35rem; }
-  .mtc-feature           { padding: 0.5rem; border-radius: 1.25rem; }
-  .mtc-copy              { padding: 1.55rem 1.1rem 1.4rem; }
-  .mtc-copy h2           { font-size: clamp(2.35rem, 11vw, 3rem); }
+  .mtc-feature           { gap: 1.35rem; }
+  .mtc-heading h2        { font-size: clamp(2.05rem, 10vw, 2.75rem); }
+  .mtc-principle         { grid-template-columns: 1fr; gap: 0.25rem; }
   .mtc-feature .btn      { width: 100%; justify-content: center; }
   .testimonials-shell    { padding: 0.4rem; border-radius: 1.35rem; }
   .cta-panel             { border-radius: 1.4rem; padding: 0.55rem; }
