@@ -293,7 +293,7 @@
 .hero-bg img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 34%;
+  object-position: var(--image-position-hero);
 }
 
 .hero-overlay {
@@ -524,7 +524,7 @@
 .ministry-card-bg {
   position: absolute; inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: var(--image-position-default);
   transition: transform var(--t-slow);
 }
 .ministry-card:hover .ministry-card-bg { transform: scale(1.06); }
@@ -677,6 +677,12 @@
 .mg--prayer  { background: linear-gradient(135deg, #1A3028, #0F1F1A); }
 .mg--groups  { background: linear-gradient(135deg, #4A3520, #2E1F0C); }
 .mg--worship { background: linear-gradient(135deg, #4F3A2A, #302116); }
+.ministry-card-bg.mg--kids    { background-position: center 42%; }
+.ministry-card-bg.mg--youth   { background-position: center 44%; }
+.ministry-card-bg.mg--women   { background-position: center 46%; }
+.ministry-card-bg.mg--prayer  { background-position: center 42%; }
+.ministry-card-bg.mg--groups  { background-position: center 44%; }
+.ministry-card-bg.mg--worship { background-position: center 40%; }
 
 /* ==========================================================================
    PASTOR CARDS
@@ -692,7 +698,7 @@
   box-shadow: var(--sh-md);
   border: 3px solid var(--c-white);
 }
-.pastor-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pastor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
 .pastor-photo-placeholder {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
@@ -956,7 +962,20 @@
 }
 
 .intro-media-card img {
-  object-position: center 36%;
+  object-position: var(--image-position-community);
+}
+
+.intro-img--portrait img,
+.intro-img--identity img {
+  object-position: var(--image-position-portrait);
+}
+
+.intro-img--community img {
+  object-position: var(--image-position-community);
+}
+
+.intro-img--mtc img {
+  object-position: var(--image-position-mtc);
 }
 
 /* ==========================================================================

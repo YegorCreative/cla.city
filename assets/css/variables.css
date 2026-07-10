@@ -178,6 +178,17 @@
   --max-w-xs:      480px;
 
   /* ==========================================================================
+     HOMEPAGE IMAGE SYSTEM
+     ========================================================================== */
+  --image-ratio-landscape: 4 / 3;
+  --image-ratio-portrait:  4 / 5;
+  --image-position-default: center center;
+  --image-position-hero: center 38%;
+  --image-position-portrait: center 42%;
+  --image-position-community: center 40%;
+  --image-position-mtc: center 46%;
+
+  /* ==========================================================================
      Z-INDEX SCALE
      ========================================================================== */
   --z-base:    0;

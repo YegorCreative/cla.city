@@ -39,7 +39,7 @@
   }
   .intro-block--premium { padding: var(--sp-md); }
   .intro-copy-card { padding: 0.5rem; }
-  .intro-block--who .intro-img { aspect-ratio: 4 / 3; }
+  .intro-block--who .intro-img { aspect-ratio: var(--image-ratio-portrait); }
   .service-layout { grid-template-columns: 1fr; }
   .service-layout--welcome {
     grid-template-columns: 1fr;
@@ -213,9 +213,13 @@
     grid-column: 1 / -1;
     grid-row: span 1;
   }
-  .ministry-grid--editorial .ministry-card--featured { min-height: 360px; }
+  .ministry-grid--editorial .ministry-card--featured,
   .ministry-grid--editorial .ministry-card--medium,
-  .ministry-grid--editorial .ministry-card--wide { min-height: 300px; }
+  .ministry-grid--editorial .ministry-card--wide {
+    aspect-ratio: var(--image-ratio-landscape);
+    min-height: 0;
+    height: auto;
+  }
   .ministry-card-content { padding: 1.1rem; }
   .ministry-grid--premium .tag {
     backdrop-filter: none;
@@ -329,7 +333,7 @@
   }
 
   /* Ministry card */
-  .ministry-card { height: 300px; }
+  .ministry-card { height: auto; aspect-ratio: var(--image-ratio-landscape); }
 }
 
 /* ==========================================================================
@@ -358,7 +362,7 @@
   .cta-panel__inner      { border-radius: 1.05rem; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .cta-banner h2         { font-size: clamp(2rem, 10vw, 2.85rem); }
   .page-hero       { padding-top: calc(var(--header-h) + 2.5rem); padding-bottom: 2.5rem; }
-  .ministry-card   { height: 260px; }
+  .ministry-card   { height: auto; aspect-ratio: var(--image-ratio-landscape); }
   .pastor-card     { flex-direction: column; }
   .gallery-grid    { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
 
