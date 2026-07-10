@@ -71,10 +71,18 @@
   /* ==========================================================================
      COLORS — Gradients & Cinematic Overlays
      ========================================================================== */
-   --c-gradient-warm:  linear-gradient(135deg, #B07A4F 0%, #A6734A 100%);
+  --c-gradient-warm:  linear-gradient(135deg, #B07A4F 0%, #A6734A 100%);
   --c-gradient-dark:  linear-gradient(160deg, #111316 0%, #252930 100%);
    --c-gradient-gold:  linear-gradient(135deg, #C8965A 0%, #B07A4F 50%, #A6734A 100%);
    --c-gradient-paper: linear-gradient(180deg, #F7F4EE 0%, #EDE8E2 100%);
+
+  /* ==========================================================================
+     DESIGN LANGUAGE PROTOTYPE — Hero only
+     ========================================================================== */
+  --c-cla-ink:    #071120;
+  --c-cla-ivory:  #F6F1E8;
+  --c-cla-brass:  #B99362;
+  --c-cla-mist:   rgba(246, 241, 232, 0.76);
 
   /* ==========================================================================
      TYPOGRAPHY
@@ -183,7 +191,7 @@
   --image-ratio-landscape: 4 / 3;
   --image-ratio-portrait:  4 / 5;
   --image-position-default: center center;
-  --image-position-hero: center 38%;
+  --image-position-hero: 58% 42%;
   --image-position-portrait: center 42%;
   --image-position-community: center 40%;
   --image-position-mtc: center 46%;
