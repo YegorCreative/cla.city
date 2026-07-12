@@ -2359,7 +2359,7 @@ blockquote cite {
 
 /* Hero outer: warm cream surface = the visible thick border/frame */
 .hero {
-  background: #e9e4db;
+  background: var(--color-ivory);
   overflow: hidden;
   padding: clamp(1.1rem, 2vw, 1.6rem);
   padding-top: calc(var(--header-h) + clamp(1.1rem, 2vw, 1.6rem));
