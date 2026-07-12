@@ -1509,7 +1509,7 @@ blockquote cite {
   aspect-ratio: 4 / 3;
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: linear-gradient(135deg, #2D352F, #1F2328);
+  background: var(--color-navy-secondary);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: var(--sp-sm);
@@ -1518,9 +1518,9 @@ blockquote cite {
   padding: var(--sp-md);
   text-decoration: none;
   transition: transform var(--t-norm), box-shadow var(--t-norm);
-  box-shadow: var(--sh-lg);
+  box-shadow: var(--shadow-default);
 }
-.map-card:hover { transform: translateY(-4px); box-shadow: 0 28px 80px rgba(0,0,0,0.32); color: var(--c-white); }
+.map-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); color: var(--c-white); }
 .map-card .pin    { font-size: 2.8rem; line-height: 1; }
 .map-card address { font-style: normal; font-size: 1rem; font-weight: 500; opacity: 0.9; line-height: 1.55; }
 .map-card .map-label {
@@ -1577,7 +1577,7 @@ blockquote cite {
   border-radius: clamp(1.4rem, 3vw, 2.2rem);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 48px rgba(10, 6, 3, 0.14);
+  box-shadow: var(--shadow-default);
   backdrop-filter: blur(10px) saturate(125%);
   -webkit-backdrop-filter: blur(10px) saturate(125%);
 }
@@ -1588,7 +1588,7 @@ blockquote cite {
   border-left: 0;
   border-radius: 1.25rem;
   padding: 1rem;
-  box-shadow: 0 12px 28px rgba(8, 5, 3, 0.12);
+  box-shadow: var(--shadow-default);
 }
 
 .service-layout--welcome .service-block:hover {
@@ -1598,12 +1598,23 @@ blockquote cite {
 }
 
 .service-layout--welcome .service-block h4 {
-  color: #F7F4EE;
+  color: var(--color-ivory);
   margin-bottom: 0.35rem;
 }
 
 .service-layout--welcome .service-block p {
-  color: rgba(247, 244, 238, 0.84);
+  color: var(--color-ivory);
+  opacity: 0.84;
+}
+
+.service-panel .eyebrow {
+  color: var(--color-primary-tint);
+}
+
+.service-panel__intro {
+  color: var(--color-ivory);
+  opacity: 0.76;
+  margin-bottom: var(--sp-md);
 }
 
 .service-layout--welcome .map-card {
@@ -1613,10 +1624,8 @@ blockquote cite {
   min-height: 100%;
   border-radius: clamp(1.6rem, 3vw, 2.3rem);
   border: 1px solid rgba(255, 255, 255, 0.17);
-  background:
-    radial-gradient(circle at 22% 16%, rgba(255, 235, 206, 0.18) 0%, transparent 34%),
-    linear-gradient(155deg, rgba(75, 83, 60, 0.46), rgba(24, 23, 22, 0.94));
-  box-shadow: 0 20px 56px rgba(8, 5, 3, 0.20);
+  background: var(--color-navy-glass);
+  box-shadow: var(--shadow-default);
   padding: clamp(2rem, 4vw, var(--sp-xl)) var(--sp-md);
   backdrop-filter: blur(8px) saturate(120%);
   -webkit-backdrop-filter: blur(8px) saturate(120%);
@@ -1624,7 +1633,7 @@ blockquote cite {
 
 .service-layout--welcome .map-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--sh-lg);
+  box-shadow: var(--shadow-hover);
 }
 
 .service-layout--welcome .map-card .pin {
@@ -1647,6 +1656,10 @@ blockquote cite {
   box-shadow: 0 14px 30px rgba(18, 12, 8, 0.14);
 }
 
+.service-cta--pill {
+  box-shadow: var(--shadow-default);
+}
+
 .map-card--premium .map-label {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
@@ -1657,12 +1670,12 @@ blockquote cite {
 /* ─── Embedded Google Maps iframe variant ─── */
 .map-card--embed {
   padding: 0;
-  background: #1a1c1f;
+  background: var(--color-navy);
   align-items: stretch;
   justify-content: flex-start;
   gap: 0;
 }
-.map-card--embed:hover { transform: none; box-shadow: var(--sh-lg); }
+.map-card--embed:hover { transform: none; box-shadow: var(--shadow-hover); }
 .map-card--embed iframe {
   flex: 1 1 auto;
   min-height: 0;
@@ -1676,7 +1689,7 @@ blockquote cite {
   padding: 0.72rem var(--sp-md);
   text-align: center;
   text-decoration: none;
-  background: rgba(18, 18, 20, 0.95);
+  background: var(--color-navy-glass);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--c-white);
   font-size: 0.85rem;
@@ -1688,7 +1701,7 @@ blockquote cite {
   background: var(--c-primary);
   color: var(--c-white);
 }
-.service-layout--welcome .map-card--embed { background: #1a1c1f; padding: 0; }
+.service-layout--welcome .map-card--embed { background: var(--color-navy); padding: 0; }
 
 /* Homepage Who We Are premium variant */
 .intro-block--premium {
@@ -2078,9 +2091,6 @@ blockquote cite {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(194, 138, 93, 0.18) 0%, transparent 56%),
-    linear-gradient(to bottom, rgba(247, 244, 238, 0) 0%, rgba(194, 138, 93, 0.08) 100%);
   pointer-events: none;
 }
 .cta-banner .container { position: relative; z-index: 1; }
@@ -2123,7 +2133,7 @@ blockquote cite {
   border-radius: clamp(1.4rem, 3vw, 2.35rem);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.06));
   border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 50px rgba(10, 6, 3, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), var(--shadow-default);
   backdrop-filter: blur(12px) saturate(130%);
   -webkit-backdrop-filter: blur(12px) saturate(130%);
 }
@@ -2417,7 +2427,7 @@ blockquote cite {
 
 /* ─── 2. SUNDAY SERVICE SECTION ─────────────────────────────────────────── */
 .service-section--premium {
-  background: #e9e4db;
+  background: var(--color-ivory);
   padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
@@ -2483,7 +2493,7 @@ blockquote cite {
 
 /* ─── 5. CTA BANNER ─────────────────────────────────────────────────────── */
 .cta-banner {
-  background: #e9e4db;
+  background: var(--color-ivory);
   padding-top: clamp(3.5rem, 6vw, 5rem);
 }
 
