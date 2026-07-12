@@ -2162,7 +2162,7 @@ blockquote cite {
 .cta-banner .btn {
   border-radius: 999px;
   padding-inline: 1.65rem;
-  box-shadow: 0 16px 34px rgba(11, 8, 6, 0.16);
+  box-shadow: var(--shadow-default);
 }
 
 .cta-banner .btn-white {
