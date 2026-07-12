@@ -1124,7 +1124,6 @@ blockquote cite {
   margin-bottom: 1rem;
   letter-spacing: -0.038em;
   max-width: 12.5ch;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.34), 0 10px 54px rgba(0, 0, 0, 0.26);
 }
 .hero-content .lead {
   font-size: clamp(1.05rem, 2vw, 1.28rem);
@@ -1146,7 +1145,7 @@ blockquote cite {
 .hero .btn {
   border-radius: 999px;
   padding-inline: 1.6rem;
-  box-shadow: 0 16px 34px rgba(11, 8, 6, 0.16);
+  box-shadow: var(--shadow-default);
 }
 
 .hero .btn-outline {
@@ -2385,17 +2384,15 @@ blockquote cite {
   min-height: 2.7rem;
   padding: 0.58rem 1.15rem;
   border-radius: 999px;
-  background: rgba(238, 234, 228, 0.86);
+  background: color-mix(in srgb, var(--color-ivory) 86%, transparent);
   border: 1px solid rgba(255, 255, 255, 0.82);
-  box-shadow:
-    0 4px 16px rgba(12, 8, 5, 0.13),
-    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-default), inset 0 1px 0 rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
 
 .hero-float-label {
-  color: #251a0f;
+  color: var(--color-navy);
   font-size: 0.73rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -2406,11 +2403,9 @@ blockquote cite {
 .hero-panel {
   padding: clamp(1.4rem, 2.8vw, 2.2rem);
   border-radius: clamp(1.8rem, 3vw, 2.5rem);
-  background: rgba(10, 7, 4, 0.56);
+  background: var(--color-navy-glass);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow:
-    0 32px 80px rgba(10, 7, 4, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  box-shadow: var(--shadow-default), inset 0 1px 0 rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
