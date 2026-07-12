@@ -2313,12 +2313,9 @@ blockquote cite {
   flex-wrap: nowrap;
   padding: 0.52rem 1.3rem;
   border-radius: 999px;
-  background: rgba(235, 230, 222, 0.84);
+  background: color-mix(in srgb, var(--color-ivory) 84%, transparent);
   border: 1px solid rgba(255, 255, 255, 0.90);
-  box-shadow:
-    0 4px 22px rgba(12, 8, 5, 0.14),
-    0 1px 4px rgba(12, 8, 5, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-default), inset 0 1px 0 rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   max-width: calc(100% - 2.4rem);
@@ -2330,13 +2327,14 @@ blockquote cite {
   font-weight: 800;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #251a0f;
+  color: var(--color-navy);
   white-space: nowrap;
 }
 
 .hero-topbar__sep {
   margin: 0 0.62rem;
-  color: rgba(37, 26, 15, 0.30);
+  color: var(--color-navy);
+  opacity: 0.30;
   font-size: 0.78rem;
   font-weight: 400;
   user-select: none;
