@@ -6,8 +6,10 @@ import { initNavigation }       from './navigation.js';
 import { initLanguageSwitcher } from './language-switcher.js';
 import { initAnimations }       from './animations.js';
 import { initMediaPlayer }      from './media-player.js';
+import { initPartials }         from './partials-loader.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await initPartials();
   initNavigation();
   initLanguageSwitcher();
   initAnimations();
