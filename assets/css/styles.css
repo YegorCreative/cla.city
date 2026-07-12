@@ -3418,6 +3418,7 @@ blockquote cite {
 
   /* Hero */
   .hero                  { padding-bottom: clamp(1.8rem, 5vh, 2.8rem); }
+  .hero-bg img           { object-position: 62% 34%; }
   .hero-shell            { max-width: calc(100% - 1rem); }
   .hero-topbar           {
     top: 0.75rem;
