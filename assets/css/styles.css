@@ -2347,12 +2347,8 @@ blockquote cite {
 /* ─── DEPTH SYSTEM (enhanced vignette + corner darkening) ───────────────── */
 .hero .hero-overlay {
   background:
-    radial-gradient(circle at 20% 15%, rgba(194, 138, 93, 0.30) 0%, transparent 28%),
-    radial-gradient(ellipse 90% 60% at 78% 20%, rgba(255, 244, 224, 0.12) 0%, transparent 45%),
-    radial-gradient(ellipse 75% 55% at 100% 0%, rgba(10, 6, 4, 0.48) 0%, transparent 52%),
-    radial-gradient(ellipse 75% 55% at 0% 100%, rgba(10, 6, 4, 0.46) 0%, transparent 52%),
-    linear-gradient(118deg, rgba(15, 11, 8, 0.72) 0%, rgba(15, 11, 8, 0.10) 52%, rgba(15, 11, 8, 0.60) 100%),
-    linear-gradient(to top, rgba(11, 8, 6, 0.94) 0%, rgba(11, 8, 6, 0.46) 40%, rgba(11, 8, 6, 0.08) 75%);
+    linear-gradient(118deg, rgba(17, 24, 39, 0.72) 0%, rgba(17, 24, 39, 0.16) 52%, rgba(17, 24, 39, 0.62) 100%),
+    linear-gradient(to top, var(--color-navy-glass) 0%, rgba(17, 24, 39, 0.44) 40%, rgba(17, 24, 39, 0.08) 75%);
 }
 
 /* ─── 1. HERO FRAME SYSTEM ──────────────────────────────────────────────── */
