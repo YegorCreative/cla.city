@@ -1783,7 +1783,7 @@ blockquote cite {
 }
 .testimonial:hover {
   transform: translateY(-4px);
-  box-shadow: var(--sh-md), 0 0 0 1px rgba(194,138,93,0.12);
+  box-shadow: var(--sh-md);
 }
 .testimonial::before {
   content: '\201C';
@@ -1803,21 +1803,21 @@ blockquote cite {
   border-radius: var(--r-xl);
   border-left-width: 0;
   border: 1px solid var(--c-border);
-  background: linear-gradient(160deg, #FFFFFF 0%, #F7F4EE 100%);
+  background: var(--color-white);
   box-shadow: var(--sh-sm);
   padding: clamp(1.1rem, 1.8vw, 1.5rem);
 }
 
 .testimonials-grid--editorial .testimonial:hover {
   transform: translateY(-3px);
-  box-shadow: var(--sh-md), 0 0 0 1px rgba(176,122,79,0.16);
+  box-shadow: var(--sh-md);
 }
 
 .testimonials-grid--editorial .testimonial::before {
   top: 0.45rem;
   right: 1rem;
   font-size: 4.4rem;
-  color: rgba(176,122,79,0.20);
+  color: var(--color-primary-tint);
 }
 
 .testimonials-grid--editorial .testimonial .author {
@@ -1830,7 +1830,7 @@ blockquote cite {
 
 .testimonials-grid--editorial .testimonial--featured {
   padding: clamp(1.5rem, 2.6vw, 2.15rem);
-  background: linear-gradient(160deg, #FFFFFF 0%, #F2E6D8 100%);
+  background: var(--color-ivory);
   box-shadow: var(--sh-md);
 }
 
@@ -1838,7 +1838,7 @@ blockquote cite {
   font-size: 5.8rem;
   top: 0.2rem;
   right: 1.15rem;
-  color: rgba(176,122,79,0.26);
+  color: var(--color-primary-tint);
 }
 
 .testimonials-grid--editorial .testimonial--featured p {
@@ -1872,7 +1872,7 @@ blockquote cite {
   padding: clamp(0.75rem, 1.5vw, 1rem);
   border-radius: clamp(1.8rem, 3.5vw, 2.8rem);
   background: linear-gradient(145deg, rgba(255,255,255,0.54), rgba(255,255,255,0.24));
-  border: 1px solid rgba(194, 138, 93, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 22px 70px rgba(42, 30, 20, 0.10);
 }
 
@@ -1880,14 +1880,12 @@ blockquote cite {
   border-radius: clamp(1.3rem, 2.6vw, 2rem);
   border: 1px solid rgba(194, 138, 93, 0.16);
   background: linear-gradient(150deg, rgba(255,255,255,0.90), rgba(247,244,238,0.78));
-  box-shadow: 0 14px 36px rgba(42, 30, 20, 0.10);
+  box-shadow: var(--shadow-default);
 }
 
 .testimonials-grid--premium .testimonial--glass {
-  background:
-    radial-gradient(circle at 16% 10%, rgba(255, 235, 206, 0.42) 0%, transparent 34%),
-    linear-gradient(145deg, rgba(255,255,255,0.88), rgba(242,230,216,0.82));
-  box-shadow: 0 24px 68px rgba(42, 30, 20, 0.15);
+  background: linear-gradient(145deg, rgba(255,255,255,0.88), rgba(242,230,216,0.82));
+  box-shadow: var(--shadow-default);
 }
 
 .testimonials-grid--premium .testimonial--soft {
@@ -1895,7 +1893,7 @@ blockquote cite {
 }
 
 .testimonials-grid--premium .testimonial::before {
-  color: rgba(176,122,79,0.24);
+  color: var(--color-primary-tint);
 }
 
 /* ==========================================================================
@@ -2484,9 +2482,7 @@ blockquote cite {
 
 /* Testimonials shell: elevated card on cream surface */
 .testimonials-shell {
-  box-shadow:
-    0 4px 12px rgba(18, 12, 8, 0.06),
-    0 20px 60px rgba(18, 12, 8, 0.12);
+  box-shadow: var(--shadow-default);
 }
 
 /* ─── 5. CTA BANNER ─────────────────────────────────────────────────────── */
