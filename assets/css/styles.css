@@ -2451,17 +2451,19 @@ blockquote cite {
 }
 
 .ministry-card--premium:hover {
-  transform: translateY(-8px) scale(1.015);
+  transform: translateY(-4px) scale(1.01);
   box-shadow: var(--shadow-hover);
 }
 
 .ministry-card--premium .ministry-card-bg {
-  transition: transform 0.60s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform var(--t-slow);
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.ministry-card--premium:hover .ministry-card-bg { transform: scale(1.08); }
+.ministry-card--premium:hover .ministry-card-bg { transform: scale(1.02); }
 
 .ministry-card--premium::after {
-  transition: border-color 0.36s ease, opacity 0.36s ease;
+  transition: border-color var(--t-norm), opacity var(--t-norm);
+  transition-timing-function: ease, ease;
   opacity: 0.7;
 }
 .ministry-card--premium:hover::after {
@@ -2471,7 +2473,7 @@ blockquote cite {
 
 /* ─── 4. TESTIMONIALS SECTION ───────────────────────────────────────────── */
 .testimonials-section--premium {
-  background: #e9e4db;
+  background: var(--color-ivory);
   padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
@@ -3199,6 +3201,10 @@ blockquote cite {
   .fade-in--right {
     opacity: 1;
     transform: none;
+  }
+  .ministry-card,
+  .ministry-card-bg {
+    transform: none !important;
   }
 }
 
