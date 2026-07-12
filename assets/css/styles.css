@@ -1049,8 +1049,8 @@ blockquote cite {
   border-radius: clamp(2rem, 4vw, 3.25rem);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(180deg, rgba(16, 14, 13, 0.30), rgba(16, 14, 13, 0.66));
-  box-shadow: 0 28px 90px rgba(12, 8, 5, 0.24), 0 6px 26px rgba(12, 8, 5, 0.16);
+  background: var(--color-navy);
+  box-shadow: var(--shadow-default);
   isolation: isolate;
 }
 
@@ -2377,10 +2377,7 @@ blockquote cite {
 
 /* Hero frame: deeper lift shadow */
 .hero-frame {
-  box-shadow:
-    0 4px 16px rgba(12, 8, 5, 0.14),
-    0 24px 64px rgba(12, 8, 5, 0.22),
-    0 56px 130px rgba(12, 8, 5, 0.20);
+  box-shadow: var(--shadow-default);
 }
 
 /* Float cards: cream frosted pill — light on dark image = reference style */
