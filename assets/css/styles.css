@@ -1133,7 +1133,6 @@ blockquote cite {
   margin-bottom: var(--sp-lg);
   line-height: 1.78;
   color: var(--c-white);
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.32);
 }
 .hero-btns {
   display: flex;
