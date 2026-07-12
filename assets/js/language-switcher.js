@@ -22,9 +22,9 @@ export function initLanguageSwitcher() {
   document.querySelectorAll('[data-lang-link]').forEach(link => {
     const targetLang = link.getAttribute('data-lang-link');
     if (targetLang === 'en') {
-      link.href = '../../en/' + page;
+      link.href = '../en/' + page;
     } else if (targetLang === 'ru') {
-      link.href = '../../ru/' + page;
+      link.href = '../ru/' + page;
     }
   });
 }

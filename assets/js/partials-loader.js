@@ -16,7 +16,7 @@ async function loadPartial(placeholder) {
   if (!name) return;
 
   const language = document.documentElement.lang;
-  const source = `/partials/${language}/${name}.html`;
+  const source = `../partials/${language}/${name}.html`;
 
   try {
     const response = await fetch(source);
