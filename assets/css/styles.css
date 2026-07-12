@@ -1293,10 +1293,10 @@ blockquote cite {
   position: absolute; inset: 0;
   background: linear-gradient(
     to top,
-    rgba(10, 5, 2, 0.97) 0%,
-    rgba(10, 5, 2, 0.62) 36%,
-    rgba(0,  0, 0, 0.14) 70%,
-    rgba(0,  0, 0, 0.00) 100%
+    var(--color-navy-glass) 0%,
+    rgba(17, 24, 39, 0.68) 48%,
+    rgba(17, 24, 39, 0.22) 76%,
+    transparent 100%
   );
   z-index: 1;
 }
@@ -1370,10 +1370,10 @@ blockquote cite {
 .ministry-grid--editorial .ministry-card::before {
   background: linear-gradient(
     to top,
-    rgba(10, 6, 3, 0.94) 0%,
-    rgba(10, 6, 3, 0.60) 38%,
-    rgba(0, 0, 0, 0.18) 74%,
-    rgba(0, 0, 0, 0) 100%
+    var(--color-navy-glass) 0%,
+    rgba(17, 24, 39, 0.68) 48%,
+    rgba(17, 24, 39, 0.22) 76%,
+    transparent 100%
   );
 }
 
@@ -1410,9 +1410,13 @@ blockquote cite {
 }
 
 .ministry-grid--premium .ministry-card--premium::before {
-  background:
-    radial-gradient(circle at 18% 12%, rgba(255, 236, 210, 0.18) 0%, transparent 30%),
-    linear-gradient(to top, rgba(10, 6, 3, 0.96) 0%, rgba(10, 6, 3, 0.68) 42%, rgba(10, 6, 3, 0.22) 74%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    var(--color-navy-glass) 0%,
+    rgba(17, 24, 39, 0.68) 48%,
+    rgba(17, 24, 39, 0.22) 76%,
+    transparent 100%
+  );
 }
 
 .ministry-card--premium::after {
@@ -1451,12 +1455,12 @@ blockquote cite {
 }
 
 /* Ministry bg gradients */
-.mg--kids    { background: linear-gradient(135deg, #5A4635, var(--accent-faith)); }
-.mg--youth   { background: linear-gradient(135deg, #3D5A47, #2C4334); }
-.mg--women   { background: linear-gradient(135deg, #6A4A3A, #4B3225); }
-.mg--prayer  { background: linear-gradient(135deg, #1A3028, #0F1F1A); }
-.mg--groups  { background: linear-gradient(135deg, #4A3520, #2E1F0C); }
-.mg--worship { background: linear-gradient(135deg, #4F3A2A, #302116); }
+.mg--kids    { background: linear-gradient(135deg, var(--color-primary), var(--color-navy)); }
+.mg--youth   { background: linear-gradient(135deg, var(--color-navy-secondary), var(--color-navy)); }
+.mg--women   { background: linear-gradient(135deg, var(--color-primary), var(--color-navy-secondary)); }
+.mg--prayer  { background: linear-gradient(135deg, var(--color-navy), var(--color-navy-secondary)); }
+.mg--groups  { background: linear-gradient(135deg, var(--color-navy-secondary), var(--color-primary)); }
+.mg--worship { background: linear-gradient(135deg, var(--color-navy), var(--color-primary)); }
 
 /* ==========================================================================
    PASTOR CARDS
@@ -2441,21 +2445,14 @@ blockquote cite {
 
 /* ─── 3. MINISTRY CARDS — premium depth ─────────────────────────────────── */
 .ministry-grid--premium .ministry-card {
-  box-shadow:
-    0 4px 8px rgba(18, 12, 8, 0.06),
-    0 12px 32px rgba(18, 12, 8, 0.16),
-    0 28px 64px rgba(18, 12, 8, 0.14);
-  transition: transform 0.36s cubic-bezier(0.22, 0.61, 0.36, 1),
-              box-shadow 0.36s cubic-bezier(0.22, 0.61, 0.36, 1);
+  box-shadow: var(--shadow-default);
+  transition: transform var(--t-norm), box-shadow var(--t-norm);
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .ministry-card--premium:hover {
   transform: translateY(-8px) scale(1.015);
-  box-shadow:
-    0 2px 4px rgba(18, 12, 8, 0.04),
-    0 16px 40px rgba(18, 12, 8, 0.20),
-    0 40px 90px rgba(18, 12, 8, 0.24),
-    0 0 0 1.5px rgba(194, 138, 93, 0.36);
+  box-shadow: var(--shadow-hover);
 }
 
 .ministry-card--premium .ministry-card-bg {
