@@ -158,36 +158,51 @@
   /* ==========================================================================
      SPACING
      ========================================================================== */
-  --sp-2xs: 0.25rem;   /*   4px */
-  --sp-xs:  0.5rem;    /*   8px */
-  --sp-sm:  1rem;      /*  16px */
-  --sp-md:  2rem;      /*  32px */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --sp-2xs: var(--space-1);  /*   4px */
+  --sp-xs:  var(--space-2);  /*   8px */
+  --sp-sm:  var(--space-4);  /*  16px */
+  --sp-md:  var(--space-6);  /*  32px */
   --sp-lg:  3.5rem;    /*  56px */
-  --sp-xl:  6rem;      /*  96px */
-  --sp-2xl: 8rem;      /* 128px */
+  --sp-xl:  var(--space-9);  /*  96px */
+  --sp-2xl: var(--space-10); /* 128px */
   --sp-3xl: 11rem;     /* 176px */
 
   /* ==========================================================================
      BORDER RADIUS
      ========================================================================== */
-  --r-xs:   3px;
-  --r-sm:   8px;
-  --r-md:   14px;
-  --r-lg:   22px;
-  --r-xl:   32px;
-  --r-2xl:  48px;
+  --radius-small:  12px;
+  --radius-medium: 20px;
+  --radius-large:  28px;
+
+  --r-xs:   var(--radius-small);
+  --r-sm:   var(--radius-small);
+  --r-md:   var(--radius-medium);
+  --r-lg:   var(--radius-large);
+  --r-xl:   var(--radius-large);
+  --r-2xl:  var(--radius-large);
   --r-full: 9999px;
 
   /* ==========================================================================
      SHADOWS
      ========================================================================== */
-  --sh-xs:       0 1px 3px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.04);
-  --sh-sm:       0 2px 8px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.06);
-  --sh-md:       0 4px 16px rgba(0,0,0,0.07), 0 12px 36px rgba(0,0,0,0.08);
-  --sh-lg:       0 12px 40px rgba(0,0,0,0.10), 0 28px 72px rgba(0,0,0,0.10);
+  --sh-xs:       var(--shadow-default);
+  --sh-sm:       var(--shadow-default);
+  --sh-md:       var(--shadow-hover);
+  --sh-lg:       var(--shadow-hover);
   --sh-xl:       0 24px 64px rgba(0,0,0,0.14), 0 48px 100px rgba(0,0,0,0.10);
-   --sh-amber:    0 4px 16px rgba(176,122,79,0.28), 0 8px 32px rgba(176,122,79,0.16);
-   --sh-amber-lg: 0 8px 28px rgba(176,122,79,0.38), 0 16px 48px rgba(176,122,79,0.20);
+   --sh-amber:    var(--shadow-gold);
+   --sh-amber-lg: var(--shadow-gold);
 
   /* ==========================================================================
      TRANSITIONS
@@ -3396,9 +3411,9 @@ blockquote cite {
 @media (max-width: 768px) {
   /* Spacing scale reduction */
   :root {
-    --sp-xl: 4rem;
+    --sp-xl: var(--space-8);
     --sp-lg: 2.5rem;
-    --sp-md: 1.5rem;
+    --sp-md: var(--space-5);
   }
 
   /* All grids to 1-col */
@@ -3594,8 +3609,8 @@ blockquote cite {
 @media (max-width: 480px) {
   :root {
     --header-h: 64px;
-    --sp-xl:    3rem;
-    --sp-lg:    2rem;
+    --sp-xl:    var(--space-7);
+    --sp-lg:    var(--space-6);
   }
 
   .hero                  { padding-bottom: 2rem; }
