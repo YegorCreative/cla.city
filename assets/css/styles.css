@@ -714,7 +714,7 @@ blockquote cite {
 }
 .gallery-item        { aspect-ratio: 1; overflow: hidden; background: var(--c-bg-alt); cursor: pointer; }
 .gallery-item img    { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow); }
-.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item:hover img { transform: scale(1.02); }
 .gallery-item.tall   { grid-row: span 2; }
 .gallery-item.wide   { grid-column: span 2; }
 
@@ -2030,12 +2030,12 @@ blockquote cite {
   pointer-events: none;
   box-shadow: var(--shadow-default);
 }
-.video-thumb:hover .play-btn { transform: scale(1.12); background: var(--c-primary); }
+.video-thumb:hover .play-btn { transform: scale(1.04); background: var(--color-primary-hover); }
 
 .video-info          { padding: 1rem var(--sp-md); color: var(--c-white); }
 .video-info .meta    { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--c-primary-lt); margin-bottom: 0.35rem; }
 .video-info h4       { color: var(--c-white); font-size: 0.97rem; margin-bottom: 0.22rem; }
-.video-info p        { color: rgba(255,255,255,0.48); font-size: 0.8rem; margin: 0; }
+.video-info p        { color: var(--color-ivory); opacity: 0.72; font-size: 0.8rem; margin: 0; }
 
 /* Gallery placeholder */
 .gallery-placeholder {
