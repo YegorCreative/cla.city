@@ -868,7 +868,7 @@ blockquote cite {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: var(--z-header);
-  background: rgba(247, 244, 238, 0.92);
+  background: var(--color-ivory);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   border-bottom: 1px solid transparent;
