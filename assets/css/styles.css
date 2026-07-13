@@ -2222,6 +2222,8 @@ blockquote cite {
 .footer-col ul li { font-size: 0.87rem; color: rgba(255,255,255,0.58); }
 .footer-col a  { color: var(--color-ivory); transition: color var(--t-fast); }
 .footer-col a:hover { color: var(--c-white); }
+.footer-col a:focus-visible,
+.social-btn:focus-visible { outline: 2px solid var(--color-ivory); }
 
 .footer-bottom {
   display: flex;
