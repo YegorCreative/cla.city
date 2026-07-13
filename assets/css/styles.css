@@ -3202,6 +3202,9 @@ blockquote cite {
   .ministry-card-bg {
     transform: none !important;
   }
+  .gallery-item img {
+    transform: none !important;
+  }
 }
 
 /* ============================================================
