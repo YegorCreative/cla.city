@@ -2210,12 +2210,12 @@ blockquote cite {
   display: block;
   margin-bottom: var(--sp-sm);
 }
-.footer-brand p { color: rgba(255,255,255,0.48); font-size: 0.87rem; line-height: 1.62; margin-bottom: var(--sp-sm); }
+.footer-brand p { color: var(--color-ivory); opacity: 0.5; font-size: 0.87rem; line-height: 1.62; margin-bottom: var(--sp-sm); }
 
 .footer-col h5 {
   font-size: 0.7rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.36);
+  color: var(--color-ivory);
   margin-bottom: var(--sp-sm);
 }
 .footer-col ul { display: flex; flex-direction: column; gap: 0.42rem; }
