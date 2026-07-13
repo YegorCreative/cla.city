@@ -758,9 +758,9 @@ blockquote cite {
 }
 
 /* --- Image gradient placeholders --- */
-.img-grad       { width: 100%; height: 100%; background: linear-gradient(135deg, #2E352F, #1F2328); }
-.img-grad--warm { background: linear-gradient(135deg, #3B2512, rgba(176,122,79,0.42)); }
-.img-grad--blue { background: linear-gradient(135deg, #2D352F, #3D5A47); }
+.img-grad       { width: 100%; height: 100%; background: linear-gradient(135deg, var(--color-navy-secondary), var(--color-navy)); }
+.img-grad--warm { background: linear-gradient(135deg, var(--color-primary), var(--color-navy)); }
+.img-grad--blue { background: linear-gradient(135deg, var(--color-navy-secondary), var(--color-primary)); }
 
 /* ============================================================
    components.css
@@ -2013,7 +2013,7 @@ blockquote cite {
 .video-thumb {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #2D352F, #1F2328);
+  background: linear-gradient(135deg, var(--color-navy-secondary), var(--color-navy));
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
@@ -2022,13 +2022,13 @@ blockquote cite {
 .play-btn {
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: rgba(194, 138, 93, 0.88);
+  background: var(--color-primary);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.35rem; color: var(--c-white);
   transition: transform var(--t-spring), background var(--t-fast);
   z-index: 2; position: relative;
   pointer-events: none;
-  box-shadow: 0 4px 20px rgba(194,138,93,0.40);
+  box-shadow: var(--shadow-default);
 }
 .video-thumb:hover .play-btn { transform: scale(1.12); background: var(--c-primary); }
 
@@ -2040,7 +2040,7 @@ blockquote cite {
 /* Gallery placeholder */
 .gallery-placeholder {
   width: 100%; height: 100%;
-  background: linear-gradient(135deg, #3A3129, #2A2520);
+  background: linear-gradient(135deg, var(--color-navy-secondary), var(--color-navy));
   display: flex; align-items: center; justify-content: center;
   font-size: 1.8rem;
   color: rgba(255, 255, 255, 0.1);
