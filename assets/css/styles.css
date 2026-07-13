@@ -1223,9 +1223,9 @@ blockquote cite {
   z-index: -1;
 }
 
-.page-hero--about::before  { background: linear-gradient(135deg, #1F2328 0%, var(--accent-faith) 100%); }
-.page-hero--visit::before  { background: linear-gradient(135deg, #2B332D 0%, var(--accent-faith) 100%); }
-.page-hero--min::before    { background: linear-gradient(135deg, #2A1F1A 0%, #3D2E22 100%); }
+.page-hero--about::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
+.page-hero--visit::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
+.page-hero--min::before    { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
 .page-hero--res::before    { background: linear-gradient(135deg, #1F2328 0%, #32473A 100%); }
 .page-hero--media::before  { background: linear-gradient(135deg, #1F2328 0%, #2E352F 100%); }
 .page-hero--give::before   { background: linear-gradient(135deg, #3B2512 0%, var(--c-primary-dk) 100%); }
