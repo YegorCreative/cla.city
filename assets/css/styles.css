@@ -880,7 +880,7 @@ blockquote cite {
 
 #site-header.scrolled {
   border-bottom-color: var(--c-border);
-  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow-default);
 }
 
 .header-inner {
@@ -894,7 +894,7 @@ blockquote cite {
   font-family: var(--f-heading);
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--c-text);
+  color: var(--color-navy);
   letter-spacing: -0.3px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -911,7 +911,7 @@ blockquote cite {
   padding: 0.42rem 0.78rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--c-muted);
+  color: var(--color-navy);
   border-radius: var(--r-sm);
   transition: color var(--t-fast), background var(--t-fast);
 }
