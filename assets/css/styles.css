@@ -1005,7 +1005,7 @@ blockquote cite {
   padding: 0.78rem var(--sp-sm);
   font-size: 0.97rem;
   font-weight: 500;
-  color: var(--c-text);
+  color: var(--color-navy);
   border-radius: var(--r-sm);
   border-bottom: 1px solid var(--c-border);
   transition: background var(--t-fast), color var(--t-fast);
