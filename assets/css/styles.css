@@ -1027,7 +1027,7 @@ blockquote cite {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--c-muted);
+  color: var(--color-navy);
   transition: color var(--t-fast);
 }
 .mobile-lang-row a.active { color: var(--c-primary); }
