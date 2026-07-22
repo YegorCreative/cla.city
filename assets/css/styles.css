@@ -1201,6 +1201,15 @@ blockquote cite {
   letter-spacing: -0.038em;
   max-width: 12.5ch;
 }
+.hero-scripture {
+  max-width: 34rem;
+  margin-bottom: var(--sp-sm);
+  font-family: var(--f-quote);
+  font-style: italic;
+  color: var(--c-white);
+  opacity: 0.82;
+}
+.hero-scripture:empty { display: none; }
 .hero-content .lead {
   font-size: clamp(1.05rem, 2vw, 1.28rem);
   opacity: 0.95;
