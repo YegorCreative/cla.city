@@ -1680,7 +1680,7 @@ blockquote cite {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
-.service-panel--light .eyebrow { color: var(--c-primary); }
+.service-panel.service-panel--light .eyebrow { color: var(--c-primary); }
 .service-panel--light .service-panel__intro { color: var(--c-muted); opacity: 1; }
 .service-panel--light .service-layout--welcome .service-block {
   background: var(--c-bg-alt);
