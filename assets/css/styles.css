@@ -1857,6 +1857,18 @@ blockquote cite {
   padding: clamp(1rem, 2vw, 1.4rem);
 }
 
+/* --- Community photo: show the full frame, mute the busy backdrop --- */
+.intro-block .intro-img.intro-img--landscape { aspect-ratio: 16 / 9; }
+.intro-img--community { position: relative; }
+.intro-img--community::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-navy);
+  opacity: 0.32;
+  pointer-events: none;
+}
+
 .intro-media-card {
   box-shadow: 0 22px 62px rgba(42, 30, 20, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.74);
@@ -3637,10 +3649,6 @@ blockquote cite {
     padding: var(--sp-sm);
     border-radius: var(--r-xl);
     gap: var(--sp-sm);
-  }
-  .service-card-stack {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
   }
   .service-content-card {
     padding: var(--sp-sm);
