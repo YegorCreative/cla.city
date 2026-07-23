@@ -1369,6 +1369,11 @@ blockquote cite {
 .mtc-tag-icon svg { width: 18px; height: 18px; color: var(--color-navy); }
 .mtc-tag span { font-weight: var(--fw-semibold); font-size: 0.95rem; color: var(--c-text); }
 .bg-dark .mtc-tag span { color: var(--c-white); }
+.bg-dark .intro-block .intro-text p { color: var(--c-inverted); }
+
+@media (min-width: 1025px) {
+  .intro-block--flip .intro-img { order: -1; }
+}
 
 /* ==========================================================================
    MINISTRY CARDS
