@@ -1388,6 +1388,7 @@ blockquote cite {
 .pastor-card--centered .pastor-photo img { object-position: center 20%; }
 .pastor-card--centered .pastor-info h3 { color: var(--c-white); }
 .pastor-card--centered .pastor-info .title { color: var(--color-ivory); }
+.pastor-card--centered .pastor-info p { color: var(--color-ivory); opacity: 0.85; margin-top: 0.5rem; }
 
 /* ==========================================================================
    MINISTRY CARDS
