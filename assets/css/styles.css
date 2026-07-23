@@ -1293,6 +1293,14 @@ blockquote cite {
   z-index: -1;
 }
 
+.page-hero--home::before   { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); opacity: 0.82; }
+.page-hero__media   { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.page-hero__media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: blur(1.5px);
+  transform: scale(1.03);
+}
 .page-hero--about::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
 .page-hero--visit::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
 .page-hero--min::before    { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
@@ -1311,6 +1319,7 @@ blockquote cite {
 }
 .page-hero .container { position: relative; z-index: 1; }
 .page-hero h1         { color: var(--c-white); margin-bottom: var(--sp-xs); }
+.page-hero .eyebrow   { color: var(--color-ivory); }
 .page-hero .lead      { color: var(--color-ivory); max-width: 580px; margin-inline: auto; }
 
 /* ==========================================================================
@@ -1333,8 +1342,12 @@ blockquote cite {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
   margin-bottom: var(--sp-sm);
+}
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-navy);
 }
 .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
 .card p  { color: var(--c-muted); font-size: 0.92rem; margin: 0; }
@@ -3538,8 +3551,8 @@ blockquote cite {
   .hero-meta-pill        { font-size: 0.68rem; letter-spacing: 0.06em; padding: 0.45rem 0.78rem; }
   .hero-content h1       { font-size: clamp(2.4rem, 9vw, 3.4rem); max-width: 10ch; }
   .hero-content .lead    { max-width: none; font-size: 1rem; }
-  .hero-btns             { flex-direction: column; align-items: stretch; }
-  .hero-btns .btn        { width: 100%; max-width: none; }
+  .hero-btns             { flex-direction: column; align-items: center; }
+  .hero-btns .btn        { width: auto; max-width: 100%; }
   .hero-float-card       {
     display: none; /* topbar carries same info on mobile */
   }
