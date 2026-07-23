@@ -1357,6 +1357,19 @@ blockquote cite {
 .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
 .card p  { color: var(--c-muted); font-size: 0.92rem; margin: 0; }
 
+/* --- Compact icon+label row (MTC focus areas) --- */
+.mtc-tags { display: flex; gap: 1.5rem; margin: 1.25rem 0; flex-wrap: wrap; }
+.mtc-tag { display: flex; align-items: center; gap: 0.5rem; }
+.mtc-tag-icon {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--c-bg-alt);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mtc-tag-icon svg { width: 18px; height: 18px; color: var(--color-navy); }
+.mtc-tag span { font-weight: var(--fw-semibold); font-size: 0.95rem; color: var(--c-text); }
+.bg-dark .mtc-tag span { color: var(--c-white); }
+
 /* ==========================================================================
    MINISTRY CARDS
    ========================================================================== */
