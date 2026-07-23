@@ -1375,6 +1375,8 @@ blockquote cite {
   .intro-block--flip .intro-img { order: -1; }
 }
 
+.mtc-logo { width: 180px; height: auto; display: block; margin-bottom: 1rem; }
+
 /* ==========================================================================
    MINISTRY CARDS
    ========================================================================== */
