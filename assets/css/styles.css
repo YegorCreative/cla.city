@@ -1858,7 +1858,7 @@ blockquote cite {
 }
 
 /* --- Community photo: show the full frame, mute the busy backdrop --- */
-.intro-block .intro-img.intro-img--landscape { aspect-ratio: 16 / 9; }
+.intro-block .intro-img.intro-img--landscape { aspect-ratio: 5 / 4; }
 .intro-img--community { position: relative; }
 .intro-img--community::after {
   content: '';
