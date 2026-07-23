@@ -1665,6 +1665,34 @@ blockquote cite {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* --- Light variant: calm, matches the page's light palette --- */
+.service-panel--light {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-md);
+}
+.service-panel--light::before,
+.service-panel--light::after { display: none; }
+.service-panel--light .service-content-card {
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.service-panel--light .eyebrow { color: var(--c-primary); }
+.service-panel--light .service-panel__intro { color: var(--c-muted); opacity: 1; }
+.service-panel--light .service-layout--welcome .service-block {
+  background: var(--c-bg-alt);
+  border: 1px solid var(--c-border);
+}
+.service-panel--light .service-layout--welcome .service-block:hover {
+  background: var(--c-white);
+  border-left-color: var(--c-primary);
+}
+.service-panel--light .service-layout--welcome .service-block h4 { color: var(--c-primary); opacity: 1; }
+.service-panel--light .service-layout--welcome .service-block p  { color: var(--c-muted); opacity: 1; }
+
 .service-panel__glow {
   position: absolute;
   inset: auto 6% -18% auto;
