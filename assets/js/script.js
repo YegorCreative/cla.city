@@ -7,6 +7,7 @@ import { initLanguageSwitcher } from './language-switcher.js';
 import { initAnimations }       from './animations.js';
 import { initMediaPlayer }      from './media-player.js';
 import { initPartials }         from './partials-loader.js';
+import { initContactForms }    from './contact-form.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initPartials();
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   initLanguageSwitcher();
   initAnimations();
   initMediaPlayer();
+  initContactForms();
 });

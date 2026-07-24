@@ -2288,6 +2288,30 @@ blockquote cite {
 /* ==========================================================================
    CTA BANNER
    ========================================================================== */
+.here-for-you__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .8fr); gap: var(--sp-xl); align-items: center; }
+.here-for-you__intro { max-width: 38rem; }
+.here-for-you__intro h2 { margin-bottom: var(--sp-sm); }
+.here-for-you__intro > p { color: var(--color-navy-secondary); max-width: 34rem; }
+.here-for-you__links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--sp-sm) var(--sp-md); margin: var(--sp-lg) 0 0; padding: 0; list-style: none; }
+.here-for-you__links li { display: flex; }
+.here-for-you__links button { display: flex; align-items: center; gap: .65rem; width: 100%; padding: .2rem 0; border: 0; background: transparent; color: var(--color-navy); text-align: left; font: inherit; cursor: pointer; }
+.here-for-you__links button span { display: inline-flex; align-items: center; justify-content: center; width: 1.8rem; height: 1.8rem; border: 1px solid var(--c-border); border-radius: 50%; color: var(--color-primary); font-weight: 700; flex: 0 0 auto; }
+.here-for-you__links button:hover, .here-for-you__links button[aria-pressed="true"] { color: var(--color-primary); }
+.here-for-you__links button[aria-pressed="true"] span { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-white); }
+.here-for-you__links button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; border-radius: var(--radius-small); }
+.here-for-you__card { padding: var(--sp-lg); border: 1px solid var(--c-border); border-radius: var(--radius-large); background: var(--color-white); box-shadow: var(--shadow-default); }
+.here-for-you__card h3 { margin-bottom: var(--sp-md); }
+.here-for-you__form { display: grid; gap: var(--sp-sm); }
+.here-for-you__form label { display: grid; gap: .35rem; color: var(--color-navy); font-size: .9rem; font-weight: 600; }
+.here-for-you__form input, .here-for-you__form textarea { width: 100%; border: 1px solid var(--c-border); border-radius: var(--radius-small); padding: .7rem .8rem; color: var(--color-navy); background: var(--color-ivory); font: inherit; }
+.here-for-you__form textarea { resize: vertical; min-height: 7rem; }
+.here-for-you__form input:focus-visible, .here-for-you__form textarea:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.here-for-you__note { color: var(--color-navy-secondary); opacity: .72; font-size: .85rem; margin: 0; }
+.here-for-you__form button:disabled { opacity: .5; cursor: not-allowed; }
+.here-for-you__success { display: grid; gap: var(--sp-sm); min-height: 18rem; align-content: center; }
+.here-for-you__success h3 { margin: 0; }
+.here-for-you__success p { color: var(--color-navy-secondary); margin: 0; }
+
 .cta-banner {
   background: var(--c-bg);
   text-align: center;
@@ -2453,6 +2477,7 @@ blockquote cite {
   color: var(--color-navy);
   transition: background var(--t-fast), color var(--t-fast);
 }
+.social-btn svg { width: 1em; height: 1em; display: block; }
 .social-btn:hover { background: var(--c-primary); color: var(--c-white); }
 
 /* ==========================================================================
@@ -3923,6 +3948,8 @@ blockquote cite {
 }
 
 @media (max-width: 900px) {
+  .here-for-you__grid { grid-template-columns: 1fr; gap: var(--sp-lg); }
+
   .showcase__topbar {
     grid-template-columns: 1fr;
     justify-items: center;
