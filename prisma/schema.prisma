@@ -18,10 +18,32 @@ model Contact {
   page        String   @db.VarChar(32)
   status      String   @default("New") @db.VarChar(20)
   createdAt   DateTime @default(now()) @map("created_at")
+  prayerRequest PrayerRequest?
 
   @@index([createdAt])
   @@index([category])
   @@map("contacts")
+}
+
+model PrayerRequest {
+  id           String   @id @default(uuid()) @db.Uuid
+  contactId    String   @unique @map("contact_id") @db.Uuid
+  contact      Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  name         String   @db.VarChar(100)
+  email        String   @db.VarChar(320)
+  request      String   @db.VarChar(3000)
+  language     String   @db.VarChar(2)
+  status       String   @default("New") @db.VarChar(20)
+  assignedTo   String?  @map("assigned_to") @db.Uuid
+  private      Boolean  @default(true)
+  answered     Boolean  @default(false)
+  answeredDate DateTime? @map("answered_date")
+  notes        String?  @db.VarChar(3000)
+  @@index([status])
+  @@index([createdAt])
+  @@map("prayer_requests")
 }
 
 model User {

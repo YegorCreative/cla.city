@@ -15,3 +15,6 @@ export function getDatabase(env) {
 export async function createContact(contact, env) {
   return getDatabase(env).contact.create({ data: contact });
 }
+export async function createPrayerRequest(contact, contactId, env) {
+  return getDatabase(env).prayerRequest.create({ data: { contactId, name: contact.name, email: contact.email, request: contact.message, language: contact.language } });
+}

@@ -1,6 +1,6 @@
 import { validateContactPayload } from './validation/contact.js';
 import { sendContactEmail } from './email/resend.js';
-import { createContact } from './db.js';
+import { createContact, createPrayerRequest } from './db.js';
 
 const json = (body, status = 200, origin = '*') => new Response(JSON.stringify(body), {
   status,
@@ -29,6 +29,10 @@ export async function handleContact(request, env) {
   let savedContact;
   try { savedContact = await createContact(result.value, env); }
   catch { return json({ error: 'Internal server error.' }, 500, origin); }
+  if (result.value.category === 'prayer') {
+    try { await createPrayerRequest(result.value, savedContact.id, env); }
+    catch { return json({ error: 'Internal server error.' }, 500, origin); }
+  }
   try { await sendContactEmail(result.value, env); return json({ success: true, id: savedContact.id }, 200, origin); }
   catch { return json({ error: 'Internal server error.' }, 500, origin); }
 }

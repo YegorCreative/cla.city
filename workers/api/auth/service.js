@@ -8,7 +8,12 @@ async function hashToken(token) { return encode(await crypto.subtle.digest('SHA-
 function cookie(token, secure) { return `${cookieName}=${token}; Path=/; HttpOnly; SameSite=Lax${secure ? '; Secure' : ''}; Max-Age=28800`; }
 
 export async function login(email, password, env) {
-  const user = await getDatabase(env).user.findUnique({ where: { email: email.trim().toLowerCase() } });
+  const db = getDatabase(env);
+  if (env.ADMIN_EMAIL && env.ADMIN_PASSWORD) {
+    const existing = await db.user.findUnique({ where: { email: env.ADMIN_EMAIL.trim().toLowerCase() } });
+    if (!existing) await db.user.create({ data: { email: env.ADMIN_EMAIL.trim().toLowerCase(), passwordHash: await bcrypt.hash(env.ADMIN_PASSWORD, 12), role: 'Super Admin' } });
+  }
+  const user = await db.user.findUnique({ where: { email: email.trim().toLowerCase() } });
   if (!user || !roles.has(user.role) || !(await bcrypt.compare(password, user.passwordHash))) return null;
   const token = crypto.randomUUID() + crypto.randomUUID();
   await getDatabase(env).session.create({ data: { tokenHash: await hashToken(token), userId: user.id, expiresAt: new Date(Date.now() + 28800000) } });
