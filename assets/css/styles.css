@@ -1418,7 +1418,7 @@ blockquote cite {
 }
 .ministry-card:hover {
   transform: scale(1.025);
-  box-shadow: 0 22px 64px rgba(0,0,0,0.42), 0 0 0 1.5px rgba(194,138,93,0.40);
+  box-shadow: var(--sh-lg);
 }
 
 .ministry-card::before {
@@ -1440,6 +1440,12 @@ blockquote cite {
   background-position: center;
   transition: transform var(--t-slow);
 }
+.ministry-card-bg.mg--kids    { background-position: center 65%; }
+.ministry-card-bg.mg--youth   { background-position: center; }
+.ministry-card-bg.mg--women   { background-position: center 30%; }
+.ministry-card-bg.mg--prayer  { background-position: center 40%; }
+.ministry-card-bg.mg--groups  { background-position: center 75%; }
+.ministry-card-bg.mg--worship { background-position: center 35%; }
 .ministry-card:hover .ministry-card-bg { transform: scale(1.06); }
 
 .ministry-card-body {
