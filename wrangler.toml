@@ -1,0 +1,6 @@
+name = "cla-city-api"
+main = "workers/index.js"
+compatibility_date = "2026-07-23"
+
+[vars]
+RESEND_FROM = "CLA Website <onboarding@resend.dev>"

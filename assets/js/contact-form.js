@@ -26,9 +26,21 @@ export function initContactForms() {
     });
 
     form.addEventListener('input', updateSubmit);
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (submit.disabled) return;
+      submit.disabled = true;
+      try {
+        const response = await fetch(form.dataset.endpoint || '/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+        if (!response.ok) throw new Error('Contact request failed');
+      } catch {
+        submit.disabled = false;
+        return;
+      }
       const success = document.createElement('div');
       success.className = 'here-for-you__success';
       success.setAttribute('role', 'status');

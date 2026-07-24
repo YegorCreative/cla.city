@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../workers/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @db.VarChar(100)
+  email       String   @db.VarChar(320)
+  message     String   @db.VarChar(3000)
+  category    String   @db.VarChar(32)
+  language    String   @db.VarChar(2)
+  page        String   @db.VarChar(32)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([createdAt])
+  @@index([category])
+  @@map("contacts")
+}
