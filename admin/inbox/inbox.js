@@ -1,0 +1,13 @@
+const state = { page: 1, selected: null };
+const $ = (id) => document.getElementById(id);
+const query = () => new URLSearchParams({ page: state.page, ...Object.fromEntries(['search','status','category','language'].map((id) => [id, $(id).value]).filter(([, value]) => value)) });
+const date = (value) => new Date(value).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' });
+async function load() {
+  const response = await fetch(`/api/admin/contacts?${query()}`); const data = await response.json();
+  $('empty').hidden = data.total !== 0; $('contacts').innerHTML = data.items.map((item) => `<button class="admin-row" data-id="${item.id}"><span class="status status--${item.status.toLowerCase().replaceAll(' ','-')}">${item.status}</span><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.email)}</span><span>${item.category}</span><time>${date(item.createdAt)}</time><small>${escapeHtml(item.message.slice(0, 100))}</small></button>`).join('');
+  $('page').textContent = `Page ${data.page} of ${Math.max(1, data.pages)}`; $('prev').disabled = data.page <= 1; $('next').disabled = data.page >= data.pages;
+  document.querySelectorAll('.admin-row').forEach((row) => row.addEventListener('click', () => show(data.items.find((item) => item.id === row.dataset.id))));
+}
+function show(item) { state.selected = item; $('detail').innerHTML = `<h2>${escapeHtml(item.name)}</h2><dl><dt>Email</dt><dd>${escapeHtml(item.email)}</dd><dt>Category</dt><dd>${item.category}</dd><dt>Language</dt><dd>${item.language}</dd><dt>Page</dt><dd>${item.page}</dd><dt>Submitted</dt><dd>${date(item.createdAt)}</dd><dt>Contact ID</dt><dd class="id">${item.id}</dd></dl><p class="admin-message">${escapeHtml(item.message)}</p><label>Status<select id="detail-status"><option ${item.status==='New'?'selected':''}>New</option><option ${item.status==='In Progress'?'selected':''}>In Progress</option><option ${item.status==='Waiting'?'selected':''}>Waiting</option><option ${item.status==='Closed'?'selected':''}>Closed</option></select></label>`; $('detail-status').addEventListener('change', async (event) => { await fetch('/api/admin/contacts', { method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ id:item.id, status:event.target.value }) }); load(); }); }
+function escapeHtml(value) { return value.replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char])); }
+['search','status','category','language'].forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', () => { state.page = 1; load(); })); $('prev').addEventListener('click', () => { state.page--; load(); }); $('next').addEventListener('click', () => { state.page++; load(); }); load();
