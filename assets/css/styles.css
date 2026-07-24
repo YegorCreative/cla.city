@@ -1537,6 +1537,21 @@ blockquote cite {
   line-height: 1.62;
 }
 
+.ministry-grid--photo-fit .ministry-card-bg {
+  background-size: cover;
+}
+
+.ministry-grid--photo-fit .mg--kids    { background-position: center 25%; }
+.ministry-grid--photo-fit .mg--youth   { background-position: center 20%; }
+.ministry-grid--photo-fit .mg--women   { background-position: center 35%; }
+.ministry-grid--photo-fit .mg--prayer  { background-position: center 45%; }
+.ministry-grid--photo-fit .mg--groups  { background-position: center 30%; }
+.ministry-grid--photo-fit .mg--worship { background-position: center top; }
+
+.ministry-grid--photo-fit .ministry-card:hover .ministry-card-bg {
+  transform: none;
+}
+
 .ministry-grid--editorial .ministry-card--wide .ministry-card-body {
   max-width: 70ch;
 }
@@ -2638,7 +2653,7 @@ blockquote cite {
   transition: transform var(--t-slow);
   transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.ministry-card--premium:hover .ministry-card-bg { transform: scale(1.02); }
+.ministry-card--premium:hover .ministry-card-bg { transform: scale(1.01); }
 
 .ministry-card--premium::after {
   transition: border-color var(--t-norm), opacity var(--t-norm);
