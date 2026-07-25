@@ -2317,6 +2317,7 @@ blockquote cite {
 .pastors-combined img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-medium); }
 .pastors-combined h3 { margin-bottom:var(--sp-xs); }
 .pastors-combined p { color:var(--color-navy-secondary); margin:0; }
+.pastors-social-links { display:flex; flex-wrap:wrap; gap:var(--sp-sm); margin-top:var(--sp-md); }.pastors-social-links a { color:var(--color-primary); font-size:.9rem; }.pastors-social-links a:hover { color:var(--color-navy); }
 .home-page [aria-labelledby="leadership-heading"] .cards-grid--2 { display:none; }
 @media (max-width: 640px) { .pastors-combined { grid-template-columns:1fr; } }
 .here-for-you__form button:disabled { opacity: .5; cursor: not-allowed; }
