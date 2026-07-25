@@ -18,3 +18,10 @@ export async function createContact(contact, env) {
 export async function createPrayerRequest(contact, contactId, env) {
   return getDatabase(env).prayerRequest.create({ data: { contactId, name: contact.name, email: contact.email, request: contact.message, language: contact.language } });
 }
+export async function createVisitor(contact, contactId, env) {
+  return getDatabase(env).visitor.create({ data: { contactId, name: contact.name, email: contact.email, language: contact.language } });
+}
+export async function createVolunteer(contact, contactId, env) {
+  const [firstName, ...rest] = contact.name.split(/\s+/);
+  return getDatabase(env).volunteer.create({ data: { contactId, firstName, lastName: rest.join(' ') || null, email: contact.email, language: contact.language, ministry: 'Other', experience: contact.message } });
+}

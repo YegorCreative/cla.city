@@ -1,5 +1,6 @@
 import { getDatabase } from '../../contact/db.js';
-const statuses = new Set(['New', 'Praying', 'Answered']);
+import { config } from '../../../config.js';
+const statuses = new Set(config.prayerStatuses);
 export async function listPrayerRequests(env, params) {
   const where = {};
   if (statuses.has(params.status)) where.status = params.status;

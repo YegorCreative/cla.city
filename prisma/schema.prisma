@@ -19,10 +19,59 @@ model Contact {
   status      String   @default("New") @db.VarChar(20)
   createdAt   DateTime @default(now()) @map("created_at")
   prayerRequest PrayerRequest?
+  visitor Visitor?
+  volunteer Volunteer?
 
   @@index([createdAt])
   @@index([category])
+  @@index([email])
+  @@index([status])
   @@map("contacts")
+}
+
+model Visitor {
+  id                   String   @id @default(uuid()) @db.Uuid
+  contactId            String   @unique @map("contact_id") @db.Uuid
+  contact              Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+  name                 String   @db.VarChar(100)
+  email                String   @db.VarChar(320)
+  phone                String?  @db.VarChar(32)
+  language             String   @db.VarChar(2)
+  visitDate            DateTime? @map("visit_date")
+  status               String   @default("Planned") @db.VarChar(32)
+  welcomeAssignedTo    String?  @map("welcome_assigned_to") @db.VarChar(100)
+  followUpDate         DateTime? @map("follow_up_date")
+  notes                String?  @db.VarChar(3000)
+  @@index([status])
+  @@index([createdAt])
+  @@map("visitors")
+}
+
+model Volunteer {
+  id               String   @id @default(uuid()) @db.Uuid
+  contactId        String   @unique @map("contact_id") @db.Uuid
+  contact          Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+  firstName        String   @db.VarChar(100)
+  lastName         String?  @db.VarChar(100)
+  email            String   @db.VarChar(320)
+  phone            String?  @db.VarChar(32)
+  language         String   @db.VarChar(2)
+  ministry        String   @db.VarChar(40)
+  status           String   @default("Applied") @db.VarChar(32)
+  experience       String?  @db.VarChar(3000)
+  availability     String?  @db.VarChar(1000)
+  backgroundCheck  Boolean  @default(false) @map("background_check")
+  notes            String?  @db.VarChar(3000)
+  assignedLeader   String?  @map("assigned_leader") @db.VarChar(100)
+  @@index([status])
+  @@index([ministry])
+  @@index([language])
+  @@index([createdAt])
+  @@map("volunteers")
 }
 
 model PrayerRequest {

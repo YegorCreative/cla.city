@@ -1,6 +1,7 @@
 import { getDatabase } from '../../contact/db.js';
+import { config } from '../../../config.js';
 
-const statuses = new Set(['New', 'In Progress', 'Waiting', 'Closed']);
+const statuses = new Set(config.contactStatuses);
 
 export async function listContacts(env, filters) {
   const db = getDatabase(env);

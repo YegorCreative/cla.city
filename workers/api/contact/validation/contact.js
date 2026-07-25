@@ -1,4 +1,4 @@
-const CATEGORIES = new Set(['general', 'prayer', 'visit', 'connection']);
+const CATEGORIES = new Set(['general', 'prayer', 'visit', 'connection', 'volunteer']);
 const LANGUAGES = new Set(['en', 'ru']);
 const PAGES = new Set(['home']);
 

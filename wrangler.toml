@@ -4,3 +4,9 @@ compatibility_date = "2026-07-23"
 
 [vars]
 RESEND_FROM = "CLA Website <onboarding@resend.dev>"
+ALLOWED_ORIGINS = "https://cla.city,https://www.cla.city"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "REPLACE_WITH_PRODUCTION_KV_ID"
+preview_id = "REPLACE_WITH_STAGING_KV_ID"

@@ -1,0 +1,2 @@
+import { getDashboard } from './service.js';
+export async function handleDashboard(request, env) { try { return new Response(JSON.stringify(await getDashboard(env, new URL(request.url).searchParams.get('q') || '')), { headers:{'Content-Type':'application/json'} }); } catch { return new Response(JSON.stringify({error:'Internal server error.'}), {status:500,headers:{'Content-Type':'application/json'}}); } }

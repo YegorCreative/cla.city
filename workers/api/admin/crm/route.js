@@ -1,0 +1,2 @@
+import { listCrmContacts } from './repository.js';
+export async function handleCrmContacts(request,env){try{return new Response(JSON.stringify(await listCrmContacts(env,Object.fromEntries(new URL(request.url).searchParams))),{headers:{'Content-Type':'application/json'}});}catch{return new Response(JSON.stringify({error:'Internal server error.'}),{status:500,headers:{'Content-Type':'application/json'}});}}

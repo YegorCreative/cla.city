@@ -1,0 +1,3 @@
+import { listVisitors, updateVisitor } from './repository.js';
+const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json'}});
+export async function handleAdminVisitors(request,env){try{if(request.method==='GET')return json(await listVisitors(env,Object.fromEntries(new URL(request.url).searchParams)));if(request.method==='PATCH'){const body=await request.json();if(!body.id)return json({error:'Invalid request.'},400);return json(await updateVisitor(env,body.id,body));}return json({error:'Invalid request.'},400);}catch{return json({error:'Internal server error.'},500);}}
