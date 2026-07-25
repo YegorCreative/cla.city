@@ -22,12 +22,144 @@ model Contact {
   visitor Visitor?
   volunteer Volunteer?
   followUpTasks FollowUpTask[]
+  registrations EventRegistration[]
+  communications Communication[]
 
   @@index([createdAt])
   @@index([category])
   @@index([email])
   @@index([status])
   @@map("contacts")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  userId     String?  @map("user_id") @db.Uuid
+  module     String   @db.VarChar(60)
+  entityType String   @map("entity_type") @db.VarChar(60)
+  entityId   String?  @map("entity_id") @db.VarChar(80)
+  action     String   @db.VarChar(80)
+  beforeData Json?    @map("before_data")
+  afterData  Json?    @map("after_data")
+  ipAddress  String?  @map("ip_address") @db.VarChar(64)
+  userAgent  String?  @map("user_agent") @db.VarChar(500)
+  createdAt  DateTime @default(now()) @map("created_at")
+  @@index([createdAt])
+  @@index([module])
+  @@index([action])
+  @@index([userId])
+  @@map("audit_logs")
+}
+
+model WorkflowExecution {
+  id           String   @id @default(uuid()) @db.Uuid
+  workflowType String   @map("workflow_type") @db.VarChar(80)
+  trigger      String   @db.VarChar(80)
+  entityType   String   @map("entity_type") @db.VarChar(60)
+  entityId     String   @map("entity_id") @db.VarChar(80)
+  status       String   @db.VarChar(20)
+  startedAt    DateTime @map("started_at")
+  completedAt  DateTime? @map("completed_at")
+  error        String?  @db.VarChar(2000)
+  @@unique([trigger, entityType, entityId])
+  @@index([startedAt])
+  @@index([status])
+  @@map("workflow_executions")
+}
+
+model PlatformSettings {
+  id                 String   @id @default(uuid()) @db.Uuid
+  churchName         String?
+  churchShortName    String?
+  websiteUrl         String?
+  contactEmail       String?
+  phone              String?
+  address            String?
+  timezone           String?
+  defaultLanguage    String?  @db.VarChar(2)
+  supportedLanguages Json?
+  logoUrl            String?
+  faviconUrl         String?
+  primaryColor       String?
+  secondaryColor     String?
+  footerText         String?
+  facebookUrl        String?
+  instagramUrl       String?
+  youtubeUrl         String?
+  giveUrl            String?
+  serviceTimes       Json?
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+  updatedByUserId    String?  @map("updated_by_user_id") @db.Uuid
+  @@map("platform_settings")
+}
+
+model Communication {
+  id           String   @id @default(uuid()) @db.Uuid
+  contactId    String   @db.Uuid
+  authorUserId String   @db.Uuid
+  contact      Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  author       User     @relation(fields: [authorUserId], references: [id])
+  type         String   @default("Email") @db.VarChar(16)
+  subject      String   @db.VarChar(200)
+  body         String   @db.VarChar(10000)
+  status       String   @default("Draft") @db.VarChar(16)
+  sentAt       DateTime? @map("sent_at")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  @@index([contactId])
+  @@index([status])
+  @@index([subject])
+  @@map("communications")
+}
+
+model ContentPage {
+  id             String   @id @default(uuid()) @db.Uuid
+  slug           String   @db.VarChar(80)
+  language       String   @db.VarChar(2)
+  title          String   @db.VarChar(180)
+  content        Json
+  published      Boolean  @default(false)
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  updatedByUserId String? @map("updated_by_user_id") @db.Uuid
+  @@unique([slug, language, published])
+  @@index([slug, language])
+  @@map("content_pages")
+}
+
+model Event {
+  id                   String   @id @default(uuid()) @db.Uuid
+  title                String   @db.VarChar(180)
+  slug                 String   @unique @db.VarChar(200)
+  description          String   @db.VarChar(5000)
+  location             String   @db.VarChar(240)
+  startDate            DateTime @map("start_date")
+  endDate              DateTime @map("end_date")
+  capacity             Int?
+  registrationEnabled  Boolean  @default(true) @map("registration_enabled")
+  isPublished          Boolean  @default(false) @map("is_published")
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+  registrations        EventRegistration[]
+  @@index([startDate])
+  @@index([isPublished])
+  @@map("events")
+}
+
+model EventRegistration {
+  id           String   @id @default(uuid()) @db.Uuid
+  eventId      String   @db.Uuid
+  contactId    String   @db.Uuid
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  contact      Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  registeredAt DateTime @default(now()) @map("registered_at")
+  status       String   @default("Registered") @db.VarChar(20)
+  notes        String?  @db.VarChar(2000)
+  @@unique([eventId, contactId])
+  @@index([eventId])
+  @@index([contactId])
+  @@map("event_registrations")
 }
 
 model Visitor {
@@ -124,6 +256,7 @@ model User {
   role         String    @db.VarChar(32)
   sessions     Session[]
   assignedTasks FollowUpTask[]
+  communications Communication[]
   createdAt    DateTime  @default(now()) @map("created_at")
   @@map("users")
 }

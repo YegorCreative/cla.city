@@ -1,6 +1,7 @@
 import { validateContactPayload } from './validation/contact.js';
 import { sendContactEmail } from './email/resend.js';
 import { createContact, createPrayerRequest, createVisitor, createVolunteer } from './db.js';
+import { runWorkflow } from '../workflows.js';
 
 const json = (body, status = 200, origin) => new Response(JSON.stringify(body), {
   status,
@@ -49,6 +50,10 @@ export async function handleContact(request, env) {
     try { await createVolunteer(result.value, savedContact.id, env); }
     catch { return json({ error: 'Internal server error.' }, 500, origin); }
   }
+  runWorkflow(env, { trigger: 'Contact Created', entityType: 'Contact', entityId: savedContact.id });
+  if (result.value.category === 'prayer') runWorkflow(env, { trigger: 'Prayer Request Created', entityType: 'Contact', entityId: savedContact.id });
+  if (result.value.category === 'visit') runWorkflow(env, { trigger: 'Visitor Created', entityType: 'Contact', entityId: savedContact.id });
+  if (result.value.category === 'volunteer') runWorkflow(env, { trigger: 'Volunteer Created', entityType: 'Contact', entityId: savedContact.id });
   try { await sendContactEmail(result.value, env); return json({ success: true, id: savedContact.id }, 200, origin); }
   catch { return json({ error: 'Internal server error.' }, 500, origin); }
 }

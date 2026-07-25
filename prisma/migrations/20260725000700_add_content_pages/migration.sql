@@ -1,0 +1,2 @@
+CREATE TABLE "content_pages" ("id" UUID NOT NULL,"slug" VARCHAR(80) NOT NULL,"language" VARCHAR(2) NOT NULL,"title" VARCHAR(180) NOT NULL,"content" JSONB NOT NULL,"published" BOOLEAN NOT NULL DEFAULT false,"created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,"updated_at" TIMESTAMP(3) NOT NULL,"updated_by_user_id" UUID,CONSTRAINT "content_pages_pkey" PRIMARY KEY ("id"));
+CREATE UNIQUE INDEX "content_pages_slug_language_published_key" ON "content_pages"("slug","language","published");CREATE INDEX "content_pages_slug_language_idx" ON "content_pages"("slug","language");

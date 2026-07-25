@@ -2307,6 +2307,18 @@ blockquote cite {
 .here-for-you__form textarea { resize: vertical; min-height: 7rem; }
 .here-for-you__form input:focus-visible, .here-for-you__form textarea:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 .here-for-you__note { color: var(--color-navy-secondary); opacity: .72; font-size: .85rem; margin: 0; }
+.home-page { display: flex; flex-direction: column; }
+.home-page > [data-partial="header"] { order: 0; }
+.home-page > .page-hero { order: 1; }
+.home-page > section[aria-labelledby="leadership-heading"] { order: 2; }
+.home-page > section:not(.page-hero):not([aria-labelledby="leadership-heading"]) { order: 3; }
+.home-page > [data-partial="footer"] { order: 4; }
+.pastors-combined { display:grid; grid-template-columns:minmax(12rem, .8fr) 1fr; gap:var(--sp-lg); align-items:center; max-width:52rem; margin:0 auto var(--sp-lg); padding:var(--sp-md); }
+.pastors-combined img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-medium); }
+.pastors-combined h3 { margin-bottom:var(--sp-xs); }
+.pastors-combined p { color:var(--color-navy-secondary); margin:0; }
+.home-page [aria-labelledby="leadership-heading"] .cards-grid--2 { display:none; }
+@media (max-width: 640px) { .pastors-combined { grid-template-columns:1fr; } }
 .here-for-you__form button:disabled { opacity: .5; cursor: not-allowed; }
 .here-for-you__success { display: grid; gap: var(--sp-sm); min-height: 18rem; align-content: center; }
 .here-for-you__success h3 { margin: 0; }

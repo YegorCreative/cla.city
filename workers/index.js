@@ -7,6 +7,12 @@ import { handleAdminVolunteers } from './api/admin/volunteers/route.js';
 import { handleDashboard } from './api/admin/dashboard/route.js';
 import { handleCrmContacts } from './api/admin/crm/route.js';
 import { handleTasks } from './api/admin/tasks/route.js';
+import { handleEvents } from './api/events.js';
+import { handleContent } from './api/admin/content.js';
+import { handleCommunications } from './api/admin/communications.js';
+import { handleSettings } from './api/admin/settings.js';
+import { handleAudit } from './api/admin/audit.js';
+import { getDatabase } from './api/contact/db.js';
 import { json, corsHeaders } from './api/shared.js';
 import { requestId, log } from './config.js';
 
@@ -46,6 +52,30 @@ export default {
     if (url.pathname === '/api/admin/tasks') {
       if (!await requireSession(request, env)) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
       return handleTasks(request, env);
+    }
+    if (url.pathname === '/api/events' || url.pathname === '/api/admin/events') {
+      if (url.pathname === '/api/admin/events' && !await requireSession(request, env)) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
+      return handleEvents(request, env);
+    }
+    if (url.pathname === '/api/admin/content') {
+      const user = await requireSession(request, env); if (!user) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
+      return handleContent(request, env, user);
+    }
+    if (url.pathname === '/api/admin/communications') {
+      const user = await requireSession(request, env); if (!user) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
+      return handleCommunications(request, env, user);
+    }
+    if (url.pathname === '/api/admin/settings') {
+      const user = await requireSession(request, env); if (!user) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
+      return handleSettings(request, env, user);
+    }
+    if (url.pathname === '/api/admin/audit') {
+      const user = await requireSession(request, env); if (!user) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
+      return handleAudit(request, env, user);
+    }
+    if (url.pathname === '/api/admin/workflows') {
+      const user = await requireSession(request, env); if (!user) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id)); if (!['Super Admin','Pastor'].includes(user.role)) return json({error:'Forbidden.'},403);
+      const db=getDatabase(env); return json(await db.workflowExecution.findMany({orderBy:{startedAt:'desc'},take:50}));
     }
     if (url.pathname === '/api/admin/login' || url.pathname === '/api/admin/logout') return handleAuth(request, env);
     return new Response('Not found', { status: 404 });
