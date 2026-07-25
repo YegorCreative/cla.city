@@ -6,6 +6,7 @@ import { handleAdminVisitors } from './api/admin/visitors/route.js';
 import { handleAdminVolunteers } from './api/admin/volunteers/route.js';
 import { handleDashboard } from './api/admin/dashboard/route.js';
 import { handleCrmContacts } from './api/admin/crm/route.js';
+import { handleTasks } from './api/admin/tasks/route.js';
 import { json, corsHeaders } from './api/shared.js';
 import { requestId, log } from './config.js';
 
@@ -41,6 +42,10 @@ export default {
     if (url.pathname === '/api/admin/crm-contacts') {
       if (!await requireSession(request, env)) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
       return handleCrmContacts(request, env);
+    }
+    if (url.pathname === '/api/admin/tasks') {
+      if (!await requireSession(request, env)) return json({ error: 'Unauthorized.', requestId: id }, 401, corsHeaders(env, id));
+      return handleTasks(request, env);
     }
     if (url.pathname === '/api/admin/login' || url.pathname === '/api/admin/logout') return handleAuth(request, env);
     return new Response('Not found', { status: 404 });

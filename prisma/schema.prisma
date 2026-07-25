@@ -21,6 +21,7 @@ model Contact {
   prayerRequest PrayerRequest?
   visitor Visitor?
   volunteer Volunteer?
+  followUpTasks FollowUpTask[]
 
   @@index([createdAt])
   @@index([category])
@@ -74,6 +75,27 @@ model Volunteer {
   @@map("volunteers")
 }
 
+model FollowUpTask {
+  id             String   @id @default(uuid()) @db.Uuid
+  contactId      String   @db.Uuid
+  contact        Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  assignedUserId String?  @map("assigned_user_id") @db.Uuid
+  assignedUser   User?    @relation(fields: [assignedUserId], references: [id], onDelete: SetNull)
+  title          String   @db.VarChar(160)
+  description    String?  @db.VarChar(3000)
+  dueDate        DateTime @map("due_date")
+  priority       String   @default("Normal") @db.VarChar(16)
+  status         String   @default("Open") @db.VarChar(20)
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  completedAt    DateTime? @map("completed_at")
+  @@index([contactId])
+  @@index([assignedUserId])
+  @@index([status])
+  @@index([dueDate])
+  @@map("follow_up_tasks")
+}
+
 model PrayerRequest {
   id           String   @id @default(uuid()) @db.Uuid
   contactId    String   @unique @map("contact_id") @db.Uuid
@@ -101,6 +123,7 @@ model User {
   passwordHash String    @map("password_hash")
   role         String    @db.VarChar(32)
   sessions     Session[]
+  assignedTasks FollowUpTask[]
   createdAt    DateTime  @default(now()) @map("created_at")
   @@map("users")
 }
