@@ -2377,11 +2377,11 @@ blockquote cite {
   scroll-margin-top: calc(var(--header-h, 72px) + 0.85rem);
 }
 
-/* Church Life — deliberate 5-photo editorial grid */
+/* Church Life — simple editorial story grid (people-first) */
 .life-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: minmax(220px, 28vw) minmax(220px, 28vw) minmax(200px, 24vw);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(260px, 34vw) minmax(220px, 26vw) minmax(220px, 26vw);
   gap: 0.75rem;
 }
 .life-grid__item {
@@ -2391,11 +2391,11 @@ blockquote cite {
   background: var(--c-bg-alt);
   min-height: 0;
 }
-.life-grid__item:nth-child(1) { grid-column: 1 / span 7; grid-row: 1; }
-.life-grid__item:nth-child(2) { grid-column: 8 / span 5; grid-row: 1; }
-.life-grid__item:nth-child(3) { grid-column: 1 / span 5; grid-row: 2; }
-.life-grid__item:nth-child(4) { grid-column: 6 / span 7; grid-row: 2; }
-.life-grid__item:nth-child(5) { grid-column: 1 / -1; grid-row: 3; }
+.life-grid__item:nth-child(1) { grid-column: 1 / -1; grid-row: 1; } /* wide worship */
+.life-grid__item:nth-child(2) { grid-column: 1; grid-row: 2; }
+.life-grid__item:nth-child(3) { grid-column: 2; grid-row: 2; }
+.life-grid__item:nth-child(4) { grid-column: 1; grid-row: 3; }
+.life-grid__item:nth-child(5) { grid-column: 2; grid-row: 3; }
 .life-grid__item img {
   width: 100%;
   height: 100%;
@@ -2403,11 +2403,11 @@ blockquote cite {
   display: block;
   transition: transform var(--t-slow);
 }
-.life-grid__item:nth-child(1) img { object-position: center 22%; } /* baptism group */
-.life-grid__item:nth-child(2) img { object-position: center 40%; } /* family: keep child in frame */
-.life-grid__item:nth-child(3) img { object-position: center 30%; } /* friends group */
-.life-grid__item:nth-child(4) img { object-position: center 28%; } /* kids classroom */
-.life-grid__item:nth-child(5) img { object-position: center 18%; } /* women gathering faces */
+.life-grid__item:nth-child(1) img { object-position: center 42%; } /* congregation faces */
+.life-grid__item:nth-child(2) img { object-position: center 32%; } /* friends group faces */
+.life-grid__item:nth-child(3) img { object-position: center 42%; } /* family + child */
+.life-grid__item:nth-child(4) img { object-position: center 30%; } /* kids classroom */
+.life-grid__item:nth-child(5) img { object-position: center 22%; } /* women faces */
 .life-grid__item:hover img { transform: scale(1.02); }
 
 .ministry-card-bg.mg--youth { background-position: center 35%; }
