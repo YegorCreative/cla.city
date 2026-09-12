@@ -2381,8 +2381,8 @@ blockquote cite {
 .home-page > section[aria-labelledby="leadership-heading"] { order: 2; }
 .home-page > section:not(.page-hero):not([aria-labelledby="leadership-heading"]) { order: 3; }
 .home-page > [data-partial="footer"] { order: 4; }
-.pastors-combined { display:grid; grid-template-columns:minmax(12rem, .8fr) 1fr; gap:var(--sp-lg); align-items:center; max-width:52rem; margin:0 auto var(--sp-lg); padding:var(--sp-md); }
-.pastors-combined img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 30%; border-radius:var(--radius-medium); }
+.pastors-combined { display:grid; grid-template-columns:minmax(12rem, .8fr) 1fr; gap:var(--sp-lg); align-items:center; max-width:52rem; margin:0 auto var(--sp-lg); padding:var(--sp-md); overflow:hidden; }
+.pastors-combined > img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 30%; border-radius:var(--radius-medium); }
 .pastors-combined h3 { margin-bottom:var(--sp-xs); }
 .pastors-combined p { color:var(--color-navy-secondary); margin:0; }
 
@@ -2391,16 +2391,63 @@ blockquote cite {
   margin: 0 0 var(--sp-lg);
   border-radius: var(--r-lg);
   overflow: hidden;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 8;
+  min-height: 280px;
   background: var(--color-navy);
 }
 .service-visual img {
   width: 100%;
-  height: 115%;
-  margin-top: -7.5%;
+  height: 130%;
+  margin-top: -15%;
   object-fit: cover;
   object-position: center 42%;
   display: block;
+  will-change: transform;
+}
+
+.section--spacious {
+  padding-block: clamp(3.5rem, 7vw, 5.75rem);
+}
+
+.page-hero--home .page-hero__content {
+  will-change: transform;
+}
+.page-hero--home .page-hero__video {
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.intro-img--photo.parallax-media {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  min-height: 22rem;
+}
+.intro-img--photo.parallax-media img {
+  width: 100%;
+  height: 125%;
+  margin-top: -12%;
+  object-fit: cover;
+  object-position: center 30%;
+  will-change: transform;
+}
+
+.pastors-combined__photo {
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+  aspect-ratio: 4 / 3;
+}
+.pastors-combined__photo img {
+  width: 100%;
+  height: 125%;
+  margin-top: -12%;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+  will-change: transform;
+  aspect-ratio: auto;
+}
+.pastors-combined.card {
+  overflow: hidden;
 }
 
 /* Anchor targets clear fixed header */
@@ -2434,12 +2481,18 @@ blockquote cite {
   display: block;
   transition: transform var(--t-slow);
 }
+.life-grid__item.parallax-media img {
+  height: 130%;
+  margin-top: -15%;
+  will-change: transform;
+}
 .life-grid__item:nth-child(1) img { object-position: center 42%; } /* congregation faces */
 .life-grid__item:nth-child(2) img { object-position: center 32%; } /* friends group faces */
 .life-grid__item:nth-child(3) img { object-position: center 42%; } /* family + child */
 .life-grid__item:nth-child(4) img { object-position: center 30%; } /* kids classroom */
-.life-grid__item:nth-child(5) img { object-position: center 28%; } /* women-painting-event-01 */
+.life-grid__item:nth-child(5) img { object-position: center 22%; } /* women-painting-event-03 heads */
 .life-grid__item:hover img { transform: scale(1.02); }
+.life-grid__item.parallax-media:hover img { transform: none; }
 
 .ministry-card-bg.mg--youth { background-position: center 35%; }
 .ministry-card-bg.mg--groups { background-position: center 28%; }
@@ -3475,14 +3528,21 @@ blockquote cite {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(22px);
   transition:
-    opacity   0.55s var(--ease-out, ease),
-    transform 0.55s var(--ease-out, ease);
+    opacity   0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+.section-header.fade-in { transform: translateY(18px); }
+.parallax-media.fade-in {
+  transform: translateY(26px) scale(0.985);
+}
+.parallax-media.fade-in.visible {
+  transform: translateY(0) scale(1);
 }
 
 /* No-JS / progressive enhancement: content stays readable */
@@ -3594,15 +3654,16 @@ html:not(.js) .fade-in--right {
    REDUCED MOTION — respect user accessibility preferences
    ========================================================================== */
 
-/* Subtle photographic parallax host */
+/* Photographic parallax host — layers are oversized to avoid blank edges */
 .parallax-media {
   overflow: hidden;
   isolation: isolate;
+  position: relative;
 }
 .parallax-media > img,
 .parallax-media [data-parallax-layer] {
   will-change: transform;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale(1.14);
   backface-visibility: hidden;
 }
 
@@ -3624,7 +3685,9 @@ html:not(.js) .fade-in--right {
     transition: none !important;
   }
   .parallax-media > img,
-  .parallax-media [data-parallax-layer] {
+  .parallax-media [data-parallax-layer],
+  .page-hero--home .page-hero__video,
+  .page-hero--home .page-hero__content {
     transform: none !important;
     will-change: auto;
   }
