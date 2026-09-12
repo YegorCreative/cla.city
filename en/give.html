@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Give online to Church LA through the verified donation page." />
+  <meta name="description" content="Give online to Church LA securely through Tithe.ly." />
   <title>Give — Church LA</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
@@ -38,15 +38,15 @@
             <div class="give-step fade-in">
               <div class="give-step-num">1</div>
               <div class="give-step-text">
-                <h4>Open the Official Page</h4>
-                <p>Use the verified Church LA donation link below.</p>
+                <h4>Choose Give Today</h4>
+                <p>Use the Church LA Tithe.ly giving button on this page.</p>
               </div>
             </div>
             <div class="give-step fade-in">
               <div class="give-step-num">2</div>
               <div class="give-step-text">
                 <h4>Complete Your Gift</h4>
-                <p>Follow the instructions on the official donation page.</p>
+                <p>Tithe.ly will securely guide you through the rest of the process.</p>
               </div>
             </div>
             <div class="give-step fade-in">
@@ -66,26 +66,23 @@
 
         <!-- RIGHT: ONLINE GIVING INTEGRATION -->
         <section class="give-cta-box fade-in" aria-labelledby="online-giving-heading">
-          <h3 id="online-giving-heading">How Your Giving Helps</h3>
+          <h3 id="online-giving-heading">Give Online</h3>
           <p>Your generosity supports the ministry of CLA City, outreach, discipleship, children's ministry, worship, missions, and the daily work of the church.</p>
 
           <div aria-label="Giving platform integration">
-            <!-- Approved giving platform -->
+            <p>Online giving is available through Tithe.ly, the secure giving platform used by Church LA.</p>
+            <button type="button" class="btn btn-primary btn-lg tithely-give-button" data-form="5403bb26-d85e-4e89-b0f2-6e16414a78b1">Give Today</button>
           </div>
 
           <aside aria-label="Security and privacy information">
             <h4>Safe &amp; Secure</h4>
-            <p>When online giving becomes available, every donation will be processed through a secure platform chosen by the church leadership.</p>
+            <p>Donations are processed by Tithe.ly. Church LA does not collect or store your payment card information on this website.</p>
           </aside>
 
           <section aria-label="Online giving frequently asked questions">
             <h4>Questions?</h4>
             <p>If you have questions about giving or would like to speak with someone, please contact our church. We'd be happy to help.</p>
           </section>
-
-          <div aria-label="Online giving action">
-            <!-- Approved CTA -->
-          </div>
         </section>
 
       </div>
@@ -117,7 +114,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Please use the official donation page linked above. Contact us if you have questions before giving.</div>
+            <div class="faq-answer-inner">Yes. Online gifts are processed securely through Tithe.ly. Church LA does not handle card details on this website.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -126,7 +123,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Only the official donation page is verified at this time. Please contact us if you have questions before giving.</div>
+            <div class="faq-answer-inner">Please use the Tithe.ly giving form on this page. Contact us if you have questions before giving.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -150,8 +147,8 @@
       <h2>Your Generosity Matters</h2>
       <p class="lead">Thank you for supporting Church LA.</p>
       <div class="hero-btns">
-        <a href="#give-heading" class="btn btn-white btn-lg">Give Today →</a>
-        <a href="about.html"    class="btn btn-outline btn-lg">Learn Our Story</a>
+        <button type="button" class="btn btn-white btn-lg tithely-give-button" data-form="5403bb26-d85e-4e89-b0f2-6e16414a78b1">Give Today →</button>
+        <a href="about.html" class="btn btn-outline btn-lg">Learn Our Story</a>
       </div>
     </div>
   </section>
@@ -159,6 +156,7 @@
 
   <div data-partial="footer"></div>
 
+  <script src="https://static.tithely.com/give/give.js" defer></script>
   <script type="module" src="../assets/js/script.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Пожертвовать онлайн в Church LA через подтверждённую страницу пожертвования." />
+  <meta name="description" content="Пожертвуйте онлайн в Church LA безопасно через Tithe.ly." />
   <title>Пожертвование — Church LA</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
@@ -38,15 +38,15 @@
             <div class="give-step fade-in">
               <div class="give-step-num">1</div>
               <div class="give-step-text">
-                <h4>Откройте официальную страницу</h4>
-                <p>Используйте подтверждённую ссылку для пожертвования Church LA ниже.</p>
+                <h4>Нажмите «Пожертвовать»</h4>
+                <p>Используйте кнопку пожертвования Church LA через Tithe.ly на этой странице.</p>
               </div>
             </div>
             <div class="give-step fade-in">
               <div class="give-step-num">2</div>
               <div class="give-step-text">
                 <h4>Завершите пожертвование</h4>
-                <p>Следуйте инструкциям на официальной странице пожертвования.</p>
+                <p>Tithe.ly безопасно проведёт вас через остальные шаги.</p>
               </div>
             </div>
             <div class="give-step fade-in">
@@ -66,26 +66,23 @@
 
         <!-- ПРАВАЯ ЧАСТЬ: ИНТЕГРАЦИЯ ОНЛАЙН-ПОЖЕРТВОВАНИЙ -->
         <section class="give-cta-box fade-in" aria-labelledby="online-giving-heading">
-          <h3 id="online-giving-heading">Как используются пожертвования</h3>
-          <p>Ваши пожертвования помогают поддерживать служения CLA City, благовестие, ученичество, детское служение, поклонение, миссии и повседневую жизнь церкви.</p>
+          <h3 id="online-giving-heading">Пожертвовать онлайн</h3>
+          <p>Ваши пожертвования помогают поддерживать служения CLA City, благовестие, ученичество, детское служение, поклонение, миссии и повседневную жизнь церкви.</p>
 
           <div aria-label="Интеграция платформы для пожертвований">
-            <!-- Approved giving platform -->
+            <p>Онлайн-пожертвования доступны через Tithe.ly — защищённую платформу, которой пользуется Church LA.</p>
+            <button type="button" class="btn btn-primary btn-lg tithely-give-button" data-form="5403bb26-d85e-4e89-b0f2-6e16414a78b1">Пожертвовать</button>
           </div>
 
           <aside aria-label="Информация о безопасности и конфиденциальности">
             <h4>Безопасность</h4>
-            <p>Когда онлайн-пожертвования будут доступны, все платежи будут обрабатываться через безопасную платформу, утвержденную руководством церкви.</p>
+            <p>Платежи обрабатывает Tithe.ly. Church LA не собирает и не хранит данные вашей карты на этом сайте.</p>
           </aside>
 
           <section aria-label="Часто задаваемые вопросы об онлайн-пожертвованиях">
             <h4>Есть вопросы?</h4>
             <p>Если у вас есть вопросы о пожертвованиях, пожалуйста, свяжитесь с нами. Мы будем рады помочь.</p>
           </section>
-
-          <div aria-label="Действие для онлайн-пожертвований">
-            <!-- Approved CTA -->
-          </div>
         </section>
 
       </div>
@@ -117,7 +114,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Пожалуйста, используйте официальную страницу пожертвования по ссылке выше. Свяжитесь с нами, если у вас есть вопросы перед пожертвованием.</div>
+            <div class="faq-answer-inner">Да. Онлайн-пожертвования обрабатываются безопасно через Tithe.ly. Church LA не обрабатывает данные карт на этом сайте.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -126,7 +123,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">На данный момент подтверждена только официальная страница пожертвования. Свяжитесь с нами, если у вас есть вопросы перед пожертвованием.</div>
+            <div class="faq-answer-inner">Пожалуйста, используйте форму Tithe.ly на этой странице. Свяжитесь с нами, если у вас есть вопросы перед пожертвованием.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -150,8 +147,8 @@
       <h2>Ваша щедрость важна</h2>
       <p class="lead">Спасибо за поддержку Church LA.</p>
       <div class="hero-btns">
-        <a href="#give-heading" class="btn btn-white btn-lg">Пожертвовать →</a>
-        <a href="about.html"    class="btn btn-outline btn-lg">Узнать нашу историю</a>
+        <button type="button" class="btn btn-white btn-lg tithely-give-button" data-form="5403bb26-d85e-4e89-b0f2-6e16414a78b1">Пожертвовать →</button>
+        <a href="about.html" class="btn btn-outline btn-lg">Узнать нашу историю</a>
       </div>
     </div>
   </section>
@@ -159,6 +156,7 @@
 
   <div data-partial="footer"></div>
 
+  <script src="https://static.tithely.com/give/give.js" defer></script>
   <script type="module" src="../assets/js/script.js"></script>
 </body>
 </html>
