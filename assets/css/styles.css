@@ -1476,29 +1476,46 @@ blockquote cite {
 }
 .ministry-card-bg.mg--kids    { background-position: center 65%; }
 .ministry-card-bg.mg--youth   { background-position: center; }
-.ministry-card-bg.mg--women   { background-position: center center; background-size: cover; }
 .ministry-card-bg.mg--prayer  { background-position: center 40%; }
 .ministry-card-bg.mg--groups  { background-position: center 75%; }
 .ministry-card-bg.mg--worship { background-position: center 35%; }
-
-/*
-  Women's group photo is naturally ~3:2 (2560×1707).
-  Fixed card heights (~1.08) forced cover to clip heads.
-  Match the photo geometry so the full group — including every head — remains visible.
-*/
-.ministry-card:has(.mg--women) {
-  height: auto;
-  aspect-ratio: 3 / 2;
-  min-height: 0;
-}
-.intro-block .intro-img:has(img.img-people-top) {
-  aspect-ratio: 3 / 2;
-}
-.intro-block .intro-img img.img-people-top {
-  object-fit: cover;
-  object-position: center center;
-}
 .ministry-card:hover .ministry-card-bg { transform: scale(1.06); }
+
+/* Women's card: full natural photograph (no cover crop) */
+.ministry-grid .ministry-card.ministry-card--women,
+.ministry-card.ministry-card--women {
+  height: auto !important;
+  min-height: 0;
+  display: block;
+  align-self: start; /* don't stretch to taller sibling cards */
+  align-items: stretch;
+}
+.ministry-card--women .ministry-card-fullphoto {
+  width: 100%;
+  height: auto !important;
+  max-width: 100%;
+  display: block;
+  object-fit: initial;
+  object-position: initial;
+}
+.ministry-card--women .ministry-card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.intro-block .intro-img.intro-img--natural {
+  aspect-ratio: auto;
+  height: auto;
+}
+.intro-block .intro-img.intro-img--natural img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: initial;
+  object-position: initial;
+}
 
 .ministry-card-body {
   position: relative;
@@ -1595,7 +1612,6 @@ blockquote cite {
 
 .ministry-grid--photo-fit .mg--kids    { background-position: center 25%; }
 .ministry-grid--photo-fit .mg--youth   { background-position: center 20%; }
-.ministry-grid--photo-fit .mg--women   { background-position: center center; }
 .ministry-grid--photo-fit .mg--prayer  { background-position: center 45%; }
 .ministry-grid--photo-fit .mg--groups  { background-position: center 30%; }
 .ministry-grid--photo-fit .mg--worship { background-position: center top; }
@@ -2422,7 +2438,7 @@ blockquote cite {
 .life-grid__item:nth-child(2) img { object-position: center 32%; } /* friends group faces */
 .life-grid__item:nth-child(3) img { object-position: center 42%; } /* family + child */
 .life-grid__item:nth-child(4) img { object-position: center 30%; } /* kids classroom */
-.life-grid__item:nth-child(5) img { object-position: center center; } /* women group — full heads */
+.life-grid__item:nth-child(5) img { object-position: center 28%; } /* women-painting-event-01 */
 .life-grid__item:hover img { transform: scale(1.02); }
 
 .ministry-card-bg.mg--youth { background-position: center 35%; }
@@ -4025,10 +4041,7 @@ html:not(.js) .fade-in--right {
 
   /* Ministry card */
   .ministry-card { height: 300px; }
-  .ministry-card:has(.mg--women) {
-    height: auto;
-    aspect-ratio: 3 / 2;
-  }
+  .ministry-card.ministry-card--women { height: auto; }
 }
 
 /* ==========================================================================
