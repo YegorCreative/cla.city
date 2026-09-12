@@ -1297,17 +1297,24 @@ blockquote cite {
   z-index: -1;
 }
 
-.page-hero--home::before   { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); opacity: 0.82; }
+.page-hero--home::before   { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); opacity: 0.72; }
 .page-hero--home .hero-btns { justify-content: center; }
 .page-hero__media   { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.page-hero__media picture,
 .page-hero__media img {
+  display: block;
   width: 100%; height: 100%;
-  object-fit: cover;
-  filter: blur(1.5px);
-  transform: scale(1.03);
 }
+.page-hero__media img {
+  object-fit: cover;
+  object-position: center 42%;
+  filter: blur(0.6px);
+  transform: scale(1.02);
+}
+.page-hero--home .page-hero__media img { object-position: center 48%; }
+.page-hero--visit::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); opacity: 0.78; }
+.page-hero--visit .page-hero__media img { object-position: center 35%; filter: blur(0.4px); }
 .page-hero--about::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
-.page-hero--visit::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
 .page-hero--min::before    { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
 .page-hero--res::before    { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
 .page-hero--media::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); }
@@ -2314,9 +2321,53 @@ blockquote cite {
 .home-page > section:not(.page-hero):not([aria-labelledby="leadership-heading"]) { order: 3; }
 .home-page > [data-partial="footer"] { order: 4; }
 .pastors-combined { display:grid; grid-template-columns:minmax(12rem, .8fr) 1fr; gap:var(--sp-lg); align-items:center; max-width:52rem; margin:0 auto var(--sp-lg); padding:var(--sp-md); }
-.pastors-combined img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-medium); }
+.pastors-combined img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 30%; border-radius:var(--radius-medium); }
 .pastors-combined h3 { margin-bottom:var(--sp-xs); }
 .pastors-combined p { color:var(--color-navy-secondary); margin:0; }
+
+/* Sunday worship visual */
+.service-visual {
+  margin: 0 0 var(--sp-lg);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+  background: var(--color-navy);
+}
+.service-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+/* Church Life photo grid */
+.life-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.65rem;
+}
+.life-grid__item {
+  margin: 0;
+  grid-column: span 4;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--c-bg-alt);
+}
+.life-grid__item--wide { grid-column: span 6; }
+.life-grid__item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-slow);
+}
+.life-grid__item:hover img { transform: scale(1.03); }
+
+.ministry-card-bg.mg--youth { background-position: center 35%; }
+.ministry-card-bg.mg--groups { background-position: center 28%; }
+.ministry-card-bg.mg--worship { background-position: center 40%; }
 .pastors-social-links { display:flex; flex-wrap:wrap; gap:var(--sp-sm); margin-top:var(--sp-md); }.pastors-social-links a { color:var(--color-primary); font-size:.9rem; }.pastors-social-links a:hover { color:var(--color-navy); }
 .home-page [aria-labelledby="leadership-heading"] .cards-grid--2 { display:none; }
 @media (max-width: 640px) { .pastors-combined { grid-template-columns:1fr; } }
@@ -3586,6 +3637,10 @@ blockquote cite {
   .intro-copy-card { padding: 0.5rem; }
   .intro-block--who .intro-img { aspect-ratio: 4 / 3; }
   .service-layout { grid-template-columns: 1fr; }
+  .service-visual { aspect-ratio: 16 / 9; margin-bottom: var(--sp-md); }
+  .life-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .life-grid__item,
+  .life-grid__item--wide { grid-column: span 1; }
   .service-layout--welcome {
     grid-template-columns: 1fr;
     padding: var(--sp-md);
