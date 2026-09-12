@@ -8,8 +8,10 @@ export function initAnimations() {
 
 /* --- IntersectionObserver scroll reveal --- */
 function initScrollReveal() {
-  if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  const targets = document.querySelectorAll('.fade-in, .fade-in--scale, .fade-in--left, .fade-in--right');
+
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    targets.forEach(el => el.classList.add('visible'));
     return;
   }
 
@@ -22,7 +24,7 @@ function initScrollReveal() {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  targets.forEach(el => observer.observe(el));
 }
 
 /* --- FAQ accordion --- */

@@ -320,8 +320,15 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h, 72px) + 0.85rem);
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -2355,10 +2362,16 @@ blockquote cite {
 }
 .service-visual img {
   width: 100%;
-  height: 100%;
+  height: 115%;
+  margin-top: -7.5%;
   object-fit: cover;
   object-position: center 42%;
   display: block;
+}
+
+/* Anchor targets clear fixed header */
+[id] {
+  scroll-margin-top: calc(var(--header-h, 72px) + 0.85rem);
 }
 
 /* Church Life photo grid */
@@ -3419,14 +3432,23 @@ blockquote cite {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(16px);
   transition:
-    opacity   var(--t-reveal),
-    transform var(--t-reveal);
+    opacity   0.55s var(--ease-out, ease),
+    transform 0.55s var(--ease-out, ease);
 }
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* No-JS / progressive enhancement: content stays readable */
+html:not(.js) .fade-in,
+html:not(.js) .fade-in--scale,
+html:not(.js) .fade-in--left,
+html:not(.js) .fade-in--right {
+  opacity: 1;
+  transform: none;
 }
 
 /* Scale reveal variant */
@@ -3529,7 +3551,22 @@ blockquote cite {
    REDUCED MOTION — respect user accessibility preferences
    ========================================================================== */
 
+/* Subtle photographic parallax host */
+.parallax-media {
+  overflow: hidden;
+  isolation: isolate;
+}
+.parallax-media > img,
+.parallax-media [data-parallax-layer] {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
   *, *::before, *::after {
     animation-duration:        0.01ms !important;
     animation-iteration-count: 1      !important;
@@ -3539,8 +3576,14 @@ blockquote cite {
   .fade-in--scale,
   .fade-in--left,
   .fade-in--right {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .parallax-media > img,
+  .parallax-media [data-parallax-layer] {
+    transform: none !important;
+    will-change: auto;
   }
   .ministry-card,
   .ministry-card-bg {

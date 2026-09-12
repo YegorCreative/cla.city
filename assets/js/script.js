@@ -9,6 +9,9 @@ import { initMediaPlayer }      from './media-player.js';
 import { initPartials }         from './partials-loader.js';
 import { initContactForms }    from './contact-form.js';
 import { initHeroVideo }        from './hero-video.js';
+import { initScrollMotion }     from './scroll-motion.js';
+
+document.documentElement.classList.add('js');
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initPartials();
@@ -18,4 +21,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   initMediaPlayer();
   initContactForms();
   initHeroVideo();
+  initScrollMotion();
 });
