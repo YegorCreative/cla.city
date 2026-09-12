@@ -1297,9 +1297,16 @@ blockquote cite {
   z-index: -1;
 }
 
-.page-hero--home::before   { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); opacity: 0.72; }
+.page-hero--home::before   {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.62) 0%, rgba(30, 64, 175, 0.48) 100%);
+  opacity: 1;
+  z-index: 1;
+}
 .page-hero--home .hero-btns { justify-content: center; }
 .page-hero__media   { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.page-hero--home .page-hero__media {
+  z-index: 0;
+}
 .page-hero__media picture,
 .page-hero__media img,
 .page-hero__media video {
@@ -1315,20 +1322,14 @@ blockquote cite {
   filter: blur(0.6px);
   transform: scale(1.02);
 }
-.page-hero--home .page-hero__media img,
 .page-hero--home .page-hero__media video { object-position: center 48%; }
 .page-hero--home .page-hero__video {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   filter: none;
   transform: none;
   pointer-events: none;
-}
-.page-hero--home .page-hero__poster {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
 }
 .page-hero--visit::before  { background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%); opacity: 0.78; }
 .page-hero--visit .page-hero__media img { object-position: center 35%; filter: blur(0.4px); }
@@ -1348,6 +1349,7 @@ blockquote cite {
   z-index: 0;
 }
 .page-hero .container { position: relative; z-index: 1; }
+.page-hero.page-hero--home .container { z-index: 2; }
 .page-hero h1         { color: var(--c-white); margin-bottom: var(--sp-xs); }
 .page-hero .eyebrow   { color: var(--color-ivory); }
 .page-hero .lead      { color: var(--color-ivory); max-width: 580px; margin-inline: auto; }
