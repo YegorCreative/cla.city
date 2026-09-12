@@ -1476,7 +1476,10 @@ blockquote cite {
 }
 .ministry-card-bg.mg--kids    { background-position: center 65%; }
 .ministry-card-bg.mg--youth   { background-position: center; }
-.ministry-card-bg.mg--women   { background-position: center 30%; }
+.ministry-card-bg.mg--women   { background-position: center 12%; } /* keep heads/faces visible */
+.intro-block .intro-img img.img-people-top {
+  object-position: center 14%;
+}
 .ministry-card-bg.mg--prayer  { background-position: center 40%; }
 .ministry-card-bg.mg--groups  { background-position: center 75%; }
 .ministry-card-bg.mg--worship { background-position: center 35%; }
@@ -1577,7 +1580,7 @@ blockquote cite {
 
 .ministry-grid--photo-fit .mg--kids    { background-position: center 25%; }
 .ministry-grid--photo-fit .mg--youth   { background-position: center 20%; }
-.ministry-grid--photo-fit .mg--women   { background-position: center 35%; }
+.ministry-grid--photo-fit .mg--women   { background-position: center 10%; } /* people-first: do not crop heads */
 .ministry-grid--photo-fit .mg--prayer  { background-position: center 45%; }
 .ministry-grid--photo-fit .mg--groups  { background-position: center 30%; }
 .ministry-grid--photo-fit .mg--worship { background-position: center top; }
@@ -2374,29 +2377,38 @@ blockquote cite {
   scroll-margin-top: calc(var(--header-h, 72px) + 0.85rem);
 }
 
-/* Church Life photo grid */
+/* Church Life — deliberate 5-photo editorial grid */
 .life-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0.65rem;
+  grid-template-rows: minmax(220px, 28vw) minmax(220px, 28vw) minmax(200px, 24vw);
+  gap: 0.75rem;
 }
 .life-grid__item {
   margin: 0;
-  grid-column: span 4;
   overflow: hidden;
   border-radius: var(--r-lg);
   background: var(--c-bg-alt);
+  min-height: 0;
 }
-.life-grid__item--wide { grid-column: span 6; }
+.life-grid__item:nth-child(1) { grid-column: 1 / span 7; grid-row: 1; }
+.life-grid__item:nth-child(2) { grid-column: 8 / span 5; grid-row: 1; }
+.life-grid__item:nth-child(3) { grid-column: 1 / span 5; grid-row: 2; }
+.life-grid__item:nth-child(4) { grid-column: 6 / span 7; grid-row: 2; }
+.life-grid__item:nth-child(5) { grid-column: 1 / -1; grid-row: 3; }
 .life-grid__item img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
   transition: transform var(--t-slow);
 }
-.life-grid__item:hover img { transform: scale(1.03); }
+.life-grid__item:nth-child(1) img { object-position: center 22%; } /* baptism group */
+.life-grid__item:nth-child(2) img { object-position: center 40%; } /* family: keep child in frame */
+.life-grid__item:nth-child(3) img { object-position: center 30%; } /* friends group */
+.life-grid__item:nth-child(4) img { object-position: center 28%; } /* kids classroom */
+.life-grid__item:nth-child(5) img { object-position: center 18%; } /* women gathering faces */
+.life-grid__item:hover img { transform: scale(1.02); }
 
 .ministry-card-bg.mg--youth { background-position: center 35%; }
 .ministry-card-bg.mg--groups { background-position: center 28%; }
@@ -3701,9 +3713,17 @@ html:not(.js) .fade-in--right {
   .intro-block--who .intro-img { aspect-ratio: 4 / 3; }
   .service-layout { grid-template-columns: 1fr; }
   .service-visual { aspect-ratio: 16 / 9; margin-bottom: var(--sp-md); }
-  .life-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .life-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 0.65rem;
+  }
   .life-grid__item,
-  .life-grid__item--wide { grid-column: span 1; }
+  .life-grid__item:nth-child(n) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 16 / 10;
+  }
   .service-layout--welcome {
     grid-template-columns: 1fr;
     padding: var(--sp-md);
