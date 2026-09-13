@@ -10,6 +10,7 @@ import { initPartials }         from './partials-loader.js';
 import { initContactForms }    from './contact-form.js';
 import { initHeroVideo }        from './hero-video.js';
 import { initScrollMotion }     from './scroll-motion.js';
+import { initJesusSchoolPlayer } from './jesus-school-player.js';
 
 document.documentElement.classList.add('js');
 
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   initContactForms();
   initHeroVideo();
   initScrollMotion();
+  initJesusSchoolPlayer();
 });
