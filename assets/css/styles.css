@@ -2395,8 +2395,7 @@ blockquote cite {
 .home-page > section[aria-labelledby="leadership-heading"] { order: 2; }
 .home-page > section:not(.page-hero):not([aria-labelledby="leadership-heading"]) { order: 3; }
 .home-page > [data-partial="footer"] { order: 4; }
-.pastors-combined { display:grid; grid-template-columns:minmax(12rem, .8fr) 1fr; gap:var(--sp-lg); align-items:center; max-width:52rem; margin:0 auto var(--sp-lg); padding:var(--sp-md); overflow:hidden; }
-.pastors-combined > img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 30%; border-radius:var(--radius-medium); }
+.pastors-combined { display:grid; grid-template-columns:minmax(12rem, .8fr) 1fr; gap:var(--sp-lg); align-items:center; max-width:52rem; margin:0 auto var(--sp-lg); padding:var(--sp-md); }
 .pastors-combined h3 { margin-bottom:var(--sp-xs); }
 .pastors-combined p { color:var(--color-navy-secondary); margin:0; }
 
