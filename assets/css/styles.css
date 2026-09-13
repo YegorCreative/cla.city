@@ -1481,29 +1481,43 @@ blockquote cite {
 .ministry-card-bg.mg--worship { background-position: center 35%; }
 .ministry-card:hover .ministry-card-bg { transform: scale(1.06); }
 
-/* Women's card: full natural photograph (no cover crop) */
+/* Women's card: full natural photograph — never cover-crop */
 .ministry-grid .ministry-card.ministry-card--women,
 .ministry-card.ministry-card--women {
   height: auto !important;
-  min-height: 0;
-  display: block;
-  align-self: start; /* don't stretch to taller sibling cards */
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  align-self: start;
   align-items: stretch;
+  overflow: visible !important; /* do not clip the photograph */
+}
+.ministry-card--women::before {
+  display: none; /* overlay gradient would sit on top of people */
+}
+.ministry-card--women:hover {
+  transform: none; /* hover scale + overflow clips edges */
 }
 .ministry-card--women .ministry-card-fullphoto {
   width: 100%;
   height: auto !important;
   max-width: 100%;
   display: block;
-  object-fit: initial;
-  object-position: initial;
+  object-fit: contain !important;
+  object-position: center center;
+  flex: 0 0 auto;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
 }
 .ministry-card--women .ministry-card-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative !important;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  inset: auto;
   z-index: 2;
+  background: var(--color-navy);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  flex: 0 0 auto;
 }
 .intro-block .intro-img.intro-img--natural {
   aspect-ratio: auto;
