@@ -4433,9 +4433,58 @@ html:not(.js) .fade-in--right {
 /* ==========================================================================
    Jesus School — educational library presentation
    ========================================================================== */
-.js-page .page-hero--res { padding-block: clamp(3.5rem, 8vw, 5.5rem); }
-.js-page .page-hero--res h1 { max-width: 14ch; }
-.js-page .page-hero--res .lead { max-width: 34rem; margin-inline: auto; opacity: .92; }
+/* Landing hero only — keep generous; courses use page-hero--js-course */
+.js-page .page-hero--res:not(.page-hero--js-course) {
+  padding-block: clamp(3.5rem, 8vw, 5.5rem);
+}
+.js-page .page-hero--res:not(.page-hero--js-course) h1 { max-width: 14ch; }
+.js-page .page-hero--res:not(.page-hero--js-course) .lead {
+  max-width: 34rem;
+  margin-inline: auto;
+  opacity: .92;
+}
+
+/* Compact editorial course hero */
+.page-hero.page-hero--js-course {
+  text-align: left;
+  padding-top: calc(var(--header-h) + 1.75rem);
+  padding-bottom: 1.75rem;
+  min-height: 0;
+}
+.page-hero.page-hero--js-course .container.js-wrap {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: left;
+}
+.page-hero.page-hero--js-course .eyebrow {
+  display: block;
+  margin-bottom: 0.55rem;
+}
+.page-hero.page-hero--js-course h1 {
+  margin: 0 0 0.45rem;
+  max-width: none;
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.page-hero.page-hero--js-course .lead {
+  margin: 0;
+  max-width: none;
+  margin-inline: 0;
+  opacity: 0.9;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--color-ivory);
+}
+@media (max-width: 768px) {
+  .page-hero.page-hero--js-course {
+    padding-top: calc(var(--header-h) + 1.35rem);
+    padding-bottom: 1.35rem;
+  }
+  .page-hero.page-hero--js-course h1 {
+    font-size: clamp(1.45rem, 6.5vw, 1.85rem);
+  }
+}
 
 .js-wrap { max-width: 52rem; margin-inline: auto; }
 .js-wrap--wide { max-width: 64rem; margin-inline: auto; }
