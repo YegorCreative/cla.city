@@ -4612,17 +4612,17 @@ html:not(.js) .fade-in--right {
 .js-audio-list { display: grid; gap: .45rem; }
 .js-player {
   display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: .75rem;
+  grid-template-columns: 40px 1fr;
+  gap: .55rem;
   align-items: center;
-  padding: .55rem .7rem;
-  border-radius: 12px;
+  padding: .35rem .55rem;
+  border-radius: 10px;
   background: #f6f3ec;
   border: 1px solid rgba(17,24,39,.06);
 }
 .js-player__btn {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border: 0;
   border-radius: 999px;
   background: var(--color-navy);
@@ -4637,44 +4637,48 @@ html:not(.js) .fade-in--right {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 7px 0 7px 12px;
+  border-width: 6px 0 6px 10px;
   border-color: transparent transparent transparent #fff;
   margin-left: 2px;
 }
 .js-player.is-playing .js-player__icon {
-  width: 10px;
-  height: 12px;
+  width: 9px;
+  height: 11px;
   border: 0;
   margin-left: 0;
-  background: linear-gradient(to right, #fff 0 3px, transparent 3px 7px, #fff 7px 10px);
+  background: linear-gradient(to right, #fff 0 3px, transparent 3px 6px, #fff 6px 9px);
 }
 .js-player__body { min-width: 0; }
 .js-player__top {
   display: flex;
   justify-content: space-between;
-  gap: .75rem;
+  gap: .5rem;
   align-items: center;
-  margin-bottom: .35rem;
+  margin-bottom: .2rem;
 }
 .js-player__label {
-  font-size: .78rem;
+  font-size: .72rem;
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--color-navy-secondary);
 }
-.js-player__dur {
-  font-size: .82rem;
+.js-player__time {
+  font-size: .78rem;
   font-variant-numeric: tabular-nums;
   color: var(--color-navy);
   font-weight: 600;
+  white-space: nowrap;
 }
 .js-player__seek {
   width: 100%;
   accent-color: var(--color-primary);
-  height: 0.35rem;
+  height: 0.28rem;
 }
 .js-player audio { display: none; }
+.js-audio-list { display: grid; gap: .35rem; }
+.js-lesson { padding: .85rem 0 1rem; }
+.js-lesson__title { margin: 0 0 .55rem; }
 
 @media (max-width: 900px) {
   .js-study { grid-template-columns: 1fr; }
