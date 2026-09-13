@@ -1,0 +1,281 @@
+[
+  {
+    "id": "course-1",
+    "slug": "course-1",
+    "title_ru": "1-й курс",
+    "title_en": "Course 1",
+    "sections": [
+      {
+        "teacher": "Sergey Gavrilov",
+        "title": "Суть Молитвы",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Gavrilov--October-4-2021-Lesson-1-e18av12",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Gavrilov-----Lesson-2-e18auoj",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Gavrilov--October-5-20201---Lesson-1-e18e4qu",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Gavrilov--October-5-2021-Lesson-2-e18e4ut"
+        ]
+      },
+      {
+        "teacher": "Maksim Ushakov",
+        "title": "Рождение свыше",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Maksim-Ushakov--lesson1-10-11-2021-e18m174",
+          "https://anchor.fm/cla81/embed/episodes/Maksim-Ushakov--lesson2-10-11-2021-e18m1a3"
+        ]
+      },
+      {
+        "teacher": "Maksim Ushakov",
+        "title": "Праведность",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Maksim-Ushakov--lesson1--October-12-2021-e18oa69",
+          "https://anchor.fm/cla81/embed/episodes/Maksim-Ushakov--lesson2--October-12-2021-e18oac3"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Обращение от мёртвых дел, Молитва",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--October-18--Lesson-1-e192m73",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--October-18--Lesson-2-e192mbr"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Обращение от мёртвых дел, Спасение",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--October-19--Lesson-1-e192mgu",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--October-19--Lesson-2-e192mlg"
+        ]
+      },
+      {
+        "teacher": "Alex Prokopchik",
+        "title": "Обращение от мёртвых дел, Вера",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Alex-Prokopchik--October-25--2021--Lesson-1-e19cvf5",
+          "https://anchor.fm/cla81/embed/episodes/Alex-Prokopchik--October-25--2021--Lesson-2-e19cvnp"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Оправдание и Молитва",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--October-26--2021--Lesson-1-MP3-e19d0q0",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--October-26--2021--Lesson-2-e19d1a2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "course-2-part-1",
+    "slug": "course-2-part-1",
+    "title_ru": "2-й курс — часть 1",
+    "title_en": "Course 2 — Part 1",
+    "sections": [
+      {
+        "teacher": "Artur Simonyan",
+        "title": "Обращение от мёртвых дел, Вера",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Artur-Simonyan--November1--2021--lesson-1-e19mg6q",
+          "https://anchor.fm/cla81/embed/episodes/Artur-Simonyan--November1--2021--lesson-2-e19mgat",
+          "https://anchor.fm/cla81/embed/episodes/Artur-Simonyan--November-2--2021--lesson-1-e19ou2m",
+          "https://anchor.fm/cla81/embed/episodes/Artur-Simonyan--November-2--2021--lesson-2-e19oua1"
+        ]
+      },
+      {
+        "teacher": "Yurii Ilchenko",
+        "title": "Вера и Призвание",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Yuri-Ilchenko--November-8--2021--Lesson-1-e1a1093",
+          "https://anchor.fm/cla81/embed/episodes/Yuri-Ilchenko--November-8--2021--Lesson-2-e1a1132",
+          "https://anchor.fm/cla81/embed/episodes/Yuri-Ilchenko--November-9--2021--Lesson-2-e1a2jom"
+        ]
+      },
+      {
+        "teacher": "Meesh Fomenko",
+        "title": "Вера",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko--2021-11-15-lesson1-e1an5fe",
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko--2021-11-15-lesson2-e1an9jq",
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko-2021-11-16-lesson-1-e1anbdk",
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko-2021-11-16-Lesson-2-e1anbik"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Вера",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--November-9--2021--Lesson-1-e1a2j9b",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--November-22-2021-Lesson-1-e1anbp7",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--November-22-2021-Lesson-2-e1anbth"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "course-2-part-2",
+    "slug": "course-2-part-2",
+    "title_ru": "2-й курс — часть 2",
+    "title_en": "Course 2 — Part 2",
+    "sections": [
+      {
+        "teacher": "Alex Prokopchik",
+        "title": "Крещение Духом Святым",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Alex-Prokopchik-November-29--2021--1-e1b1t2j",
+          "https://anchor.fm/cla81/embed/episodes/Alex-Prokopchik-November-29--2021--2-e1b1t5r"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Водное крещение",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko-November-30--2021--1-e1bd0hc",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko-November-30--2021--2-e1bd0o5"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Крещение в тело Христа",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko-December-6--2021--1-e1bd1dr",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko-December6--2021--2-e1bd2dm",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko-December-7--2021--1-e1becno",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko-December-7--2021--2-e1becr1"
+        ]
+      },
+      {
+        "teacher": "Alex Prokopchik",
+        "title": "Дары Служения",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Alex-Prokopchik--December-13--2021--Lesson-1-e1c0trt",
+          "https://anchor.fm/cla81/embed/episodes/Alex-Prokopchik--December-13--2021--Lesson-2-e1c0toh"
+        ]
+      },
+      {
+        "teacher": "Sergey Demidovich",
+        "title": "Дары Служения",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Demidovich--December-14--2021--Lesson-1-e1c0tvn",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Demidovich--December-14--2021--Lesson-2-e1c0ut4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "course-3",
+    "slug": "course-3",
+    "title_ru": "3-й курс",
+    "title_en": "Course 3",
+    "sections": [
+      {
+        "teacher": "Leonid Malko",
+        "title": "Дух Святой",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--December-20--2021--Lesson-1-e1c0v6b",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--December-20--2021--Lesson-2-e1c0vd6",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--December-21--2021-Lesson-1-e1cietn",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--December-21--2021-Lesson-2-e1cif8s"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Возложение рук, исцеление",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--January-10-2022-Lesson-e1cr9bk",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--January-11-2022-e1csucc",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--January-17-2022-e1d6iu4",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--January-18-2022-e1d6j1n"
+        ]
+      },
+      {
+        "teacher": "Sergey Shidlovskiy",
+        "title": "Общение с Богом.",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Shidlovskiy--January-24-2022--Lesson-1-e1dekge",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Shidlovskiy--January-24-Lesson-2-e1deks1",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Shidlovskiy--January-25-2022-Lesson-1-e1dhpj4",
+          "https://anchor.fm/cla81/embed/episodes/Sergey-Shidlovskiy--January-25-2022--Lesson-2-e1dhq0i"
+        ]
+      },
+      {
+        "teacher": "Artur Simonyan",
+        "title": "Вопросы и ответы",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Artur-Simonyan--January-31--2022-e1dp93h"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "course-4-part-1",
+    "slug": "course-4-part-1",
+    "title_ru": "4-й курс — часть 1",
+    "title_en": "Course 4 — Part 1",
+    "sections": [
+      {
+        "teacher": "Leonid Malko",
+        "title": "Воскресенье мёртвых",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--February-1-2022--Lesson-1-e1dre89",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--February-1-2022--Lesson-2-e1drecu",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School---February-8-2022-Lesson-1-e1e61ja",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School---February-8-2022-Lesson-2-e1e61sd",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--February-14-2022--Lesson1-e1efo2a",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--February-14-2022--Lesson2-e1efo94",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--February-15-2022--Lesson1-e1efp0i",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--February-15-2022--Lesson2-e1eids4"
+        ]
+      },
+      {
+        "teacher": "Stepan Arakelyan",
+        "title": "Плод Духа",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Stepan-Arakelyan--February-7-2022-Jesus-School--Lesson1-e1e4qtq",
+          "https://anchor.fm/cla81/embed/episodes/Stepan-Arakelyan--February-7-2022-Jesus-School--Lesson2-e1e4smb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "course-4-part-2",
+    "slug": "course-4-part-2",
+    "title_ru": "4-й курс — часть 2",
+    "title_en": "Course 4 — Part 2",
+    "sections": [
+      {
+        "teacher": "Alex Prokopchik",
+        "title": "Важность постановление цели для жизни.",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Aleks-Prokopchik-Jesus-School--february-21--Lesson-1-e1g1o5t",
+          "https://anchor.fm/cla81/embed/episodes/Aleks-Prokopchik-Jesus-School--february-21--Lesson-2-e1g1oda",
+          "https://anchor.fm/cla81/embed/episodes/Aleks-Prokopchik-Jesus-School--february-22--Lesson-1-e1g1ojt",
+          "https://anchor.fm/cla81/embed/episodes/Aleks-Prokopchik-Jesus-School--february-22--Lesson-2-e1g1opi"
+        ]
+      },
+      {
+        "teacher": "Leonid Malko",
+        "title": "Вечный Суд",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-14-Lesson1-e1g1phg",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-14-Lesson2-e1g1pq1",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-15-Lesson1-e1g1qe6",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-15-Lesson2-e1g1r7u",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-21-Lesson1-e1g387u",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-21-Lesson2-e1g38b4",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-22-Lesson1-e1gd5g8",
+          "https://anchor.fm/cla81/embed/episodes/Leonid-Malko--Jesus-School--March-22-Lesson2-e1gd5mp"
+        ]
+      },
+      {
+        "teacher": "Meesh Fomenko",
+        "title": "Дары Святого Духа",
+        "audios": [
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko-1-Jesus-School--2022-03-29-e1h69p0",
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko-Lesson-2-Jesus-School-2022-03-29-e1h69uh",
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko-Lesson1-Jesus-School-2022-03-30-e1h6a5i",
+          "https://anchor.fm/cla81/embed/episodes/Meesh-Fomenko-Lesson-2-Jesus-School-2022-03-30-e1h6ae9"
+        ]
+      }
+    ]
+  }
+]

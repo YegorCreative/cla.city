@@ -4429,3 +4429,22 @@ html:not(.js) .fade-in--right {
     width: 100%;
   }
 }
+
+
+/* Jesus School library */
+.js-course-nav { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin: var(--sp-md) 0 var(--sp-lg); }
+.js-course-nav a { display:inline-flex; padding:.45rem .85rem; border:1px solid var(--c-border); border-radius:999px; color:var(--color-navy); text-decoration:none; font-size:.9rem; background:var(--color-white); }
+.js-course-nav a:hover, .js-course-nav a[aria-current="page"] { background:var(--color-primary); border-color:var(--color-primary); color:var(--color-white); }
+.js-info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-md); }
+.js-info-card { padding:var(--sp-md); border:1px solid var(--c-border); border-radius:var(--radius-large); background:var(--color-white); }
+.js-info-card h3 { margin-bottom:.5rem; font-size:1.05rem; }
+.js-info-card p { color:var(--color-navy-secondary); margin:0; }
+.js-lesson { padding:var(--sp-md); border:1px solid var(--c-border); border-radius:var(--radius-large); background:var(--color-white); margin-bottom:var(--sp-md); }
+.js-lesson__meta { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline; margin-bottom:.75rem; }
+.js-lesson__teacher { font-weight:700; color:var(--color-navy); }
+.js-lesson__title { color:var(--color-navy); font-size:1.1rem; margin:0; }
+.js-audio { margin:0 0 .75rem; border-radius:var(--radius-medium); overflow:hidden; background:var(--c-bg-alt); }
+.js-audio iframe { display:block; width:100%; height:98px; border:0; }
+.js-audio:last-child { margin-bottom:0; }
+.js-back { margin-bottom:var(--sp-md); }
+@media (max-width: 900px) { .js-info-grid { grid-template-columns:1fr; } }
