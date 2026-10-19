@@ -1,0 +1,21 @@
+.about-page .page-hero--about {
+  isolation: isolate;
+  min-height: calc(var(--header-h) + 40vw);
+  display: grid;
+  align-content: center;
+  /* Fit the introduction and visit button within the shared banner height. */
+  padding-top: calc(var(--header-h) + clamp(1rem, 2vw, 1.5rem));
+  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.about-page .page-hero--about .lead {
+  max-width: 760px;
+}
+
+.about-page .page-hero--about::before {
+  /* Photo: Caleb Oquendo, https://www.pexels.com/photo/39008709/ */
+  top: var(--header-h);
+  background:
+    var(--page-hero-overlay),
+    url("../images/hero/about-community.jpg") center 35% / cover no-repeat;
+}

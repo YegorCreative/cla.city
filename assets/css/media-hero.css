@@ -1,0 +1,16 @@
+.media-page .page-hero--media {
+  isolation: isolate;
+  min-height: calc(var(--header-h) + 40vw);
+  display: grid;
+  align-content: center;
+  padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 5rem));
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.media-page .page-hero--media::before {
+  /* Photo: Caleb Oquendo, https://www.pexels.com/photo/34328505/ */
+  top: var(--header-h);
+  background:
+    var(--page-hero-overlay),
+    url("../images/hero/media.jpg") center 35% / cover no-repeat;
+}

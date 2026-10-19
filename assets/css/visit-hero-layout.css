@@ -1,0 +1,20 @@
+.visit-page .page-hero--visit {
+  isolation: isolate;
+  min-height: calc(var(--header-h) + 40vw);
+  display: grid;
+  align-content: center;
+  padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 5rem));
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+/* Align the existing photo and overlay with the visible banner below the header. */
+.visit-page .page-hero--visit::before,
+.visit-page .page-hero--visit .page-hero__media {
+  top: var(--header-h);
+}
+
+.visit-page .page-hero--visit .page-hero__media img {
+  /* Leave space above the back row's heads and hats. */
+  object-position: center 20%;
+  transform: none;
+}

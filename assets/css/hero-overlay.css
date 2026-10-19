@@ -1,0 +1,14 @@
+.page-hero {
+  --page-hero-overlay: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.68) 0%,
+    rgba(30, 64, 175, 0.56) 100%
+  );
+}
+
+/* These banners keep their photos and video in separate media layers. */
+.home-page .page-hero--home::before,
+.visit-page .page-hero--visit::before {
+  background: var(--page-hero-overlay);
+  opacity: 1;
+}

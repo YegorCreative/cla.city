@@ -1,0 +1,17 @@
+.give-page .page-hero--give {
+  isolation: isolate;
+  /* Match the reference's 1514 × 580 photo area below the fixed header. */
+  min-height: calc(var(--header-h) + 100vw * 580 / 1514);
+  display: grid;
+  align-content: center;
+  padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 5rem));
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.give-page .page-hero--give::before {
+  /* Keep the photo below the fixed header, with faces inside the visible crop. */
+  top: var(--header-h);
+  background:
+    var(--page-hero-overlay),
+    url("../images/hero/give.jpg") center 55% / cover no-repeat;
+}

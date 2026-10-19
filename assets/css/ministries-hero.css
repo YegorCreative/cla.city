@@ -1,0 +1,16 @@
+.ministries-page .page-hero--min {
+  isolation: isolate;
+  min-height: calc(var(--header-h) + 40vw);
+  display: grid;
+  align-content: center;
+  padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 5rem));
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.ministries-page .page-hero--min::before {
+  /* Photo: Tima Miroshnichenko, https://www.pexels.com/photo/6860826/ */
+  top: var(--header-h);
+  background:
+    var(--page-hero-overlay),
+    url("../images/hero/ministries.jpg") center top / cover no-repeat;
+}

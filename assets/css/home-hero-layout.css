@@ -1,0 +1,18 @@
+.home-page .page-hero--home {
+  min-height: calc(var(--header-h) + 40vw);
+  display: grid;
+  align-content: center;
+  /* Keep the introduction and visit button within the shared banner height. */
+  padding-top: calc(var(--header-h) + clamp(1rem, 2vw, 1.5rem));
+  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.home-page .page-hero--home .lead {
+  max-width: 760px;
+}
+
+/* Start the video and overlay below the fixed header. */
+.home-page .page-hero--home::before,
+.home-page .page-hero--home .page-hero__media {
+  top: var(--header-h);
+}

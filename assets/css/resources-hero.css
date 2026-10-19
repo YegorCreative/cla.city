@@ -1,0 +1,16 @@
+.resources-page .page-hero--res {
+  isolation: isolate;
+  min-height: calc(var(--header-h) + 40vw);
+  display: grid;
+  align-content: center;
+  padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 5rem));
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.resources-page .page-hero--res::before {
+  /* Photo: Brett Jordan, https://www.pexels.com/photo/20802851/ */
+  top: var(--header-h);
+  background:
+    var(--page-hero-overlay),
+    url("../images/hero/resources.jpg") center 35% / cover no-repeat;
+}
