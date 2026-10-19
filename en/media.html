@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Church LA Media — watch services and church life on the CLA City YouTube channel." />
+  <meta name="description" content="Watch Sunday gatherings, hear messages from the Bible, and see photos of life at Church LA." />
   <title>Media — Church LA</title>
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=8" />
 </head>
-<body>
+<body class="media-page">
 
   <div data-partial="header"></div>
 
@@ -16,22 +16,26 @@
   <section class="page-hero page-hero--media" aria-labelledby="hero-heading">
     <div class="container">
       <span class="eyebrow">Watch &amp; Listen</span>
-      <h1 id="hero-heading">Church, Wherever<br />You Are</h1>
-      <p class="lead">Watch CLA City services and church life on our YouTube channel.</p>
+      <h1 id="hero-heading">Get to Know Us,<br />Wherever You Are</h1>
+      <p class="lead">Watch our Sunday gatherings and get a glimpse of life at CLA City on YouTube.</p>
     </div>
   </section>
 
 
   <!-- RECENT SERMONS -->
-  <section class="section" aria-labelledby="sermons-heading">
+  <section class="section section--half-bottom" aria-labelledby="sermons-heading">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="eyebrow">Recent Messages</span>
-        <h2 id="sermons-heading">Sermons</h2>
-        <p class="lead">Watch our latest services and messages on the CLA City YouTube channel.</p>
+      <div class="section-header text-center mb-sm">
+        <div class="youtube-brand">
+          <svg class="youtube-brand__icon" viewBox="0 0 48 34" width="48" height="34" aria-hidden="true" focusable="false"><rect width="48" height="34" rx="9" fill="#FF0033"/><path d="M20 10v14l12-7z" fill="#fff"/></svg>
+          <span>YouTube</span>
+        </div>
+        <span class="eyebrow">From Our Sundays</span>
+        <h2 id="sermons-heading">Messages from the Bible</h2>
+        <p class="lead">Hear messages from the Bible and watch recent Sunday gatherings on our YouTube channel.</p>
       </div>
 
-      <div class="text-center mt-lg">
+      <div class="text-center mt-sm">
         <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Watch on YouTube ↗</a>
       </div>
     </div>
@@ -39,22 +43,22 @@
 
 
   <!-- PHOTO GALLERY -->
-  <section class="section bg-alt" aria-labelledby="gallery-heading">
+  <section class="section section--half-top bg-alt" aria-labelledby="gallery-heading">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center mb-sm">
         <span class="eyebrow">Community Life</span>
         <h2 id="gallery-heading">Gallery</h2>
         <p class="lead">A glimpse into Sundays, events, and everyday life at CLA City.</p>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item wide" data-src="../assets/images/gallery/04.jpg" role="button" tabindex="0" aria-label="View the congregation worshiping together">
+        <div class="gallery-item gallery-item--featured" data-src="../assets/images/gallery/04.jpg" role="button" tabindex="0" aria-label="View the congregation worshiping together">
           <img src="../assets/images/gallery/04.jpg" alt="The congregation worshiping together" loading="lazy" decoding="async" />
         </div>
         <div class="gallery-item" data-src="../assets/images/gallery/02.jpg" role="button" tabindex="0" aria-label="View a worship musician performing under stage lights">
           <img src="../assets/images/gallery/02.jpg" alt="A worship musician performing under stage lights" loading="lazy" decoding="async" />
         </div>
-        <div class="gallery-item tall" data-src="../assets/images/gallery/06.jpg" role="button" tabindex="0" aria-label="View a CLA City ministry team group portrait">
+        <div class="gallery-item" data-src="../assets/images/gallery/06.jpg" role="button" tabindex="0" aria-label="View a CLA City ministry team group portrait">
           <img src="../assets/images/gallery/06.jpg" alt="A CLA City ministry team group portrait" loading="lazy" decoding="async" />
         </div>
         <div class="gallery-item" data-src="../assets/images/gallery/07.jpg" role="button" tabindex="0" aria-label="View young people playing an outdoor group game">
@@ -78,26 +82,29 @@
 
 
   <!-- LIVE STREAM CTA -->
-  <section class="section" aria-labelledby="live-heading">
+  <section class="section section--half-bottom" aria-labelledby="live-heading">
     <div class="container max-720 text-center">
-      <span class="eyebrow">YouTube</span>
+      <div class="youtube-brand">
+        <svg class="youtube-brand__icon" viewBox="0 0 48 34" width="48" height="34" aria-hidden="true" focusable="false"><rect width="48" height="34" rx="9" fill="#FF0033"/><path d="M20 10v14l12-7z" fill="#fff"/></svg>
+        <span>YouTube</span>
+      </div>
       <h2 id="live-heading">CLA City YouTube Channel</h2>
       <div class="divider center"></div>
-      <p class="lead">Open the CLA City YouTube channel to watch services and other media.</p>
+      <p class="lead">Visit our YouTube channel to watch Sunday gatherings and other videos.</p>
       <p style="color:var(--c-muted)">Sunday Service — 2:30 PM PT · Russian only</p>
-      <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-primary btn-lg mt-md">Watch on YouTube →</a>
+      <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Watch on YouTube →</a>
     </div>
   </section>
 
 
   <!-- CTA -->
-  <section class="cta-banner">
+  <section class="cta-banner cta-banner--light section--half-top">
     <div class="container">
-      <span class="eyebrow" style="color:rgba(255,255,255,0.7)">Better Together</span>
-      <h2>Online is Good. In Person is Better.</h2>
+      <span class="eyebrow">Better Together</span>
+      <h2>Come Meet Us in Person.</h2>
       <p class="lead">Come experience the warmth, music, and community that doesn't fully translate through a screen. We'd love to see you.</p>
       <div class="hero-btns">
-        <a href="visit.html" class="btn btn-white btn-lg">Plan Your Visit</a>
+        <a href="visit.html" class="btn btn-primary btn-lg">Plan Your Visit</a>
         <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-outline btn-lg">YouTube Channel ↗</a>
       </div>
     </div>

@@ -57,8 +57,9 @@
   .give-layout    { grid-template-columns: 1fr; }
   .give-cta-box   { position: static; box-shadow: none; }
 
-  /* Gallery: 3-col on tablet */
-  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  /* Gallery: uniform squares on tablet and mobile */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item--featured, .gallery-item.wide { grid-row: auto; grid-column: auto; aspect-ratio: 1; }
 
   .ministry-grid--editorial {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -158,7 +159,6 @@
 
   /* Gallery: 2-col, no spanning */
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item.tall, .gallery-item.wide { grid-row: auto; grid-column: auto; }
 
   /* Hero */
   .hero                  { padding: 0.75rem; padding-top: calc(var(--header-h) + 0.75rem); }

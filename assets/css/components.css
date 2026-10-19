@@ -581,6 +581,7 @@
   z-index: -1;
 }
 
+.page-hero--about .hero-btns { justify-content: center; }
 .page-hero--about::before  { background: linear-gradient(135deg, #1F2328 0%, var(--accent-faith) 100%); }
 .page-hero--visit::before  { background: linear-gradient(135deg, #2B332D 0%, var(--accent-faith) 100%); }
 .page-hero--min::before    { background: linear-gradient(135deg, #2A1F1A 0%, #3D2E22 100%); }
@@ -826,6 +827,11 @@
    PASTOR CARDS
    ========================================================================== */
 .pastor-card { display: flex; gap: var(--sp-md); align-items: flex-start; }
+.about-page .pastor-card { flex-direction: column; align-items: center; }
+.about-page .pastor-photo { width: min(100%, 200px); height: auto; aspect-ratio: 1; }
+.about-page .pastor-info { width: 100%; }
+.about-page .pastor-info h3,
+.about-page .pastor-info .title { text-align: center; }
 
 .pastor-photo {
   width: 112px; height: 112px;
@@ -837,6 +843,7 @@
   border: 3px solid var(--c-white);
 }
 .pastor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
+.pastor-photo--leonid img { object-position: center 21%; }
 .pastor-photo-placeholder {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
@@ -1589,6 +1596,7 @@
   pointer-events: none;
 }
 .cta-banner .container { position: relative; z-index: 1; }
+.cta-banner .hero-btns { justify-content: center; }
 .cta-panel {
   position: relative;
   overflow: hidden;

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Church LA Медиа — смотрите служения и жизнь общины на YouTube-канале CLA City." />
+  <meta name="description" content="Смотрите воскресные встречи, слушайте размышления о Библии и знакомьтесь с жизнью Church LA по фотографиям." />
   <title>Медиа — Church LA</title>
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=8" />
 </head>
-<body>
+<body class="media-page">
 
   <div data-partial="header"></div>
 
@@ -16,22 +16,26 @@
   <section class="page-hero page-hero--media" aria-labelledby="hero-heading">
     <div class="container">
       <span class="eyebrow">Смотреть и слушать</span>
-      <h1 id="hero-heading">Церковь,<br />где бы вы ни были</h1>
-      <p class="lead">Смотрите служения и жизнь CLA City на YouTube-канале.</p>
+      <h1 id="hero-heading">Знакомьтесь с нами,<br />где бы вы ни были</h1>
+      <p class="lead">Смотрите воскресные встречи и знакомьтесь с жизнью CLA City на YouTube.</p>
     </div>
   </section>
 
 
   <!-- ПОСЛЕДНИЕ ПРОПОВЕДИ -->
-  <section class="section" aria-labelledby="sermons-heading">
+  <section class="section section--half-bottom" aria-labelledby="sermons-heading">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="eyebrow">Последние послания</span>
-        <h2 id="sermons-heading">Проповеди</h2>
-        <p class="lead">Смотрите последние служения и проповеди на YouTube-канале CLA City.</p>
+      <div class="section-header text-center mb-sm">
+        <div class="youtube-brand">
+          <svg class="youtube-brand__icon" viewBox="0 0 48 34" width="48" height="34" aria-hidden="true" focusable="false"><rect width="48" height="34" rx="9" fill="#FF0033"/><path d="M20 10v14l12-7z" fill="#fff"/></svg>
+          <span>YouTube</span>
+        </div>
+        <span class="eyebrow">По воскресеньям</span>
+        <h2 id="sermons-heading">Размышления о Библии</h2>
+        <p class="lead">Слушайте размышления на основе Библии и смотрите записи воскресных встреч на нашем YouTube-канале.</p>
       </div>
 
-      <div class="text-center mt-lg">
+      <div class="text-center mt-sm">
         <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Смотреть на YouTube ↗</a>
       </div>
     </div>
@@ -39,22 +43,22 @@
 
 
   <!-- ФОТОГАЛЕРЕЯ -->
-  <section class="section bg-alt" aria-labelledby="gallery-heading">
+  <section class="section section--half-top bg-alt" aria-labelledby="gallery-heading">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center mb-sm">
         <span class="eyebrow">Жизнь общины</span>
         <h2 id="gallery-heading">Галерея</h2>
         <p class="lead">Взгляд на воскресенья, события и повседневную жизнь CLA City.</p>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item wide" data-src="../assets/images/gallery/04.jpg" role="button" tabindex="0" aria-label="Открыть фотографию общины во время поклонения">
+        <div class="gallery-item gallery-item--featured" data-src="../assets/images/gallery/04.jpg" role="button" tabindex="0" aria-label="Открыть фотографию общины во время поклонения">
           <img src="../assets/images/gallery/04.jpg" alt="Община во время поклонения" loading="lazy" decoding="async" />
         </div>
         <div class="gallery-item" data-src="../assets/images/gallery/02.jpg" role="button" tabindex="0" aria-label="Открыть фотографию музыканта поклонения на сцене">
           <img src="../assets/images/gallery/02.jpg" alt="Музыкант поклонения на сцене" loading="lazy" decoding="async" />
         </div>
-        <div class="gallery-item tall" data-src="../assets/images/gallery/06.jpg" role="button" tabindex="0" aria-label="Открыть групповую фотографию команды служения CLA City">
+        <div class="gallery-item" data-src="../assets/images/gallery/06.jpg" role="button" tabindex="0" aria-label="Открыть групповую фотографию команды служения CLA City">
           <img src="../assets/images/gallery/06.jpg" alt="Команда служения CLA City" loading="lazy" decoding="async" />
         </div>
         <div class="gallery-item" data-src="../assets/images/gallery/07.jpg" role="button" tabindex="0" aria-label="Открыть фотографию молодёжи во время игры на улице">
@@ -78,26 +82,29 @@
 
 
   <!-- ПРЯМОЙ ЭФИР -->
-  <section class="section">
+  <section class="section section--half-bottom">
     <div class="container max-720 text-center">
-      <span class="eyebrow">YouTube</span>
+      <div class="youtube-brand">
+        <svg class="youtube-brand__icon" viewBox="0 0 48 34" width="48" height="34" aria-hidden="true" focusable="false"><rect width="48" height="34" rx="9" fill="#FF0033"/><path d="M20 10v14l12-7z" fill="#fff"/></svg>
+        <span>YouTube</span>
+      </div>
       <h2>YouTube-канал CLA City</h2>
       <div class="divider center"></div>
-      <p class="lead">Откройте YouTube-канал CLA City, чтобы посмотреть служения и другие материалы.</p>
+      <p class="lead">На нашем YouTube-канале доступны записи воскресных встреч и другие видео.</p>
       <p style="color:var(--c-muted)">Воскресное служение — 14:30 PT (2:30 PM) · только на русском языке</p>
-      <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-primary btn-lg mt-md">Смотреть на YouTube →</a>
+      <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Смотреть на YouTube →</a>
     </div>
   </section>
 
 
   <!-- CTA -->
-  <section class="cta-banner">
+  <section class="cta-banner cta-banner--light section--half-top">
     <div class="container">
-      <span class="eyebrow" style="color:rgba(255,255,255,0.7)">Вместе лучше</span>
-      <h2>Онлайн хорошо. Вживую лучше.</h2>
+      <span class="eyebrow">Вместе лучше</span>
+      <h2>Приходите знакомиться лично.</h2>
       <p class="lead">Приходите лично — и почувствуйте тепло, музыку и общение, которые не полностью передаются через экран. Будем рады встрече.</p>
       <div class="hero-btns">
-        <a href="visit.html" class="btn btn-white btn-lg">Планируй визит</a>
+        <a href="visit.html" class="btn btn-primary btn-lg">Планировать визит</a>
         <a href="https://www.youtube.com/channel/UCWfXZ8MkZafjm4t33sbznlQ" target="_blank" rel="noopener" class="btn btn-outline btn-lg">YouTube-канал ↗</a>
       </div>
     </div>

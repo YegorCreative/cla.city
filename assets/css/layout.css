@@ -11,14 +11,34 @@
 }
 
 /* Container size variants */
-.container--wide   { max-width: var(--max-w-wide);   padding-inline: var(--sp-md); }
-.container--narrow { max-width: var(--max-w-narrow); }
-.container--text   { max-width: var(--max-w-text);   }
+.container--wide {
+  max-width: var(--max-w-wide);
+  padding-inline: var(--sp-md);
+}
+.container--narrow {
+  max-width: var(--max-w-narrow);
+}
+.container--text {
+  max-width: var(--max-w-text);
+}
 
 /* --- Section spacing --- */
-.section    { padding-block: var(--sp-xl); }
-.section-sm { padding-block: var(--sp-lg); }
-.section--lg { padding-block: var(--sp-2xl); }
+.section {
+  padding-block: var(--sp-xl);
+}
+.section-sm {
+  padding-block: var(--sp-lg);
+}
+.section--lg {
+  padding-block: var(--sp-2xl);
+}
+.section--half-top,
+.cta-banner.section--half-top {
+  padding-top: calc(var(--sp-xl) * var(--section-spacing-scale, 1) / 2);
+}
+.section--half-bottom {
+  padding-bottom: calc(var(--sp-xl) * var(--section-spacing-scale, 1) / 2);
+}
 
 /* --- Hero frame layout --- */
 .hero-shell {
@@ -42,9 +62,16 @@
   gap: var(--sp-lg);
   align-items: center;
 }
-.intro-block .intro-text h2  { margin-bottom: var(--sp-sm); }
-.intro-block .intro-text p   { color: var(--c-muted); font-size: 1.05rem; }
-.intro-block .intro-text p+p { margin-top: var(--sp-xs); }
+.intro-block .intro-text h2 {
+  margin-bottom: var(--sp-sm);
+}
+.intro-block .intro-text p {
+  color: var(--c-muted);
+  font-size: 1.05rem;
+}
+.intro-block .intro-text p + p {
+  margin-top: var(--sp-xs);
+}
 
 .intro-block .intro-img {
   border-radius: var(--r-lg);
@@ -53,15 +80,28 @@
   aspect-ratio: var(--image-ratio-landscape);
   background: var(--c-bg-alt);
 }
-.intro-block .intro-img picture { display: block; width: 100%; height: 100%; }
+.intro-block .intro-img picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .intro-block .intro-img img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: var(--image-position-default);
   transition: transform var(--t-slow);
 }
 .intro-block .intro-img:hover img {
   transform: scale(1.04);
+}
+.intro-block .intro-img.intro-img--speaker {
+  width: min(100%, 20rem);
+  justify-self: center;
+  aspect-ratio: 4 / 4;
+}
+.intro-img--speaker img {
+  object-position: center 40%;
 }
 
 /* --- Who We Are card variant --- */
@@ -79,16 +119,25 @@
   flex-direction: column;
   justify-content: center;
 }
-.intro-block--who .intro-text p   { font-size: 1.05rem; color: var(--c-muted); }
-.intro-block--who .intro-text p+p { margin-top: var(--sp-sm); }
+.intro-block--who .intro-text p {
+  font-size: 1.05rem;
+  color: var(--c-muted);
+}
+.intro-block--who .intro-text p + p {
+  margin-top: var(--sp-sm);
+}
 .intro-block--who .intro-img {
   aspect-ratio: var(--image-ratio-portrait);
   border-radius: var(--r-xl);
   box-shadow: none;
 }
 
-.intro-block .intro-img--landscape { aspect-ratio: var(--image-ratio-landscape); }
-.intro-block .intro-img--portrait  { aspect-ratio: var(--image-ratio-portrait); }
+.intro-block .intro-img--landscape {
+  aspect-ratio: var(--image-ratio-landscape);
+}
+.intro-block .intro-img--portrait {
+  aspect-ratio: var(--image-ratio-portrait);
+}
 
 .intro-block--premium {
   position: relative;
@@ -122,7 +171,11 @@
   padding: var(--sp-lg);
   border-radius: var(--r-2xl);
   border: 1px solid var(--c-border-w);
-  background: linear-gradient(145deg, rgba(28, 35, 31, 0.92), rgba(17, 19, 22, 0.96));
+  background: linear-gradient(
+    145deg,
+    rgba(28, 35, 31, 0.92),
+    rgba(17, 19, 22, 0.96)
+  );
   box-shadow: var(--sh-xl);
 }
 
@@ -171,9 +224,21 @@
 }
 
 /* --- Feature cards grids --- */
-.cards-grid    { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-md); }
-.cards-grid--2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-md); }
-.cards-grid--4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-md); }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+}
+.cards-grid--2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-md);
+}
+.cards-grid--4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md);
+}
 
 /* --- Ministry grid --- */
 .ministry-grid {
@@ -262,11 +327,147 @@
   border-radius: var(--r-lg);
   overflow: hidden;
 }
-.gallery-item        { aspect-ratio: 1; overflow: hidden; background: var(--c-bg-alt); cursor: pointer; }
-.gallery-item img    { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow); }
-.gallery-item:hover img { transform: scale(1.08); }
-.gallery-item.tall   { grid-row: span 2; }
-.gallery-item.wide   { grid-column: span 2; }
+.gallery-item {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--c-bg-alt);
+  cursor: pointer;
+}
+.gallery-item img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-item--featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+.gallery-item.wide {
+  grid-column: span 2;
+  aspect-ratio: auto;
+}
+
+/* --- Compact page spacing --- */
+.home-page .section,
+.home-page .cta-banner,
+.ministries-page .section,
+.ministries-page .cta-banner,
+.visit-page .section,
+.visit-page .cta-banner,
+.about-page .section,
+.about-page .cta-banner,
+.resources-page .section,
+.resources-page .cta-banner,
+.media-page .section,
+.media-page .cta-banner,
+.give-page .section,
+.give-page .cta-banner {
+  padding-block: clamp(1.25rem, 3.5vw, 1.75rem);
+}
+.home-page .page-hero,
+.ministries-page .page-hero,
+.visit-page .page-hero,
+.about-page .page-hero,
+.resources-page .page-hero,
+.media-page .page-hero,
+.give-page .page-hero {
+  padding-top: calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem));
+  padding-bottom: clamp(1.25rem, 3.5vw, 1.75rem);
+}
+.home-page .page-hero .lead,
+.ministries-page .page-hero .lead,
+.visit-page .page-hero .lead,
+.about-page .page-hero .lead,
+.resources-page .page-hero .lead,
+.media-page .page-hero .lead,
+.give-page .page-hero .lead {
+  margin-bottom: 0;
+}
+.home-page .ministry-grid,
+.ministries-page .ministry-grid {
+  gap: var(--sp-sm);
+}
+.home-page .intro-block,
+.home-page .service-layout,
+.home-page .here-for-you__grid,
+.home-page .pastors-combined,
+.ministries-page .intro-block,
+.visit-page .service-layout,
+.about-page .intro-block,
+.resources-page .intro-block,
+.give-page .give-layout {
+  gap: clamp(1rem, 3vw, 1.75rem);
+}
+.home-page .cta-banner .lead,
+.ministries-page .cta-banner .lead,
+.visit-page .cta-banner .lead,
+.about-page .cta-banner .lead,
+.resources-page .cta-banner .lead,
+.media-page .cta-banner .lead,
+.give-page .cta-banner .lead {
+  margin-bottom: var(--sp-sm);
+}
+.visit-page .cards-grid,
+.visit-page .cards-grid--2,
+.about-page .cards-grid,
+.about-page .pastor-grid,
+.about-page .pastor-card,
+.about-page .beliefs-grid {
+  gap: var(--sp-sm);
+}
+
+.home-page .service-visual,
+.home-page .pastors-combined,
+.home-page .service-panel__intro,
+.home-page .here-for-you__card h3 {
+  margin-bottom: var(--sp-sm);
+}
+.home-page .here-for-you__links,
+.home-page .cta-actions {
+  margin-top: var(--sp-sm);
+}
+.home-page blockquote {
+  margin-block: var(--sp-sm);
+}
+.home-page .service-layout--welcome,
+.home-page .here-for-you__card,
+.home-page .cta-panel__inner {
+  padding: clamp(1rem, 3vw, 1.75rem);
+}
+.home-page .cta-panel {
+  padding: var(--sp-sm);
+}
+
+.media-page .section--half-top {
+  padding-top: min(1.5rem, 3.5vw);
+}
+.media-page .section--half-bottom {
+  padding-bottom: min(1.5rem, 3.5vw);
+}
+.give-page .give-cta-box {
+  padding: clamp(1rem, 3vw, 1.75rem);
+}
+.give-page .give-cta-box p {
+  margin-bottom: var(--sp-sm);
+}
+.give-page .give-cta-box > aside,
+.give-page .give-cta-box > section {
+  margin-top: var(--sp-sm);
+}
+.give-page .give-cta-box > :last-child p:last-child {
+  margin-bottom: 0;
+}
 
 /* --- Give page layout --- */
 .give-layout {
@@ -308,6 +509,14 @@
 }
 
 /* --- Image gradient placeholders --- */
-.img-grad       { width: 100%; height: 100%; background: linear-gradient(135deg, #2E352F, #1F2328); }
-.img-grad--warm { background: linear-gradient(135deg, #3B2512, rgba(176,122,79,0.42)); }
-.img-grad--blue { background: linear-gradient(135deg, #2D352F, #3D5A47); }
+.img-grad {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2e352f, #1f2328);
+}
+.img-grad--warm {
+  background: linear-gradient(135deg, #3b2512, rgba(176, 122, 79, 0.42));
+}
+.img-grad--blue {
+  background: linear-gradient(135deg, #2d352f, #3d5a47);
+}
