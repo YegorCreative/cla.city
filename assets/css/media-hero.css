@@ -8,9 +8,21 @@
 }
 
 .media-page .page-hero--media::before {
-  /* Photo: Caleb Oquendo, https://www.pexels.com/photo/34328505/ */
   top: var(--header-h);
   background:
     var(--page-hero-overlay),
-    url("../images/hero/media.jpg") center 35% / cover no-repeat;
+    url("../images/hero/media-worship.webp") center 85% / cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .media-page .page-hero--media {
+    min-height: calc(var(--header-h) + 66.67vw);
+  }
+
+  .media-page .page-hero--media::before {
+    /* Preserve the full photo, including heads and raised hands, on mobile. */
+    background-color: var(--c-dark);
+    background-size: auto, 100% auto;
+    background-position: center, center top;
+  }
 }

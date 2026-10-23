@@ -8,9 +8,21 @@
 }
 
 .ministries-page .page-hero--min::before {
-  /* Photo: Tima Miroshnichenko, https://www.pexels.com/photo/6860826/ */
   top: var(--header-h);
   background:
     var(--page-hero-overlay),
-    url("../images/hero/ministries.jpg") center top / cover no-repeat;
+    url("../images/hero/ministries-community.webp") center 45% / cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .ministries-page .page-hero--min {
+    min-height: calc(var(--header-h) + 56.27vw);
+  }
+
+  .ministries-page .page-hero--min::before {
+    /* Keep the full group visible when the banner is taller than the photo. */
+    background-color: var(--c-dark);
+    background-size: auto, 100% auto;
+    background-position: center, center top;
+  }
 }

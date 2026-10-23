@@ -1,0 +1,33 @@
+/* Keep ministry photos at their prepared crop, clear of the card text. */
+.ministries-page .ministry-card {
+  height: auto;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--c-dark);
+}
+
+.ministries-page .ministry-card::before {
+  display: none;
+}
+
+.ministries-page .ministry-card-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ministries-page .ministry-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.ministries-page .ministry-card-body a {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+

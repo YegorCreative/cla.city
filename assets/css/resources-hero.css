@@ -8,9 +8,21 @@
 }
 
 .resources-page .page-hero--res::before {
-  /* Photo: Brett Jordan, https://www.pexels.com/photo/20802851/ */
   top: var(--header-h);
   background:
     var(--page-hero-overlay),
-    url("../images/hero/resources.jpg") center 35% / cover no-repeat;
+    url("../images/hero/resources-classroom.webp") center 35% / cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .resources-page .page-hero--res {
+    min-height: calc(var(--header-h) + 66.68vw);
+  }
+
+  .resources-page .page-hero--res::before {
+    /* Show the full classroom without cropping people on narrow screens. */
+    background-color: var(--c-dark);
+    background-size: auto, 100% auto;
+    background-position: center, center top;
+  }
 }

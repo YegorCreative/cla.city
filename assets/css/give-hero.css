@@ -9,9 +9,9 @@
 }
 
 .give-page .page-hero--give::before {
-  /* Keep the photo below the fixed header, with faces inside the visible crop. */
+  /* Keep the communion trays in view below the fixed header. */
   top: var(--header-h);
   background:
     var(--page-hero-overlay),
-    url("../images/hero/give.jpg") center 55% / cover no-repeat;
+    url("../images/hero/give-communion.webp") center 60% / cover no-repeat;
 }

@@ -1,0 +1,99 @@
+/* A focused giving action with readable supporting information. */
+.give-page .give-cta-box {
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  background: var(--c-white);
+}
+
+.give-page .give-cta-box p {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  max-width: 52ch;
+  margin-bottom: 1.25rem;
+}
+
+.give-cta-main,
+.give-cta-details {
+  padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.give-cta-main {
+  background: var(--c-dark);
+}
+
+.give-page .give-cta-main h3 {
+  color: var(--c-white);
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.give-page .give-cta-main p {
+  color: #f3f4f6;
+}
+
+.give-page .give-cta-main .btn {
+  width: 100%;
+  max-width: 22rem;
+  min-height: 56px;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: var(--c-primary);
+  color: var(--c-white);
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 6px 0 var(--color-primary-hover), 0 12px 28px var(--color-primary-glow);
+}
+
+.give-page .give-cta-main .btn:hover {
+  background: var(--color-primary-hover);
+  color: var(--c-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 var(--color-primary-hover), 0 16px 32px var(--color-primary-glow);
+}
+
+.give-page .give-cta-main .btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-primary-hover);
+}
+
+.give-page .give-cta-main .btn:focus-visible {
+  outline: 3px solid var(--c-white);
+  outline-offset: 5px;
+}
+
+.give-cta-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.5rem;
+}
+
+.give-page .give-cta-details h4 {
+  font-family: var(--f-body);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--c-text);
+}
+
+.give-page .give-cta-details p {
+  color: var(--c-text-2);
+  margin-bottom: 0;
+}
+
+.give-cta-details a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--c-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.give-cta-details a:hover {
+  color: var(--color-primary-hover);
+}
+

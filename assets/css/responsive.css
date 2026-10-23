@@ -151,6 +151,13 @@
   .cards-grid--2,
   .cards-grid--4     { grid-template-columns: 1fr; }
   .ministry-grid     { grid-template-columns: 1fr; }
+  /* Frame these photos for the wider, stacked cards. */
+  .ministry-grid--photo-fit .ministry-card-bg.mg--kids {
+    background-position: center 75%;
+  }
+  .ministry-grid--photo-fit .ministry-card-bg.mg--worship {
+    background-position: center 15%;
+  }
   .pastor-grid       { grid-template-columns: 1fr; }
   .beliefs-grid      { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }

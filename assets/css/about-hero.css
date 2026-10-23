@@ -13,9 +13,8 @@
 }
 
 .about-page .page-hero--about::before {
-  /* Photo: Caleb Oquendo, https://www.pexels.com/photo/39008709/ */
   top: var(--header-h);
   background:
     var(--page-hero-overlay),
-    url("../images/hero/about-community.jpg") center 35% / cover no-repeat;
+    url("../images/hero/about-community-worship.webp") center 35% / cover no-repeat;
 }
