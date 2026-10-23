@@ -82,7 +82,8 @@ USA
 ## 9. Donation Link
 
 - `https://www.cla.city/pozhertvovat`
-- Do NOT mention cash, check, Venmo, Zelle, PayPal, or any other payment method unless verified.
+- Zelle giving: `+1 (747) 279-9715` — confirmed by the website owner on October 23, 2026.
+- Do NOT mention cash, check, Venmo, PayPal, or any other payment method unless verified.
 - Do NOT display dollar amounts, giving goals, or fundraising progress unless verified.
 
 ---
@@ -151,7 +152,7 @@ The following must NOT appear anywhere on the site until individually verified:
 - Fake pastor names or fake staff names
 - Fake sermon titles, dates, thumbnails, or video cards
 - Fake ministry email addresses
-- Fake or unverified payment methods (Venmo, Zelle, PayPal, cash, check)
+- Fake or unverified payment methods (Venmo, PayPal, cash, check)
 - Fundraising goals or giving progress bars
 - Instagram, Telegram, or any social link not listed in Section 8
 - MTC (Missionary Training Center) details beyond a passing reference in Leonid's bio
