@@ -17,6 +17,72 @@
   top: var(--header-h);
 }
 
+@media (max-width: 768px) {
+  .home-page .page-hero--home {
+    --home-video-height: clamp(15rem, 62.5vw, 28rem);
+    --page-hero-overlay: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.06) 0%,
+      rgba(0, 0, 0, 0.08) 60%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+    min-height: 0;
+    display: block;
+    padding: var(--header-h) 0 2rem;
+    background: var(--c-bg);
+    color: var(--c-text);
+  }
+
+  /* Reserve the video area independently of the introduction below it. */
+  .home-page .page-hero--home::before,
+  .home-page .page-hero--home .page-hero__media {
+    bottom: auto;
+    height: var(--home-video-height);
+  }
+
+  .home-page .page-hero--home .page-hero__content {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+    will-change: auto;
+  }
+
+  /* Keep only the small church name over the lower edge of the video. */
+  .home-page .page-hero--home .page-hero__content > .eyebrow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: var(--home-video-height);
+    padding: 1.25rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .home-page .page-hero--home h1 {
+    max-width: 24ch;
+    margin: 1.75rem auto 0.75rem;
+    padding-inline: 1.25rem;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    color: var(--c-text);
+  }
+
+  .home-page .page-hero--home .lead {
+    max-width: 38rem;
+    margin-bottom: 0;
+    padding-inline: 1.25rem;
+    color: var(--c-muted);
+  }
+
+  .home-page .page-hero--home .hero-btns {
+    margin-top: 1.25rem;
+    padding-inline: 1.25rem;
+  }
+
+  .home-page .page-hero--home .hero-btns .btn {
+    width: min(100%, 22rem);
+  }
+}
+
 @media (max-width: 640px) {
   /* Let photo aspect ratios follow the available width on small screens. */
   .home-page .intro-img--photo.parallax-media,

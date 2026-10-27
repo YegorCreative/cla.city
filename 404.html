@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found — Church LA</title>
   <meta name="description" content="This page doesn't exist, but you're still welcome here." />
-  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
   <style>
     .error-page {
       min-height: 100vh;
@@ -76,7 +76,7 @@
       document.getElementById('go-ru').href = root + 'ru/';
       // Also correct the CSS href in case the page is being served from a sub-path
       var css = document.head.querySelector('link[rel="stylesheet"]');
-      if (css) css.href = root + 'assets/css/styles.css';
+      if (css) css.href = root + 'assets/css/styles.css?v=12';
     })();
   </script>
 </body>
