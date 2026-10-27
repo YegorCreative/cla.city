@@ -16,3 +16,13 @@
 .home-page .page-hero--home .page-hero__media {
   top: var(--header-h);
 }
+
+@media (max-width: 640px) {
+  /* Let photo aspect ratios follow the available width on small screens. */
+  .home-page .intro-img--photo.parallax-media,
+  .home-page .service-visual {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
+}
