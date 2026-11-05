@@ -1,3 +1,28 @@
+.home-page {
+  /* Follow the document order: introduction, Sunday details, then previews. */
+  display: block;
+}
+
+.home-page [aria-labelledby="who-heading"] .btn {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.home-page [aria-labelledby="who-heading"] .btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.home-page [aria-labelledby="who-heading"] .btn-outline:hover,
+.home-page [aria-labelledby="who-heading"] .btn-outline:focus-visible {
+  background: var(--color-primary);
+  color: var(--c-white);
+  border-color: var(--color-primary);
+}
+
 .home-page .page-hero--home {
   min-height: calc(var(--header-h) + 40vw);
   display: grid;

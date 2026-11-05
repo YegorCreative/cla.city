@@ -344,7 +344,7 @@
   }
 
   /* CTA banner */
-  .cta-banner { padding: var(--sp-lg) 0; }
+  .cta-banner { padding: var(--section-space) 0; }
   .cta-panel {
     border-radius: var(--r-2xl);
     padding: 0.75rem;
@@ -415,9 +415,9 @@
   }
   .hero-topbar__item { font-size: 0.55rem; letter-spacing: 0.07em; }
   .hero-topbar__sep  { margin: 0 0.3rem; }
-  .service-section--premium { padding-block: 2.5rem; }
-  .testimonials-section--premium { padding-block: 2.5rem; }
-  .cta-banner { padding-top: 2.5rem; }
+  .service-section--premium { padding-block: var(--section-space); }
+  .testimonials-section--premium { padding-block: var(--section-space); }
+  .cta-banner { padding-top: var(--section-space); }
 
 }
 
@@ -571,7 +571,7 @@
 
 @media (max-width: 640px) {
   .showcase {
-    padding-block: 2.6rem 3.4rem;
+    padding-block: var(--section-space);
   }
 
   .showcase__stage {

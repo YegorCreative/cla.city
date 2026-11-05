@@ -19,11 +19,6 @@
     url("../images/hero/about-community-worship.webp") center 35% / cover no-repeat;
 }
 
-/* Give the portraits and biographies room without changing other page grids. */
-.about-page .section {
-  padding-block: clamp(2.5rem, 5vw, 4rem);
-}
-
 .about-page .pastor-grid {
   gap: clamp(2rem, 4vw, 3.5rem);
 }

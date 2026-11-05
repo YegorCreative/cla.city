@@ -1,5 +1,18 @@
 # CLA City implementation review
 
+## Follow-up — November 5, 2026
+
+After reviewing the supplied 15-page PDF, the owner requested implementation of the remaining items. This follow-up supersedes the earlier decisions below about keeping both belief presentations and retaining all homepage sections.
+
+- Home now has seven sections in document order: welcome, church introduction, Sunday details, pastors, groups, Bible Schools, and contact. Removed the separate next-step invitation, large MTC promotion, photo grid, and final invitation. Media remains linked from the introduction, MTC has a short school preview, and the joint pastor introduction replaces the hidden duplicate individual cards. Full biographies and the gallery remain on their dedicated pages.
+- About now uses one beliefs presentation. All eight numbered doctrinal statements are unchanged; practical application is reflected in the introduction.
+- Prayer and Worship cards on Home and Ministries use specific email subjects and clear request/inquiry labels instead of leading back to another listing card.
+- Bible Schools now previews the first existing lesson from each of the six course blocks. Native audio controls use `preload="none"`; every preview includes the original podcast-platform link and its course destination. Both language versions identify the recordings as Russian. Full school and course pages are unchanged.
+- Added responsive preview columns, wrapping for long buttons, and scoped stylesheet version updates. Existing typography and photographs are retained. All copy and navigation changes are mirrored in English and Russian.
+- Validation: targeted static checks passed for balanced HTML, unique IDs, section labels, 124 local references, removed-anchor references across public pages, unchanged Sunday/contact sections, unchanged beliefs, preview/course matching, and unchanged course pages. All six audio URLs returned HTTP 200 with audio content types. `git diff --check` passed. No browser automation was run during this follow-up, in accordance with the project instructions; mobile layout and actual playback remain for visual review.
+
+The sections below record the earlier implementation pass.
+
 Local changes for review. The owner approved the global visual proposal, removal of the repeated YouTube section, and both MTC descriptions during this chat. Nothing has been published or committed.
 
 ## Implemented

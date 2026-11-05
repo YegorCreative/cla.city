@@ -14,7 +14,59 @@
     url("../images/hero/resources-classroom.webp") center 35% / cover no-repeat;
 }
 
+.resources-page .lesson-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-md);
+}
+
+.resources-page .btn {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.resources-page .lesson-preview {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.resources-page .lesson-preview h3,
+.resources-page .lesson-preview p,
+.resources-page .lesson-preview .eyebrow {
+  margin: 0;
+}
+
+.resources-page .lesson-preview audio {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: auto;
+}
+
+.resources-page .lesson-preview__links {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.resources-page .lesson-preview__links a {
+  width: fit-content;
+}
+
+.resources-page .lesson-preview__links a:last-child {
+  color: var(--c-muted);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
+  .resources-page .lesson-preview-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .resources-page .page-hero--res {
     min-height: calc(var(--header-h) + 66.68vw);
   }

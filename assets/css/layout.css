@@ -23,21 +23,17 @@
 }
 
 /* --- Section spacing --- */
-.section {
-  padding-block: var(--sp-xl);
+/* Bible Schools spacing, shared by every public page and section variant.
+   Adjacent sections contribute equal halves: 40–56px between content blocks. */
+:root {
+  --section-space: clamp(1.25rem, 3.5vw, 1.75rem);
+  --section-spacing-scale: 0.5;
 }
-.section-sm {
-  padding-block: var(--sp-lg);
-}
+
+.section,
+.section-sm,
 .section--lg {
-  padding-block: var(--sp-2xl);
-}
-.section--half-top,
-.cta-banner.section--half-top {
-  padding-top: calc(var(--sp-xl) * var(--section-spacing-scale, 1) / 2);
-}
-.section--half-bottom {
-  padding-bottom: calc(var(--sp-xl) * var(--section-spacing-scale, 1) / 2);
+  padding-block: var(--section-space);
 }
 
 /* --- Hero frame layout --- */
@@ -358,23 +354,7 @@
   aspect-ratio: auto;
 }
 
-/* --- Compact page spacing --- */
-.home-page .section,
-.home-page .cta-banner,
-.ministries-page .section,
-.ministries-page .cta-banner,
-.visit-page .section,
-.visit-page .cta-banner,
-.about-page .section,
-.about-page .cta-banner,
-.resources-page .section,
-.resources-page .cta-banner,
-.media-page .section,
-.media-page .cta-banner,
-.give-page .section,
-.give-page .cta-banner {
-  padding-block: clamp(1.25rem, 3.5vw, 1.75rem);
-}
+/* --- Compact page content layout --- */
 .home-page .page-hero,
 .ministries-page .page-hero,
 .visit-page .page-hero,
@@ -449,12 +429,6 @@
   padding: var(--sp-sm);
 }
 
-.media-page .section--half-top {
-  padding-top: min(1.5rem, 3.5vw);
-}
-.media-page .section--half-bottom {
-  padding-bottom: min(1.5rem, 3.5vw);
-}
 .give-page .give-cta-box {
   padding: clamp(1rem, 3vw, 1.75rem);
 }
