@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CLA City — design proposal for review</title>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=13" />
+  <style>
+    body { background: #fff; padding: clamp(1rem, 4vw, 3rem); }
+    main { max-width: 1100px; margin: auto; }
+    .review-title { font: 500 1.5rem var(--f-body); margin-bottom: 1rem; }
+    .review-intro { max-width: 70ch; }
+    .samples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+    .sample { min-width: 0; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #e5e7eb; border-radius: 20px; background: var(--c-bg); }
+    .sample h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-block: 1rem; overflow-wrap: anywhere; }
+    .sample p { color: var(--c-muted); }
+    .current { --c-bg: #faf7f2; --c-muted: #5c6670; --f-heading: "Oswald", Arial, sans-serif; }
+    .current h2 { color: #1f2328; font-weight: 600; }
+    .proposed {
+      --color-ivory: #fff;
+      --c-bg: #fff;
+      --c-text: #374151;
+      --c-muted: #4b5563;
+      --c-border: #e5e7eb;
+      --f-heading: "Roboto", system-ui, sans-serif;
+    }
+    .proposed h2 { color: #000; font-weight: 500; }
+    .sample img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
+    .review-note { font-size: .9rem; margin-block: 1rem; }
+    @media (max-width: 700px) { .samples { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="review-title">CLA City: proposed visual foundation</h1>
+    <p class="review-intro">The proposal has been approved and applied locally. This sample preserves the previous design for comparison. The proposal uses the existing self-hosted Roboto font, which supports both English and Russian.</p>
+    <div class="samples">
+      <section class="sample current" aria-label="Previous design">
+        <span class="eyebrow">Previous · Oswald 600 · warm background</span>
+        <h2 lang="ru">Приходите познакомиться с нами</h2>
+        <h2>Come get to know us</h2>
+        <p lang="ru">Мы будем рады познакомиться с вами, ответить на вопросы и помочь освоиться в нашей церкви.</p>
+        <p>We'd love to meet you, answer your questions, and help you settle into our church.</p>
+        <img src="../assets/images/gallery/04-960.webp" width="960" height="640" alt="CLA City congregation worshipping together" />
+      </section>
+      <section class="sample proposed" aria-label="Proposed design">
+        <span class="eyebrow">Approved · Roboto 500 · white background</span>
+        <h2 lang="ru">Приходите познакомиться с нами</h2>
+        <h2>Come get to know us</h2>
+        <p lang="ru">Мы будем рады познакомиться с вами, ответить на вопросы и помочь освоиться в нашей церкви.</p>
+        <p>We'd love to meet you, answer your questions, and help you settle into our church.</p>
+        <img src="../assets/images/gallery/04-960.webp" width="960" height="640" alt="CLA City congregation worshipping together" />
+      </section>
+    </div>
+    <p class="review-note">Proposed tokens: light backgrounds #ffffff; headings #000000; body #374151; secondary text #4b5563; light borders #e5e7eb. Heading family: Roboto, weight 500. Existing dark sections, image overlays, logos, and white text on dark surfaces remain intact.</p>
+    <p><a href="implementation-review.md">Implementation notes and remaining decisions</a></p>
+  </main>
+</body>
+</html>

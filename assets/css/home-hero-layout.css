@@ -11,6 +11,23 @@
   max-width: 760px;
 }
 
+/* Raise the people within the introduction photo's existing crop. */
+.home-page .intro-img--photo.parallax-media img {
+  object-position: center 55%;
+}
+
+/* Show both pastors clearly in the existing joint photograph. */
+.home-page .pastors-combined {
+  max-width: 64rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+}
+
+@media (max-width: 900px) {
+  .home-page .pastors-combined {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* Start the video and overlay below the fixed header. */
 .home-page .page-hero--home::before,
 .home-page .page-hero--home .page-hero__media {
@@ -63,7 +80,7 @@
     margin: 1.75rem auto 0.75rem;
     padding-inline: 1.25rem;
     font-size: clamp(2rem, 6vw, 2.75rem);
-    color: var(--c-text);
+    color: var(--c-heading);
   }
 
   .home-page .page-hero--home .lead {
@@ -90,5 +107,16 @@
     width: 100%;
     max-width: 100%;
     min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Keep longer Russian contact choices readable on narrow phones. */
+  .home-page .here-for-you__links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page .service-card-stack {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
